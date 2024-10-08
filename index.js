@@ -67,6 +67,9 @@ function temp(fahrenheit) {
 // Table of any Number
 //! ===============================
 
+const tableNum = 10;
+
+function multiply(num) {}
 
 //! ===============================
 // leap year or not
