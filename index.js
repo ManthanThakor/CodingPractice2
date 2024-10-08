@@ -198,15 +198,105 @@ function maxNum(arr) {
 // Count Vowels in String
 //! ===============================
 
-const Str2= "ManthanRocks"
+const Str2 = "ManthanRocks";
 
-function Vowels(Str2){
-
+function Vowels(Str2) {
   let VowelsCount = 0;
-  Vowels = "aeiouAEIOU";
-
-  
+  let Vowels = "aeiouAEIOU";
+  for (let i = 0; i < Str2.length; i++) {
+    if (Vowels.includes(Str2[i])) {
+      VowelsCount++;
+    }
+  }
+  return VowelsCount;
 }
+// console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
+
+//! ===============================
+// Sum of All even Number in Array
+//! ===============================
+
+const Arr12 = [1, 2, 3, 4, 5, 6];
+
+function SumEvenNum(Arr12) {
+  let sum = 0;
+  for (let i = 0; i < Arr12.length; i++) {
+    if (Arr12[i] % 2 === 0) {
+      sum = sum + Arr12[i];
+    }
+  }
+  return sum;
+}
+// console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`); // Sum of All even Number in Array 12
+
+//! ===============================
+// Find Duplicate Number in Array
+//! ===============================
+
+const numbers = [1, 2, 3, 4, 5, 3, 2, 6, 1];
+
+function findDuplicates(arr) {
+  const duplicates = [];
+  const checked = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+    if (checked[num]) {
+      if (!duplicates.includes(num)) {
+        duplicates.push(num);
+      }
+    } else {
+      checked[num] = true;
+    }
+  }
+  return duplicates;
+}
+
+// console.log(findDuplicates(numbers)); // Outputs: [ 3, 2, 1 ]
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
 //! ===============================
 //
 //! ===============================
