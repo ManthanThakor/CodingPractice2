@@ -278,6 +278,241 @@ function isPalindrome(str) {
 // console.log(isPalindrome(testString)); // Outputs: true
 
 //! ===============================
+// Reverse the Number
+//! ===============================
+
+const number = 12345;
+
+function reverseNumber(number) {
+  let reverse = 0;
+  while (number !== 0) {
+    let remainder = number % 10;
+    reverse = reverse * 10 + remainder;
+    number = Math.floor(number / 10);
+  }
+  return reverse;
+}
+// console.log(reverseNumber(number)); // Outputs: 54321
+
+//! ===============================
+// Armstrong  Number
+//! ===============================
+
+const num13 = 153;
+function ArmstrongNum(num) {
+  let sum = 0;
+  temp = num;
+
+  while (temp > 0) {
+    let remainder = temp % 10;
+    sum = sum + remainder * remainder * remainder;
+    temp = parseInt(temp / 10);
+  }
+  if (sum === num) {
+    console.log("It is an Armstrong Number");
+  } else {
+    console.log("It is not an  Armstrong Number");
+  }
+}
+// console.log(ArmstrongNum(num13)); // It is an Armstrong Number
+
+//! ===============================
+// Fibonacci Sequence
+//! ===============================
+
+function Fibonacci(num) {
+  if (num === 0) {
+    return 0;
+  }
+  if (num === 1) {
+    return 1;
+  }
+  return Fibonacci(num - 1) + Fibonacci(num - 2);
+}
+//! If We Want direct output At 10
+const numFor = 10;
+// console.log(Fibonacci(10));
+// Outputs: 55
+
+//! If We Want Sequence
+for (let i = 0; i <= numFor; i++) {
+  // console.log(Fibonacci(i));
+}
+// 0
+// 1
+// 1
+// 2
+// 3
+// 5
+// 8
+// 13
+// 21
+// 34
+// 55
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+//
+//! ===============================
+//! ===============================
+//
+//! ===============================
+
+//! ===============================
+// *
+// **
+// ***
+// ****
+// *****
+//! ===============================
+
+const numSec = 5;
+
+function printStar(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+}
+// console.log(printStar(numSec));
+// *
+// **
+// ***
+// ****
+// *****
+
+//! ===============================
+// *
+// **
+// ***
+// ****
+// ***
+// **
+// *
+//! ===============================
+
+const num111 = 4;
+
+function StarSeq(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+  for (let i = num - 1; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+}
+// console.log(StarSeq(num111));
+// *
+// **
+// ***
+// ****
+// ***
+// **
+// *
+
+//! ===============================
+//    *
+//   ***
+//  *****
+// *******
+//! ===============================
+
+const num222 = 4;
+function StarSeq2(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+}
+// console.log(StarSeq2(num222));
+//    *
+//   ***
+//  *****
+// *******
+
+//! ===============================
+//    *
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+//! ===============================
+
+const num2223 = 4;
+
+function StarSeq5(num) {
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+
+  for (let i = num - 1; i > 0; i--) {
+    let row = "";
+
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+}
+// console.log(StarSeq5(num2223));
+//    *
+//   ***
+//  *****
+// *******
+//  *****
+//   ***
+//    *
+
+//! ===============================
 //  12345
 //  1234
 //  123
@@ -306,70 +541,86 @@ function PrintNum(num) {
 // 1
 
 //! ===============================
-// Reverse the Number
+// 55555
+// 4444
+// 333
+// 22
+// 1
 //! ===============================
 
-const number = 12345;
-console.log(reverseNumber(number)); // Outputs: 54321
+const numSec22 = 5;
 
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
-//! ===============================
-// *
-// **
-// ***
-// ****
-// *****
-//! ===============================
-
-const numSec = 5;
-
-function printStar(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
+function PrintNum2(num) {
+  // Outer loop to handle the number of lines
+  for (let i = num; i >= 1; i--) {
+    let result = "";
     for (let j = 1; j <= i; j++) {
-      row += "*";
+      result += i;
+    }
+    console.log(result);
+  }
+}
+
+// PrintNum2(numSec22);
+// 55555
+// 4444
+// 333
+// 22
+// 1
+
+//! ===============================
+// *****
+//  ****
+//   ***
+//    **
+//     *
+//! ===============================
+
+const numSec212 = 5;
+
+function StarSeq3(num) {
+  for (let i = num; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + "*";
     }
     console.log(row);
   }
 }
-// console.log(printStar(numSec));
-// *
-// **
-// ***
-// ****
+
+// console.log(StarSeq3(numSec212));
 // *****
+//  ****
+//   ***
+//    **
+//     *
+
+//! ===============================
+// *****
+// ****
+// ***
+// **
+// *
+//! ===============================
+const numSec213 = 5;
+
+function StarSeq4(num) {
+  for (let i = num; i > 0; i--) {
+    let row = "";
+
+    for (let k = 1; k <= i; k++) {
+      row = row + "*";
+    }
+    console.log(row);
+  }
+}
+
+// console.log(StarSeq4(numSec213));
+// *****
+// ****
+// ***
+// **
+// *
