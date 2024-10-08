@@ -255,15 +255,63 @@ function findDuplicates(arr) {
 // console.log(findDuplicates(numbers)); // Outputs: [ 3, 2, 1 ]
 
 //! ===============================
-//
+// Check Palindrome or Not
 //! ===============================
-//! ===============================
-//
-//! ===============================
+const testString = "Racecar";
+function isPalindrome(str) {
+  let lowerStr = "";
+  for (let i = 0; i < str.length; i++) {
+    lowerStr = lowerStr + str[i].toLowerCase();
+  }
+  let start = 0;
+  let end = str.length - 1;
+
+  while (start < end) {
+    if (lowerStr[start] !== lowerStr[end]) {
+      return false;
+    }
+    start++;
+    end--;
+  }
+  return true;
+}
+// console.log(isPalindrome(testString)); // Outputs: true
 
 //! ===============================
-//
+//  12345
+//  1234
+//  123
+//  12
+//  1
 //! ===============================
+
+const numSec21 = 5;
+
+function PrintNum(num) {
+  // Outer loop to handle the number of lines
+  for (let i = num; i >= 1; i--) {
+    let result = "";
+    for (let j = 1; j <= i; j++) {
+      result += j;
+    }
+    console.log(result);
+  }
+}
+
+// PrintNum(numSec21);
+// 12345
+// 1234
+// 123
+// 12
+// 1
+
+//! ===============================
+// Reverse the Number
+//! ===============================
+
+const number = 12345;
+console.log(reverseNumber(number)); // Outputs: 54321
+
 //! ===============================
 //
 //! ===============================
