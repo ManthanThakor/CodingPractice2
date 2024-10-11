@@ -495,13 +495,17 @@ function pattern16(num) {
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
-      row = row + " *";
+      if (j == 1 || j == i || i == num) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
     }
     pattern += row + "\n";
   }
   return pattern;
 }
-console.log(pattern16(num16));
+// console.log(pattern16(num16));
 // *
 // **
 // * *
