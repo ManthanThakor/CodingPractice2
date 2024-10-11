@@ -257,6 +257,7 @@ function findDuplicates(arr) {
 //! ===============================
 // Check Palindrome or Not
 //! ===============================
+
 const testString = "Racecar";
 function isPalindrome(str) {
   let lowerStr = "";
@@ -349,6 +350,81 @@ for (let i = 0; i <= numFor; i++) {
 // 21
 // 34
 // 55
+
+//! ===============================
+// Add two number without multiplication symbol
+//! ===============================
+
+const nu1 = 5;
+const nu2 = 4;
+
+function multi(a, b) {
+  let result = 0;
+  for (let i = 1; i <= b; i++) {
+    result = result + a;
+  }
+  return result;
+}
+// console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
+
+//! ===============================
+// sort array with bubble sort
+//! ===============================
+
+const sortArr = [10, 2, 23, 13, 42, 11, 45, 22, 12];
+function bubble(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        // [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // using destructuring
+      }
+    }
+  }
+  return arr;
+}
+// console.log(bubble(sortArr));
+// [2, 10, 11, 12, 13, 22, 23, 42, 45]
+
+//! ===============================
+// remove duplicate from Array and then sort array with bubble sort
+//! ===============================
+
+const dupliarr = [
+  1, 2, 3, 4, 2, 2, 10, 2, 3, 4, 5, 6, 7, 8, 33, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3,
+  3, 3, 3, 2, 90, 2, 2, 2, 2, 2,
+];
+
+function removeDup(arr) {
+  let pureArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!pureArr.includes(arr[i])) {
+      pureArr.push(arr[i]);
+    }
+  }
+  // console.log(`without Duplicate Array : ${pureArr}`);
+  // without Duplicate Array [1, 2, 3, 4, 10, 5, 6, 7, 8, 33, 90];
+
+  sorttArr(pureArr);
+
+  return pureArr;
+}
+
+function sorttArr(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+// console.log(`without Duplicate + sorted Array ${removeDup(dupliarr)}`);
+// without Duplicate + sorted Array 1,2,3,4,5,6,7,8,10,33,90
 
 //! ===============================
 // 1,8,27,64,125,......,N
@@ -740,6 +816,7 @@ function StarSeq3(num) {
 // **
 // *
 //! ===============================
+
 const numSec213 = 5;
 
 function StarSeq4(num) {
@@ -759,3 +836,37 @@ function StarSeq4(num) {
 // ***
 // **
 // *
+
+//! ===============================
+// *****
+// *   *
+// *   *
+// *****
+//! ===============================
+
+const length = 4;
+const breathOfLength = 5;
+
+function squarePattern(length, breathOfLength) {
+  let pattern = "";
+
+  for (let i = 1; i <= length; i++) {
+    let row = "";
+    for (let j = 1; j <= breathOfLength; j++) {
+      if (i === 1 || i === length || j === 1 || j === breathOfLength) {
+        row += "*";
+      } else {
+        row += " ";
+      }
+    }
+    pattern += row + "\n";
+  }
+
+  return pattern; // Return the full pattern
+}
+
+// console.log(squarePattern(length, breathOfLength));
+// *****
+// *   *
+// *   *
+// *****
