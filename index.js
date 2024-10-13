@@ -578,295 +578,252 @@ function SeriesPart7(num) {
 // 123456789101
 
 //! ===============================
-// 1! 2! 3! 4! 5! 6! ......n
+// iterate over an array
 //! ===============================
 
-//! ===============================
-//
-//! ===============================
-//! ===============================
-//
-//! ===============================
+let arr123 = [1, 2, 3, 4, 5];
 
-//! ===============================
-// *
-// **
-// ***
-// ****
-// *****
-//! ===============================
-
-const numSec = 5;
-
-function printStar(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row += "*";
-    }
-    console.log(row);
-  }
+for (let i = 0; i < arr123.length; i++) {
+  // console.log(arr123[i]);
 }
-// console.log(printStar(numSec));
-// *
-// **
-// ***
-// ****
-// *****
+// 1
+// 2
+// 3
+// 4
+// 5
 
 //! ===============================
-// *
-// **
-// ***
-// ****
-// ***
-// **
-// *
+// iterate over an 2D array
 //! ===============================
 
-const num111 = 4;
+let Arr2d = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
-function StarSeq(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row = row + "*";
+function Arr2D(arr) {
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      result = result + arr[i][j];
     }
-    console.log(row);
+    result = result + "\n";
   }
-  for (let i = num - 1; i > 0; i--) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row = row + "*";
-    }
-    console.log(row);
-  }
-}
-// console.log(StarSeq(num111));
-// *
-// **
-// ***
-// ****
-// ***
-// **
-// *
-
-//! ===============================
-//    *
-//   ***
-//  *****
-// *******
-//! ===============================
-
-const num222 = 4;
-function StarSeq2(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      row = row + "*";
-    }
-    console.log(row);
-  }
-}
-// console.log(StarSeq2(num222));
-//    *
-//   ***
-//  *****
-// *******
-
-//! ===============================
-//    *
-//   ***
-//  *****
-// *******
-//  *****
-//   ***
-//    *
-//! ===============================
-
-const num2223 = 4;
-
-function StarSeq5(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      row = row + "*";
-    }
-    console.log(row);
-  }
-
-  for (let i = num - 1; i > 0; i--) {
-    let row = "";
-
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      row = row + "*";
-    }
-    console.log(row);
-  }
-}
-// console.log(StarSeq5(num2223));
-//    *
-//   ***
-//  *****
-// *******
-//  *****
-//   ***
-//    *
-
-//! ===============================
-//  12345
-//  1234
-//  123
-//  12
-//  1
-//! ===============================
-
-const numSec21 = 5;
-
-function PrintNum(num) {
-  // Outer loop to handle the number of lines
-  for (let i = num; i >= 1; i--) {
-    let result = "";
-    for (let j = 1; j <= i; j++) {
-      result += j;
-    }
-    console.log(result);
-  }
+  return result;
 }
 
-// PrintNum(numSec21);
-// 12345
-// 1234
+// console.log(Arr2D(Arr2d));
 // 123
-// 12
-// 1
+// 456
+// 789
 
 //! ===============================
-// 55555
-// 4444
-// 333
-// 22
-// 1
+// iterate over an 3D array
 //! ===============================
 
-const numSec22 = 5;
+let arr3d = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+  [
+    [7, 8, 9],
+    [10, 11, 12],
+  ],
+];
 
-function PrintNum2(num) {
-  // Outer loop to handle the number of lines
-  for (let i = num; i >= 1; i--) {
-    let result = "";
-    for (let j = 1; j <= i; j++) {
-      result += i;
+function arr3D(arr) {
+  let result = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      for (k = 0; k < arr[i][j].length; k++) {
+        result = result + arr[i][j][k];
+      }
+      result = result + "\n";
     }
-    console.log(result);
   }
+  return result;
 }
 
-// PrintNum2(numSec22);
-// 55555
-// 4444
-// 333
-// 22
-// 1
+// console.log(arr3D(arr3d));
+// 123
+// 456
+// 789
+// 101112
 
 //! ===============================
-// *****
-//  ****
-//   ***
-//    **
-//     *
-//! ===============================
+// addition of array
+//! =============================
 
-const numSec212 = 5;
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
 
-function StarSeq3(num) {
-  for (let i = num; i > 0; i--) {
-    let row = "";
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= i; k++) {
-      row = row + "*";
-    }
-    console.log(row);
+function addArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return "Arrays must be of the same length";
   }
+
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i] + arr2[i]);
+  }
+
+  return result;
 }
 
-// console.log(StarSeq3(numSec212));
-// *****
-//  ****
-//   ***
-//    **
-//     *
+// console.log(addArrays(arr1, arr2)); // Output: [5, 7, 9]
 
 //! ===============================
-// *****
-// ****
-// ***
-// **
-// *
-//! ===============================
+// addition of 2d array
+//! =============================
 
-const numSec213 = 5;
+let arr11 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
 
-function StarSeq4(num) {
-  for (let i = num; i > 0; i--) {
-    let row = "";
+let arr22 = [
+  [7, 8, 9],
+  [10, 11, 12],
+];
 
-    for (let k = 1; k <= i; k++) {
-      row = row + "*";
-    }
-    console.log(row);
+function add2DArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length || arr1[0].length !== arr2[0].length) {
+    return "Arrays must have the same dimensions";
   }
+
+  let result = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    let row = [];
+    for (let j = 0; j < arr1[i].length; j++) {
+      row.push(arr1[i][j] + arr2[i][j]);
+    }
+    result.push(row);
+  }
+
+  return result;
 }
 
-// console.log(StarSeq4(numSec213));
-// *****
-// ****
-// ***
-// **
-// *
+// console.log(add2DArrays(arr11, arr22));
+// Output:
+// [
+//   [8, 10, 12],
+//   [14, 16, 18]
+// ]
 
 //! ===============================
-// *****
-// *   *
-// *   *
-// *****
+// addition of 3d array
+//! =============================
+
+let arr111 = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+  [
+    [7, 8, 9],
+    [10, 11, 12],
+  ],
+];
+
+let arr222 = [
+  [
+    [1, 1, 1],
+    [2, 2, 2],
+  ],
+  [
+    [3, 3, 3],
+    [4, 4, 4],
+  ],
+];
+
+function add3DArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length)
+    return "Arrays must have the same dimensions";
+
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let twoDResult = [];
+    for (let j = 0; j < arr1[i].length; j++) {
+      let oneDResult = [];
+      for (let k = 0; k < arr1[i][j].length; k++) {
+        oneDResult.push(arr1[i][j][k] + arr2[i][j][k]);
+      }
+      twoDResult.push(oneDResult);
+    }
+    result.push(twoDResult);
+  }
+
+  return result;
+}
+
+// console.log(add3DArrays(arr111, arr222));
+// Output:
+// [
+//   [
+//     [2, 3, 4],
+//     [6, 7, 8]
+//   ],
+//   [
+//     [10, 11, 12],
+//     [14, 15, 16]
+//   ]
+// ]
+
 //! ===============================
+// multiplyMatrices
+//! =============================
 
-const length = 4;
-const breathOfLength = 5;
+function multiplyMatrices(A, B) {
+  // Get the dimensions of the matrices
+  const m = A.length; // Rows in A
+  const n = A[0].length; // Columns in A
+  const p = B[0].length; // Columns in B
 
-function squarePattern(length, breathOfLength) {
-  let pattern = "";
+  // Check if multiplication is possible
+  if (n !== B.length) {
+    throw new Error("Number of columns in A must equal number of rows in B.");
+  }
 
-  for (let i = 1; i <= length; i++) {
-    let row = "";
-    for (let j = 1; j <= breathOfLength; j++) {
-      if (i === 1 || i === length || j === 1 || j === breathOfLength) {
-        row += "*";
-      } else {
-        row += " ";
+  // Initialize the result matrix with zeros using nested loops
+  const C = [];
+  for (let i = 0; i < m; i++) {
+    C[i] = []; // Initialize the i-th row
+    for (let j = 0; j < p; j++) {
+      C[i][j] = 0; // Initialize each element in the row to 0
+    }
+  }
+
+  // Perform matrix multiplication
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < p; j++) {
+      for (let k = 0; k < n; k++) {
+        C[i][j] += A[i][k] * B[k][j]; // Multiply and accumulate
       }
     }
-    pattern += row + "\n";
   }
 
-  return pattern; // Return the full pattern
+  return C;
 }
 
-// console.log(squarePattern(length, breathOfLength));
-// *****
-// *   *
-// *   *
-// *****
+// Example matrices
+const A = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+const B = [
+  [7, 8],
+  [9, 10],
+  [11, 12],
+];
+
+const result = multiplyMatrices(A, B);
+// console.log(result);
+// Output: [
+//   [58, 64],
+//   [139, 154]
+// ]
