@@ -212,6 +212,36 @@ function Vowels(Str2) {
 }
 // console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
 
+const Str29 = "ManthanRocks";
+
+//? ---------
+//? Method-2
+//? ---------
+
+function Vowels2(Str2) {
+  let VowelsCount = 0;
+  for (let i = 0; i < Str2.length; i++) {
+    let char = Str2[i];
+    if (
+      char === "a" ||
+      char === "e" ||
+      char === "i" ||
+      char === "o" ||
+      char === "u" ||
+      char === "A" ||
+      char === "E" ||
+      char === "I" ||
+      char === "O" ||
+      char === "U"
+    ) {
+      VowelsCount++;
+    }
+  }
+  return VowelsCount;
+}
+
+// console.log(`Total VowelCount of string is : ${Vowels2(Str29)}`); //Total VowelCount of string is : 3
+
 //! ===============================
 // Sum of All even Number in Array
 //! ===============================
@@ -227,32 +257,30 @@ function SumEvenNum(Arr12) {
   }
   return sum;
 }
-// console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`); // Sum of All even Number in Array 12
+// console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`);
+// Sum of All even Number in Array 12
 
 //! ===============================
 // Find Duplicate Number in Array
 //! ===============================
 
-const numbers = [1, 2, 3, 4, 5, 3, 2, 6, 1];
-
 function findDuplicates(arr) {
-  const duplicates = [];
-  const checked = [];
+  let duplicates = [];
 
   for (let i = 0; i < arr.length; i++) {
-    const num = arr[i];
-    if (checked[num]) {
-      if (!duplicates.includes(num)) {
-        duplicates.push(num);
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+        duplicates.push(arr[i]);
       }
-    } else {
-      checked[num] = true;
     }
   }
+
   return duplicates;
 }
 
-// console.log(findDuplicates(numbers)); // Outputs: [ 3, 2, 1 ]
+let arr = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+// console.log("Duplicate elements are: ", findDuplicates(arr));
+// Output: Duplicate elements are: [1, 2, 3]
 
 //! ===============================
 // Check Palindrome or Not
