@@ -261,28 +261,6 @@ function SumEvenNum(Arr12) {
 // Sum of All even Number in Array 12
 
 //! ===============================
-// Find Duplicate Number in Array
-//! ===============================
-
-function findDuplicates(arr) {
-  let duplicates = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
-        duplicates.push(arr[i]);
-      }
-    }
-  }
-
-  return duplicates;
-}
-
-let arr = [1, 2, 3, 4, 2, 3, 5, 6, 1];
-// console.log("Duplicate elements are: ", findDuplicates(arr));
-// Output: Duplicate elements are: [1, 2, 3]
-
-//! ===============================
 // Check Palindrome or Not
 //! ===============================
 
@@ -322,6 +300,27 @@ function reverseNumber(number) {
   return reverse;
 }
 // console.log(reverseNumber(number)); // Outputs: 54321
+
+//! ===============================
+// take input a character  and determine  its an lowercase alphabet , upper alphabet  or  digit or other character
+//! ===============================
+
+const inputChar = "A";
+
+function determineCharacterType(char) {
+  char = char.charCodeAt(0);
+  if (char >= 97 && char <= 122) {
+    return "Lowercase Alphabet";
+  } else if (char >= 65 && char <= 90) {
+    return "Uppercase Alphabet";
+  } else if (char >= 48 && char <= 57) {
+    return "Digit";
+  } else {
+    return "Other Character";
+  }
+}
+const result1 = determineCharacterType(inputChar);
+// console.log(`The character '${inputChar}' is: ${result1}`);
 
 //! ===============================
 // Armstrong  Number
@@ -396,6 +395,100 @@ function multi(a, b) {
 // console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
 
 //! ===============================
+// Find Duplicate Number in Array
+//! ===============================
+
+let arr = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+
+function findDuplicates(arr) {
+  let duplicates = [];
+  let index = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        duplicates[index] = arr[i];
+        index++;
+      }
+    }
+  }
+  return duplicates;
+}
+
+// console.log("Duplicate elements are: ", findDuplicates(arr));
+// Output: Duplicate elements are: [1, 2, 3]
+
+//! ===============================
+// Find Duplicate Character in String
+//! ===============================
+
+let strDup = "manthan";
+
+function findDuplicatesStr(str) {
+  let duplicates = "";
+  for (let i = 0; i < str.length - 1; i++) {
+    for (let j = i + 1; j < str.length; j++) {
+      if (str[i] == str[j]) {
+        duplicates += str[i];
+      }
+    }
+  }
+  return duplicates;
+}
+// console.log("Duplicate elements in string are: ", findDuplicatesStr(strDup));
+// Output: Duplicate elements in string are:  an
+
+//! ===============================
+// Remove Duplicate number from array
+//! ===============================
+
+let arr21 = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+function removeDuplicate(arr) {
+  let withoutDuplicate = [];
+  let index = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false; // this is the flag for exit loop
+    for (let j = 0; j < withoutDuplicate.length; j++) {
+      if (arr[i] == withoutDuplicate[j]) {
+        isDuplicate = true;
+      }
+    }
+    if (!isDuplicate) {
+      // withoutDuplicate.push(arr[i]);
+      // or
+      withoutDuplicate[index] = arr[i];
+      index++;
+    }
+  }
+  return withoutDuplicate;
+}
+
+// console.log("Array without duplicates: ", removeDuplicate(arr21));
+
+//! ===============================
+// Remove Duplicate character from string
+//! ===============================
+
+let strRemoveDuplicate = "manthan";
+function strRemoveDuplicateFun(str) {
+  let withoutDuplicateString = "";
+  for (let i = 0; i < str.length; i++) {
+    let duplicate = false;
+    for (let j = 0; j < withoutDuplicateString.length; j++) {
+      if (str[i] == withoutDuplicateString[j]) {
+        duplicate = true;
+      }
+    }
+    if (!duplicate) {
+      withoutDuplicateString += str[i];
+    }
+  }
+  return withoutDuplicateString;
+}
+
+// console.log( "Array without duplicates: ", strRemoveDuplicateFun(strRemoveDuplicate));
+// output:  Array without duplicates:  manth
+
+//! ===============================
 // sort array with bubble sort
 //! ===============================
 
@@ -453,173 +546,6 @@ function sorttArr(arr) {
 }
 // console.log(`without Duplicate + sorted Array ${removeDup(dupliarr)}`);
 // without Duplicate + sorted Array 1,2,3,4,5,6,7,8,10,33,90
-
-//! ===============================
-// 1,8,27,64,125,......,N
-//! ===============================
-
-const numPart11 = 10;
-function SeriesPart1(num) {
-  for (let i = 1; i <= num; i++) {
-    console.log(i ** 3);
-  }
-}
-
-// console.log(SeriesPart1(numPart11));
-// 1
-// 8
-// 27
-// 64
-// 125
-// 216
-// 343
-// 512
-// 729
-// 1000
-
-const numPart112 = 10;
-function SeriesPart2(num) {
-  let result = [];
-  for (let i = 1; i <= num; i++) {
-    let cal = i ** 3;
-    result.push(cal);
-  }
-  console.log(result);
-}
-
-// console.log(SeriesPart2(numPart112));
-// [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000];
-
-//! ===============================
-// 2, 12 ,36,80,.....,N
-//! ===============================
-
-const numPart113 = 10;
-function SeriesPart3(num) {
-  for (let i = 1; i <= num; i++) {
-    console.log(i ** 2 + i ** 3);
-  }
-}
-// console.log(SeriesPart3(numPart113));
-// 2
-// 12
-// 36
-// 80
-// 150
-// 252
-// 392
-// 576
-// 810
-// 1100
-
-//! ===============================
-// 1, -2,3,-4,5,-6,7,-8......n
-//! ===============================
-
-const numPart114 = 10;
-function SeriesPart4(num) {
-  for (let i = 1; i <= num; i++) {
-    if (i % 2 === 0) {
-      console.log(`-${i}`);
-    } else {
-      console.log(`${i}`);
-    }
-  }
-}
-// console.log(SeriesPart4(numPart114));
-// 1
-// -2
-// 3
-// -4
-// 5
-// -6
-// 7
-// -8
-// 9
-// -10
-
-const numPart115 = 10;
-function SeriesPart5(num) {
-  let result = [];
-  let temp;
-  for (let i = 1; i <= num; i++) {
-    if (i % 2 === 0) {
-      temp = `-${i}`;
-      result.push(temp);
-    } else {
-      temp = `${i}`;
-      result.push(temp);
-    }
-  }
-  return result;
-}
-// console.log(SeriesPart5(numPart115));
-// ["1", "-2", "3", "-4", "5", "-6", "7", "-8", "9", "-10"];
-
-//! ===============================
-// 3, 6,12,24,.....n
-//! ===============================
-
-const numPart116 = 10;
-function SeriesPart6(num) {
-  let Arr = [];
-  let fNumb = 3;
-  for (let i = 1; i <= num; i++) {
-    Arr.push(fNumb);
-    fNumb = fNumb * 2;
-  }
-  return Arr;
-}
-// console.log(SeriesPart6(numPart116));
-// [3, 6,  12,  24, 48,   96, 192, 384,  768, 1536 ]
-
-//! ===============================
-// 0, 4, 18, 48, 100, 180, 294, 448, 648
-//! ===============================
-
-let num = 10;
-
-let seq = [];
-
-for (let i = 1; i < num; i++) {
-  let cal = i ** 3 - i ** 2;
-  seq.push(cal);
-}
-
-// console.log(seq);
-// [0, 4, 18, 48, 100, 180, 294, 448, 648];
-
-//! ===============================
-// 11
-// 121
-// 1231
-// 12341...n
-//! ===============================
-
-const numPart117 = 10;
-
-function SeriesPart7(num) {
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row = row + j;
-    }
-    row = row + 1;
-
-    console.log(row);
-  }
-}
-// console.log(SeriesPart7(numPart117));
-// 11
-// 121
-// 1231
-// 12341
-// 123451
-// 1234561
-// 12345671
-// 123456781
-// 1234567891
-// 123456789101
 
 //! ===============================
 // iterate over an array
@@ -784,21 +710,40 @@ let arr222 = [
   ],
 ];
 
+// function add3DArrays(arr1, arr2) {
+//   if (arr1.length !== arr2.length)
+//     return "Arrays must have the same dimensions";
+
+//   let result = [];
+//   for (let i = 0; i < arr1.length; i++) {
+//     let twoDResult = [];
+//     for (let j = 0; j < arr1[i].length; j++) {
+//       let oneDResult = [];
+//       for (let k = 0; k < arr1[i][j].length; k++) {
+//         oneDResult.push(arr1[i][j][k] + arr2[i][j][k]);
+//       }
+//       twoDResult.push(oneDResult);
+//     }
+//     result.push(twoDResult);
+//   }
+
+//   return result;
+// }
+
 function add3DArrays(arr1, arr2) {
   if (arr1.length !== arr2.length)
     return "Arrays must have the same dimensions";
 
   let result = [];
+
   for (let i = 0; i < arr1.length; i++) {
-    let twoDResult = [];
+    result[i] = []; // Initialize the current 2D array
     for (let j = 0; j < arr1[i].length; j++) {
-      let oneDResult = [];
+      result[i][j] = [];
       for (let k = 0; k < arr1[i][j].length; k++) {
-        oneDResult.push(arr1[i][j][k] + arr2[i][j][k]);
+        result[i][j][k] = arr1[i][j][k] + arr2[i][j][k]; // Directly add values
       }
-      twoDResult.push(oneDResult);
     }
-    result.push(twoDResult);
   }
 
   return result;

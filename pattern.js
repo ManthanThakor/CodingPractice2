@@ -1163,6 +1163,7 @@ function HardPattern2(num) {
         row = row + " ";
       }
     }
+
     pattern += row + "\n";
   }
 
@@ -1183,7 +1184,7 @@ function HardPattern2(num) {
   return pattern;
 }
 
-// console.log(HardPattern2(hardNum2));
+console.log(HardPattern2(hardNum2));
 // *******
 //  *   *
 //   * *
@@ -1346,3 +1347,54 @@ function HardPattern5(num) {
 // ***     ***
 // ***** *****
 // ***********
+
+// ===================================================
+// ===================================================
+
+// let hardNum2 = 4;
+
+// function HardPattern2(num) {
+//   let pattern = "";
+//   for (let i = num; i > 0; i--) {
+//     let row = "";
+//     for (let j = 1; j <= num - i; j++) {
+//       row = row + " ";
+//     }
+//     for (let k = 1; k <= 2 * i - 1; k++) {
+//       if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+//         row = row + "*";
+//       } else {
+//         row = row + " ";
+//       }
+//     }
+
+//     pattern += row + "\n";
+//   }
+
+//   for (let i = 2; i <= num; i++) {
+//     let row = "";
+//     for (let j = 1; j <= num - i; j++) {
+//       row = row + " ";
+//     }
+//     for (let k = 1; k <= 2 * i - 1; k++) {
+//       if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+//         row = row + "*";
+//       } else {
+//         row = row + " ";
+//       }
+//     }
+//     pattern += row + "\n";
+//   }
+//   return pattern;
+// }
+
+// // console.log(HardPattern2(hardNum2));
+// * * * * * * * * * * * * * * * * * * * * * * * * *
+//   *           *   *           *   *           *
+//     *       *       *       *       *       *
+//       *   *           *   *           *   *
+//         *               *               *
+//       *   *           *   *           *   *
+//     *       *       *       *       *       *
+//   *           *   *           *   *           *
+// * * * * * * * * * * * * * * * * * * * * * * * * *
