@@ -424,6 +424,39 @@ function pattern16(num) {
 
 // ===================================================
 // ===================================================
+
+// ---------------------------------------------------
+// 11111
+// 1   1
+// 1   1
+// 11111
+// ---------------------------------------------------
+
+let num1111 = 4;
+let num2222 = 5;
+
+function square(num1, num2) {
+  let pattern = "";
+  for (let i = 1; i <= num1; i++) {
+    let row = "";
+    for (let j = 1; j <= num2; j++) {
+      if (i == 1 || i == num1 || j == 1 || j == num2) {
+        row = row + "1";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+}
+
+// console.log(square(num1111, num2222));
+// 11111
+// 1   1
+// 1   1
+// 11111
+
 // ===================================================
 // ===================================================
 
@@ -1053,3 +1086,263 @@ function pattern29(num) {
 
 // ===================================================
 // ===================================================
+//? ===================================================
+//? ===================================================
+//! ---------------------------------
+//! Difficulty  level insane
+//! ---------------------------------
+//? ===================================================
+//? ===================================================
+// ===================================================
+// ===================================================
+
+// ---------------------------------
+//     A
+//    A B A
+//   A B C B A
+//  A B C D C B A
+// A B C D E D C B A
+// ---------------------------------
+
+let hardNum = 5;
+
+function HardPattern(num) {
+  let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+
+    // increasing part of the pattern
+    for (let k = 0; k < i; k++) {
+      row += alphabets[k];
+    }
+    // decreasing part of the pattern
+    for (let m = i - 2; m >= 0; m--) {
+      row += alphabets[m];
+    }
+    pattern += row + "\n";
+  }
+  return pattern;
+}
+// console.log(HardPattern(hardNum));
+//      A
+//     ABA
+//    ABCBA
+//   ABCDCBA
+//  ABCDEDCBA
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------
+// *******
+//  *   *
+//   * *
+//    *
+//   * *
+//  *   *
+// *******
+// ---------------------------------
+
+let hardNum2 = 4;
+
+function HardPattern2(num) {
+  let pattern = "";
+  for (let i = num; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern += row + "\n";
+  }
+
+  for (let i = 2; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern += row + "\n";
+  }
+  return pattern;
+}
+
+// console.log(HardPattern2(hardNum2));
+// *******
+//  *   *
+//   * *
+//    *
+//   * *
+//  *   *
+// *******
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------
+//     *
+//    * *
+//   *   *
+//  *     *
+// *       *
+//  *     *
+//   *   *
+//    * *
+//     *
+// ---------------------------------
+
+let hardNum3 = 5;
+
+function HardPattern3(num) {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (k == 1 || k == 2 * i - 1 || i == 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+
+  for (let i = num - 1; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (k == 1 || k == 2 * i - 1 || i == 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+}
+
+// console.log(HardPattern3(hardNum3));
+//     *
+//    * *
+//   *   *
+//  *     *
+// *       *
+//  *     *
+//   *   *
+//    * *
+//     *
+// ===================================================
+// ===================================================
+
+// *
+//     * *
+//   * * *
+// * * * *
+
+let hardNum4 = 4;
+
+function HardPattern4(num) {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+
+    // Add leading spaces
+    for (let j = 1; j <= num - i; j++) {
+      if (i == 1) {
+        row = row + "";
+      } else {
+        row = row + "  "; // double space  for proper vision //! we can use single space also
+      }
+    }
+
+    for (let k = 1; k <= i; k++) {
+      row += "* "; //  space after star for proper vision
+    }
+
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(HardPattern4(hardNum4));
+// *
+//     * *
+//   * * *
+// * * * *
+
+// ===================================================
+// ===================================================
+
+// *         *
+// ***     ***
+// ***** *****
+// ***********
+
+let hardNum5 = 4;
+
+function HardPattern5(num) {
+  let pattern = "";
+  let space = 9; // Start with 9 spaces between the stars
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    let starCount;
+
+    if (i === num) {
+      starCount = 4;
+    } else {
+      starCount = 2 * i - 1;
+    }
+
+    // Add starting stars
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row += "*";
+    }
+
+    // Add spaces between the stars
+    for (let m = 1; m <= space; m++) {
+      row += " ";
+    }
+
+    // Add right side  stars
+    for (let n = 1; n <= starCount; n++) {
+      row += "*";
+    }
+
+    pattern += row + "\n";
+    space -= 4; // Reduce the spaces by 4 for the next row
+  }
+  return pattern;
+}
+
+// console.log(HardPattern5(hardNum5));
+
+// *         *
+// ***     ***
+// ***** *****
+// ***********
