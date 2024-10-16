@@ -1184,7 +1184,7 @@ function HardPattern2(num) {
   return pattern;
 }
 
-console.log(HardPattern2(hardNum2));
+// console.log(HardPattern2(hardNum2));
 // *******
 //  *   *
 //   * *
@@ -1351,50 +1351,171 @@ function HardPattern5(num) {
 // ===================================================
 // ===================================================
 
-// let hardNum2 = 4;
+let hardNum6 = 4;
 
-// function HardPattern2(num) {
-//   let pattern = "";
-//   for (let i = num; i > 0; i--) {
-//     let row = "";
-//     for (let j = 1; j <= num - i; j++) {
-//       row = row + " ";
-//     }
-//     for (let k = 1; k <= 2 * i - 1; k++) {
-//       if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-//         row = row + "*";
-//       } else {
-//         row = row + " ";
-//       }
-//     }
+function HardPattern6(num) {
+  let pattern = "";
+  for (let i = num; i > 0; i--) {
+    let row = "";
+    // =========== For left main  side upper part : number 1 =============
 
-//     pattern += row + "\n";
-//   }
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    // =========== For right side upper part : number 2 =============
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    // =========== For right side upper part : number 3 =============
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern += row + "\n";
+  }
+  // ====================================
+  // =========== bottom part ============
+  // ====================================
 
-//   for (let i = 2; i <= num; i++) {
-//     let row = "";
-//     for (let j = 1; j <= num - i; j++) {
-//       row = row + " ";
-//     }
-//     for (let k = 1; k <= 2 * i - 1; k++) {
-//       if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-//         row = row + "*";
-//       } else {
-//         row = row + " ";
-//       }
-//     }
-//     pattern += row + "\n";
-//   }
-//   return pattern;
-// }
+  for (let i = 2; i <= num; i++) {
+    let row = "";
 
-// // console.log(HardPattern2(hardNum2));
-// * * * * * * * * * * * * * * * * * * * * * * * * *
-//   *           *   *           *   *           *
-//     *       *       *       *       *       *
-//       *   *           *   *           *   *
-//         *               *               *
-//       *   *           *   *           *   *
-//     *       *       *       *       *       *
-//   *           *   *           *   *           *
-// * * * * * * * * * * * * * * * * * * * * * * * * *
+    // =========== For left main side bottom part : number 1 =============
+
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    // =========== For right   side bottom part : number 2 =============
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    // =========== For right   side bottom part : number 3 =============
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(HardPattern6(hardNum6));
+// *********************
+//  *   *  *   *  *   *
+//   * *    * *    * *
+//    *      *      *
+//   * *    * *    * *
+//  *   *  *   *  *   *
+// *********************
+
+// ===================================================
+// ===================================================
+
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+
+function printPattern(rows) {
+  let pattern = "";
+
+  // Upper part of the pattern
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < rows - i; j++) {
+      pattern += "*";
+    }
+    for (let j = 0; j < i * 2; j++) {
+      pattern += " ";
+    }
+    for (let j = 0; j < rows - i; j++) {
+      pattern += "*";
+    }
+    pattern += "\n";
+  }
+
+  // Lower part of the pattern
+  for (let i = 1; i < rows; i++) {
+    for (let j = -1; j < i; j++) {
+      pattern += "*";
+    }
+    for (let j = (rows - i - 1) * 2; j > 0; j--) {
+      pattern += " ";
+    }
+    for (let j = -1; j < i; j++) {
+      pattern += "*";
+    }
+    pattern += "\n";
+  }
+
+  console.log(pattern);
+}
+
+// Call the function with the number of rows for the upper part of the diamond
+// printPattern(5);
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
