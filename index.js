@@ -195,54 +195,6 @@ function maxNum(arr) {
 // console.log(`max numb in array ${maxNum(maxNumArray)}`);// max numb in array 42
 
 //! ===============================
-// Count Vowels in String
-//! ===============================
-
-const Str2 = "ManthanRocks";
-
-function Vowels(Str2) {
-  let VowelsCount = 0;
-  let Vowels = "aeiouAEIOU";
-  for (let i = 0; i < Str2.length; i++) {
-    if (Vowels.includes(Str2[i])) {
-      VowelsCount++;
-    }
-  }
-  return VowelsCount;
-}
-// console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
-
-const Str29 = "ManthanRocks";
-
-//? ---------
-//? Method-2
-//? ---------
-
-function Vowels2(Str2) {
-  let VowelsCount = 0;
-  for (let i = 0; i < Str2.length; i++) {
-    let char = Str2[i];
-    if (
-      char === "a" ||
-      char === "e" ||
-      char === "i" ||
-      char === "o" ||
-      char === "u" ||
-      char === "A" ||
-      char === "E" ||
-      char === "I" ||
-      char === "O" ||
-      char === "U"
-    ) {
-      VowelsCount++;
-    }
-  }
-  return VowelsCount;
-}
-
-// console.log(`Total VowelCount of string is : ${Vowels2(Str29)}`); //Total VowelCount of string is : 3
-
-//! ===============================
 // Sum of All even Number in Array
 //! ===============================
 
@@ -259,6 +211,78 @@ function SumEvenNum(Arr12) {
 }
 // console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`);
 // Sum of All even Number in Array 12
+
+//! ===============================
+// Armstrong  Number
+//! ===============================
+
+const num13 = 153;
+function ArmstrongNum(num) {
+  let sum = 0;
+  temp = num;
+
+  while (temp > 0) {
+    let remainder = temp % 10;
+    sum = sum + remainder * remainder * remainder;
+    temp = parseInt(temp / 10);
+  }
+  if (sum === num) {
+    console.log("It is an Armstrong Number");
+  } else {
+    console.log("It is not an  Armstrong Number");
+  }
+}
+// console.log(ArmstrongNum(num13)); // It is an Armstrong Number
+
+//! ===============================
+// Fibonacci Sequence
+//! ===============================
+
+function Fibonacci(num) {
+  if (num === 0) {
+    return 0;
+  }
+  if (num === 1) {
+    return 1;
+  }
+  return Fibonacci(num - 1) + Fibonacci(num - 2);
+}
+//! If We Want direct output At 10
+const numFor = 10;
+// console.log(Fibonacci(10));
+// Outputs: 55
+
+//! If We Want Sequence
+for (let i = 0; i <= numFor; i++) {
+  // console.log(Fibonacci(i));
+}
+// 0
+// 1
+// 1
+// 2
+// 3
+// 5
+// 8
+// 13
+// 21
+// 34
+// 55
+
+//! ===============================
+// Add two number without multiplication symbol
+//! ===============================
+
+const nu1 = 5;
+const nu2 = 4;
+
+function multi(a, b) {
+  let result = 0;
+  for (let i = 1; i <= b; i++) {
+    result = result + a;
+  }
+  return result;
+}
+// console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
 
 //! ===============================
 // Check Palindrome or Not
@@ -313,12 +337,12 @@ function reverseNumber(number) {
 const inputChar = "A";
 
 function determineCharacterType(char) {
-  char = char.charCodeAt(0);
-  if (char >= 97 && char <= 122) {
+  let character = char.charCodeAt(0);
+  if (character >= 97 && character <= 122) {
     return "Lowercase Alphabet";
-  } else if (char >= 65 && char <= 90) {
+  } else if (character >= 65 && character <= 90) {
     return "Uppercase Alphabet";
-  } else if (char >= 48 && char <= 57) {
+  } else if (character >= 48 && character <= 57) {
     return "Digit";
   } else {
     return "Other Character";
@@ -326,6 +350,7 @@ function determineCharacterType(char) {
 }
 const result1 = determineCharacterType(inputChar);
 // console.log(`The character '${inputChar}' is: ${result1}`);
+// The character 'A' is: Uppercase Alphabet
 
 //! ===============================
 //  convert a string to upper and lower case without using built-in methods in JavaScript
@@ -338,7 +363,6 @@ function toUpperCase(str) {
   for (let i = 0; i < str.length; i++) {
     let character = str.charCodeAt(i);
     // Convert to uppercase if it's a lowercase letter
-
     if (character >= 97 && character <= 122) {
       character -= 32; // Convert to uppercase
     }
@@ -423,87 +447,241 @@ const lowerStr = toLowerCase(inputStr);
 // }
 
 //! ===============================
+// Count Vowels in String
+//! ===============================
+
+const Str2 = "ManthanRocks";
+
+function Vowels(Str2) {
+  let VowelsCount = 0;
+  let Vowels = "aeiouAEIOU";
+  for (let i = 0; i < Str2.length; i++) {
+    if (Vowels.includes(Str2[i])) {
+      VowelsCount++;
+    }
+  }
+  return VowelsCount;
+}
+// console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
+
+//? ---------
+//? Method-2
+//? ---------
+
+function Vowels2(Str2) {
+  let VowelsCount = 0;
+  for (let i = 0; i < Str2.length; i++) {
+    let char = Str2[i];
+    if (
+      char === "a" ||
+      char === "e" ||
+      char === "i" ||
+      char === "o" ||
+      char === "u" ||
+      char === "A" ||
+      char === "E" ||
+      char === "I" ||
+      char === "O" ||
+      char === "U"
+    ) {
+      VowelsCount++;
+    }
+  }
+  return VowelsCount;
+}
+
+// console.log(`Total VowelCount of string is : ${Vowels2(Str29)}`); //Total VowelCount of string is : 3
+
+//! ===============================
+// check the character is Counting Vowels or Consonants
+//! ===============================
+
+let ch = "U";
+
+if (
+  ch === "a" ||
+  ch === "A" ||
+  ch === "e" ||
+  ch === "E" ||
+  ch === "i" ||
+  ch === "I" ||
+  ch === "o" ||
+  ch === "O" ||
+  ch === "u" ||
+  ch === "U"
+) {
+  // console.log(`The character ${ch} is a vowel.`);
+} else {
+  // console.log(`The character ${ch} is a consonant.`);
+}
+
+//! ===============================
 // Counting Vowels and Consonants
 //! ===============================
 
+let strVowel = "Hello World";
 function countVowelsAndConsonants(str) {
   let vowelsCount = 0;
-  let consonant = 0;
+  let consonantCount = 0;
+  const vowel = "aeiouAEIOU";
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const charCode = char.charCodeAt(0); // Get the ASCII code
+
+    // lowercase letter : a to z (ASCII codes 97 to 122)
+    // uppercase letter : A to Z (ASCII codes 65 to 90)
+    if (
+      (charCode >= 97 && charCode <= 122) ||
+      (charCode >= 65 && charCode <= 90)
+    ) {
+      if (vowel.includes(char)) {
+        vowelsCount++;
+      } else {
+        consonantCount++;
+      }
+    }
+  }
+  return { vowelsCount, consonantCount };
 }
 
-console.log(countVowelsAndConsonants("Hello World")); // Output: { vowelsCount: 3, consonantsCount: 7 }
+// console.log(countVowelsAndConsonants(strVowel)); // Output: { vowelsCount: 3, consonantsCount: 7 }
 
 //! ===============================
-// Armstrong  Number
+// Counting Vowels and Consonants and give the which character are vowel and consonants
 //! ===============================
 
-const num13 = 153;
-function ArmstrongNum(num) {
-  let sum = 0;
-  temp = num;
+let strVowel3 = "Hello World";
 
-  while (temp > 0) {
-    let remainder = temp % 10;
-    sum = sum + remainder * remainder * remainder;
-    temp = parseInt(temp / 10);
+function countVowelsAndConsonants3(str) {
+  let vowelsCount = 0;
+  let consonantCount = 0;
+  const vowel = "aeiouAEIOU";
+  const vowels = []; // Array to store vowel characters
+  const consonants = []; // Array to store consonant characters
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const charCode = char.charCodeAt(0); // Get the ASCII code
+
+    // Check if the character is a letter
+    if (
+      (charCode >= 97 && charCode <= 122) || // lowercase letters
+      (charCode >= 65 && charCode <= 90) // uppercase letters
+    ) {
+      if (vowel.includes(char)) {
+        vowelsCount++;
+        vowels.push(char); // Add to vowels array
+      } else {
+        consonantCount++;
+        consonants.push(char); // Add to consonants array
+      }
+    }
   }
-  if (sum === num) {
-    console.log("It is an Armstrong Number");
+
+  return { vowelsCount, consonantCount, vowels, consonants };
+}
+
+// Example usage
+const result3 = countVowelsAndConsonants3(strVowel3);
+// console.log(`Vowels Count: ${result3.vowelsCount}`); // Output: Vowels Count: 3
+// console.log(`Consonants Count: ${result3.consonantCount}`); // Output: Consonants Count: 7
+// console.log(`Vowels: ${result3.vowels.join(", ")}`); // Output: Vowels: e, o, o
+// console.log(`Consonants: ${result3.consonants.join(", ")}`); // Output: Consonants: H, l, l, W, r, l, d
+
+//! ===============================
+// String Compression :
+// finding duplicates works by comparing each character with all subsequent characters in the string.
+//! ===============================
+
+let compressStr = "aaabbbbcccaaa";
+
+function compressString(str) {
+  let count = 1;
+  let compressed = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == str[i + 1]) {
+      count++;
+    } else {
+      // Append the character
+      compressed += str[i];
+      // Append the count only if it's greater than 1
+      if (count > 1) {
+        compressed += " " + count + " ";
+      }
+      count = 1; // Reset count
+    }
+  }
+  return compressed;
+}
+
+// console.log(compressString(compressStr));
+// a 3 b 4 c 3 a 3
+
+//! ===============================
+// Substrings of a String
+//! ===============================
+
+function generateSubstrings(str) {
+  let substrings = [];
+  for (let i = 0; i < str.length; i++) {
+    let temp = "";
+    for (let j = i; j < str.length; j++) {
+      temp += str[j];
+      substrings.push(temp);
+    }
+  }
+  return substrings;
+}
+
+// Input
+// console.log(generateSubstrings("abc"));
+// Output: ["a", "ab", "abc", "b", "bc", "c"]
+
+//! ===============================
+// take two string and check the one string is a substring of another string
+//! ===============================
+
+//! ============== method 1 =================
+
+const string11 = "Hello, world!";
+const string22 = "world";
+function isSubstring1(str1, str2) {
+  if (str1.includes(str2)) {
+    return true;
   } else {
-    console.log("It is not an  Armstrong Number");
+    return false;
   }
 }
-// console.log(ArmstrongNum(num13)); // It is an Armstrong Number
+// console.log(isSubstring1(string11, string22));
+// true
 
-//! ===============================
-// Fibonacci Sequence
-//! ===============================
+//! ============== method 2 =================
 
-function Fibonacci(num) {
-  if (num === 0) {
-    return 0;
+function isSubstring(str1, str2) {
+  if (str2.length > str1.length) return false;
+
+  for (let i = 0; i < str1.length - str2.length; i++) {
+    let matchFound = true;
+
+    for (let j = 0; j < str2.length; j++) {
+      if (str1[i + j] !== str2[j]) {
+        matchFound = false;
+        break;
+      }
+    }
+
+    if (matchFound) {
+      return true;
+    }
   }
-  if (num === 1) {
-    return 1;
-  }
-  return Fibonacci(num - 1) + Fibonacci(num - 2);
+  return false;
 }
-//! If We Want direct output At 10
-const numFor = 10;
-// console.log(Fibonacci(10));
-// Outputs: 55
 
-//! If We Want Sequence
-for (let i = 0; i <= numFor; i++) {
-  // console.log(Fibonacci(i));
-}
-// 0
-// 1
-// 1
-// 2
-// 3
-// 5
-// 8
-// 13
-// 21
-// 34
-// 55
-
-//! ===============================
-// Add two number without multiplication symbol
-//! ===============================
-
-const nu1 = 5;
-const nu2 = 4;
-
-function multi(a, b) {
-  let result = 0;
-  for (let i = 1; i <= b; i++) {
-    result = result + a;
-  }
-  return result;
-}
-// console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
+// Example usage:
+const string1 = "Hello, world!";
+const string2 = "world";
+// console.log(isSubstring(string1, string2)); // Output: true
 
 //! ===============================
 // Find Duplicate Number in Array
@@ -555,7 +733,7 @@ function findDuplicatesStr(str) {
 let arr21 = [1, 2, 3, 4, 2, 3, 5, 6, 1];
 function removeDuplicate(arr) {
   let withoutDuplicate = [];
-  let index = 0;
+  // let index = 0;
   for (let i = 0; i < arr.length; i++) {
     let isDuplicate = false; // this is the flag for exit loop
     for (let j = 0; j < withoutDuplicate.length; j++) {
@@ -564,16 +742,32 @@ function removeDuplicate(arr) {
       }
     }
     if (!isDuplicate) {
-      // withoutDuplicate.push(arr[i]);
-      // or
-      withoutDuplicate[index] = arr[i];
-      index++;
+      withoutDuplicate.push(arr[i]);
+      // // or
+      // withoutDuplicate[index] = arr[i];
+      // index++;
     }
   }
   return withoutDuplicate;
 }
 
 // console.log("Array without duplicates: ", removeDuplicate(arr21));
+
+//========== method - 2 =============
+
+let arrdupli = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+
+function dupliarr2(arr) {
+  let withoutDuplicateArr = [];
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (!withoutDuplicateArr.includes(arr[i])) {
+      withoutDuplicateArr.push(arr[i]);
+    }
+  }
+  return withoutDuplicateArr;
+}
+// console.log(dupliarr2(arrdupli));
+// [ 1, 2, 3, 4, 5, 6 ]
 
 //! ===============================
 // Remove Duplicate character from string
@@ -602,6 +796,57 @@ function strRemoveDuplicateFun(str) {
 // );
 
 // output:  Array without duplicates: manth
+
+//! ===============================
+// characterFrequencyCount
+//! ===============================
+
+function characterFrequencyCount(str) {
+  const frequency = {};
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (frequency[char]) {
+      frequency[char] += 1;
+    } else {
+      frequency[char] = 1;
+    }
+  }
+
+  return frequency;
+}
+
+// Example usage
+const inputString = "hello world";
+const result = characterFrequencyCount(inputString);
+// console.log(result);
+// { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
+
+//! ================ method 2 ================
+
+function characterFrequencyCount2(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (!result.includes(char)) {
+      let count = 0;
+      for (let j = 0; j < str.length; j++) {
+        if (str[j] === char) {
+          count++;
+        }
+      }
+      // result += `${char}:${count} `;
+      result += char + count + " ";
+    }
+  }
+
+  return result;
+}
+
+// Example usage
+const inputString2 = "hello world";
+const result2 = characterFrequencyCount2(inputString2);
+// console.log(result2);
 
 //! ===============================
 // sort array with bubble sort
