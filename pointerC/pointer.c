@@ -298,7 +298,7 @@ void countVowelsConsonants(char *str, int *vowels, int *consonants)
 {
     *vowels = 0;
     *consonants = 0;
-    while (*str)
+    while(*str)
     {
         if (isalpha(*str))
         {

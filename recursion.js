@@ -44,7 +44,6 @@ function fibonacci(num) {
   if (num === 1) {
     return 1;
   }
-
   return fibonacci(num - 1) + fibonacci(num - 2);
 }
 // console.log(`Fibonacci Seq of given number ${number1}: ${fibonacci(number1)}`);
@@ -89,31 +88,6 @@ for (let i = 0; i < number2; i++) {
 //     0,  1,  3,  6, 10,
 //    15, 21, 28, 36, 45
 //  ]
-
-//! ====================================================
-// Linear Sum of even number
-//! ====================================================
-
-const number3 = 10;
-
-function LinearSumOfEvenNum(num) {
-  if (num <= 0) {
-    return 0;
-  } else if (num % 2 === 0) {
-    return num + LinearSumOfEvenNum(num - 2);
-  } else {
-    return LinearSumOfEvenNum(num - 1);
-  }
-}
-
-// console.log(LinearSumOfEvenNum(number3)); // Output: 30
-
-let linearEvenSum = [];
-for (let i = 0; i <= number3; i++) {
-  linearEvenSum.push(LinearSumOfEvenNum(i));
-}
-// console.log(linearEvenSum);
-// [0, 0, 2, 2, 6, 6, 12, 12, 20, 20, 30]
 
 //! ====================================================
 // Count number of digits
@@ -168,5 +142,48 @@ function isPalindrome(str, start, end) {
   }
   return isPalindrome(str, start + 1, end - 1);
 }
-console.log(isPalindrome(str1, 0, str1.length - 1));
+// console.log(isPalindrome(str1, 0, str1.length - 1));
 // true
+
+//! ====================================================
+// Linear Sum odd number
+//! ====================================================
+
+let num8 = 10;
+
+function LinearSumOddNumber(num) {
+  if (num <= 0) {
+    return 0;
+  } else if (num % 2 != 0) {
+    return num + LinearSumOddNumber(num - 2);
+  } else {
+    return LinearSumOddNumber(num - 1);
+  }
+}
+
+console.log(LinearSumOddNumber(num8)); // 25
+
+//! ====================================================
+// Linear Sum of even number
+//! ====================================================
+
+const number3 = 10;
+
+function LinearSumOfEvenNum(num) {
+  if (num <= 0) {
+    return 0;
+  } else if (num % 2 === 0) {
+    return num + LinearSumOfEvenNum(num - 2);
+  } else {
+    return LinearSumOfEvenNum(num - 1);
+  }
+}
+
+// console.log(LinearSumOfEvenNum(number3)); // Output: 30
+
+let linearEvenSum = [];
+for (let i = 0; i <= number3; i++) {
+  linearEvenSum.push(LinearSumOfEvenNum(i));
+}
+// console.log(linearEvenSum);
+// [0, 0, 2, 2, 6, 6, 12, 12, 20, 20, 30]
