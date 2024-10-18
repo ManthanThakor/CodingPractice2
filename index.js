@@ -199,6 +199,23 @@ function SumEvenNum(Arr12) {
 // Sum of All even Number in Array 12
 
 //! ===============================
+// Reverse the Number
+//! ===============================
+
+const number = 12345;
+
+function reverseNumber(number) {
+  let reverse = 0;
+  while (parseInt(number) !== 0) {
+    let remainder = number % 10;
+    reverse = reverse * 10 + remainder;
+    number = parseInt(number / 10);
+  }
+  return reverse;
+}
+// console.log(reverseNumber(number)); // Outputs: 54321
+
+//! ===============================
 // Armstrong  Number
 //! ===============================
 
@@ -269,6 +286,35 @@ function multi(a, b) {
   return result;
 }
 // console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
+
+//! ===============================
+// power calculations in JavaScript without using built-in methods
+//! ==============================
+
+//! =========== Method -1 ===================
+
+function power(base, exponent) {
+  let result = 1;
+  for (let i = 0; i < exponent; i++) {
+    result *= base;
+  }
+  return result;
+}
+
+// console.log(power(2, 3)); // Output: 8 (2^3)
+// console.log(power(5, 0)); // Output: 1 (5^0)
+
+//! =========== Method -2  ===================
+
+function power(base, exponent) {
+  if (exponent === 0) {
+    return 1;
+  }
+  return base * power(base, exponent - 1); // Recursive case
+}
+
+// console.log(power(2, 3)); // Output: 8 (2^3)
+// console.log(power(5, 0)); // Output: 1 (5^0)
 
 //! ===============================
 // Find Duplicate Number in Array
@@ -404,6 +450,22 @@ function bubble(arr) {
 }
 // console.log(bubble(sortArr));
 // [2, 10, 11, 12, 13, 22, 23, 42, 45]
+
+//! ===============================
+// reverse the arr
+//! ===============================
+
+const arr32 = [1, 2, 3, 4, 5];
+
+function revArr(arr) {
+  let arr2 = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    arr2.push(arr[i]);
+  }
+  return arr2;
+}
+console.log(revArr(arr32));
 
 //! ===============================
 // remove duplicate from Array and then sort array with bubble sort

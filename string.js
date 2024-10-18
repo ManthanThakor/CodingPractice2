@@ -38,23 +38,6 @@ function isPalindrome(str) {
 // console.log(isPalindrome(testString)); // Outputs: true
 
 //! ===============================
-// Reverse the Number
-//! ===============================
-
-const number = 12345;
-
-function reverseNumber(number) {
-  let reverse = 0;
-  while (number !== 0) {
-    let remainder = number % 10;
-    reverse = reverse * 10 + remainder;
-    number = Math.floor(number / 10);
-  }
-  return reverse;
-}
-// console.log(reverseNumber(number)); // Outputs: 54321
-
-//! ===============================
 // take input a character  and determine  its an lowercase alphabet , upper alphabet  or  digit or other character
 //! ===============================
 
