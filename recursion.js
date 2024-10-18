@@ -119,4 +119,54 @@ for (let i = 0; i <= number3; i++) {
 // Count number of digits
 //! ====================================================
 
-const Number = 12345;
+const Number4 = 12345;
+
+function countNumDigit(num) {
+  if (parseInt(num) < 1) {
+    return 0;
+  }
+  return 1 + countNumDigit(parseInt(num) / 10);
+}
+// console.log(`Total Number of digits in  the given  number ${Number4} is : ${countNumDigit(Number4)}`);
+// Total Number of digits in  the given  number 12345 is : 5
+
+//! ====================================================
+// Find Gcd And Lcm
+//! ====================================================
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+
+function lcm(a, b) {
+  return Math.abs(a * b) / gcd(a, b);
+}
+
+const num5 = 48;
+const num6 = 18;
+
+// console.log(`GCD of ${num1} and ${num2} is: ${gcd(num1, num2)}`);
+// GCD of 2 and 3 is: 1
+// console.log(`LCM of ${num1} and ${num2} is: ${lcm(num1, num2)}`);
+// LCM of 2 and 3 is: 6
+
+//! ====================================================
+// Check if a String is a Palindrome
+//! ====================================================
+
+let str1 = "HELEH";
+
+function isPalindrome(str, start, end) {
+  if (start >= end) {
+    return true;
+  }
+  if (str[start] !== str[end]) {
+    return false;
+  }
+  return isPalindrome(str, start + 1, end - 1);
+}
+console.log(isPalindrome(str1, 0, str1.length - 1));
+// true
