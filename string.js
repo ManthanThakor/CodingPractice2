@@ -439,33 +439,6 @@ const result = characterFrequencyCount(inputString);
 // console.log(result);
 // { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
 
-//! ================ method 2 ================
-
-function characterFrequencyCount2(str) {
-  let result = "";
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (!result.includes(char)) {
-      let count = 0;
-      for (let j = 0; j < str.length; j++) {
-        if (str[j] === char) {
-          count++;
-        }
-      }
-      // result += `${char}:${count} `;
-      result += char + count + " ";
-    }
-  }
-
-  return result;
-}
-
-// Example usage
-const inputString2 = "hello world";
-const result2 = characterFrequencyCount2(inputString2);
-// console.log(result2);
-// h1 e1 l3 o2 w1 r1 d1
-
 //! ===============================
 // find largest character from string and its length also
 //! ===============================
