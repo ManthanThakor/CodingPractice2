@@ -489,3 +489,45 @@ if (compstring.length === compstring2.length) {
 } else {
   // console.log("The strings do not have the same length.");
 }
+
+//! ===============================
+// slice and concatenate strings without using methods
+//! ===============================
+
+// ======== Method 1 =========
+
+let str1 = "Hello, ";
+let str2 = "World!";
+
+// Slicing the strings using indexing
+let slicedStr1 = str1[0] + str1[1] + str1[2] + str1[3] + str1[4]; // Slices "Hello"
+let slicedStr2 = str2[1] + str2[2] + str2[3] + str2[4]; // Slices "orld"
+
+// Concatenating the sliced strings
+let result12 = slicedStr1 + slicedStr2;
+
+// console.log(result12);
+// Output: "Helloorld"
+
+// ======== Method 2 =========
+
+let str31 = "Hello, ";
+let str32 = "World!";
+
+function sliceString(str, start, end) {
+  let sliced = "";
+  for (let i = start; i < end; i++) {
+    sliced += str[i];
+  }
+  return sliced;
+}
+
+// Slicing the strings using the function
+let slicedStr13 = sliceString(str31, 0, 5); // Slices "Hello"
+let slicedStr23 = sliceString(str32, 1, 5); // Slices "orld"
+
+// Concatenating the sliced strings
+let result33 = slicedStr13 + slicedStr23;
+
+// console.log(result33);
+// Output: "Helloorld"

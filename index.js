@@ -465,7 +465,8 @@ function revArr(arr) {
   }
   return arr2;
 }
-console.log(revArr(arr32));
+// console.log(revArr(arr32));
+// [ 5, 4, 3, 2, 1 ]
 
 //! ===============================
 // remove duplicate from Array and then sort array with bubble sort
@@ -504,3 +505,25 @@ function sorttArr(arr) {
 }
 // console.log(`without Duplicate + sorted Array ${removeDup(dupliarr)}`);
 // without Duplicate + sorted Array 1,2,3,4,5,6,7,8,10,33,90
+
+//! ===============================
+// flat the Array
+//! ===============================
+
+function flattenArray(arr) {
+  let flatArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flatArray = flatArray.concat(flattenArray(arr[i]));
+    } else {
+      flatArray.push(arr[i]);
+    }
+  }
+
+  return flatArray;
+}
+
+const nestedArray = [1, [2, [3, 4]], 5];
+// console.log(flattenArray(nestedArray));
+// Output: [1, 2, 3, 4, 5]
