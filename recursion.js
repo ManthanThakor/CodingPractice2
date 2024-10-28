@@ -116,7 +116,7 @@ function gcd(a, b) {
 }
 
 function lcm(a, b) {
-  return Math.abs(a * b) / gcd(a, b);
+  return Math.floor(a * b) / gcd(a, b);
 }
 
 const num5 = 48;
@@ -161,7 +161,7 @@ function LinearSumOddNumber(num) {
   }
 }
 
-console.log(LinearSumOddNumber(num8)); // 25
+// console.log(LinearSumOddNumber(num8)); // 25
 
 //! ====================================================
 // Linear Sum of even number

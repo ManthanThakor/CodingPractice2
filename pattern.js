@@ -329,10 +329,10 @@ function pattern13(num) {
 
 // ---------------------------------------------------
 // 54321
-// 4321
-// 321
-// 21
-// 1
+//  4321
+//   321
+//    21
+//     1
 // ---------------------------------------------------
 
 const num14 = 5;
@@ -341,6 +341,9 @@ function pattern14(num) {
   let pattern = "";
   for (let i = num; i > 0; i--) {
     let row = "";
+    for (let k = 1; k <= num - i; k++) {
+      row = row + " ";
+    }
     for (let j = i; j > 0; j--) {
       row = row + j;
     }
@@ -351,10 +354,10 @@ function pattern14(num) {
 
 // console.log(pattern14(num14));
 // 54321
-// 4321
-// 321
-// 21
-// 1
+//  4321
+//   321
+//    21
+//     1
 
 // ===================================================
 // ===================================================
@@ -574,7 +577,7 @@ function pattern11(num) {
     for (let j = 1; j <= i; j++) {
       row = row + "*";
     }
-    pattern += row + " \n";
+    pattern += row + "\n";
   }
   return pattern;
 }
@@ -630,7 +633,7 @@ function pattern12(num) {
 // ******
 // ---------------------------------------------------
 
-const num20 = 5;
+const num20 = 6;
 
 function pattern20(num) {
   let pattern = "";
@@ -1314,13 +1317,6 @@ function HardPattern5(num) {
     let row = "";
     let starCount;
 
-    // for right side * print
-    if (i === num) {
-      starCount = 4;
-    } else {
-      starCount = 2 * i - 1;
-    }
-
     // Add starting stars
     for (let k = 1; k <= 2 * i - 1; k++) {
       row += "*";
@@ -1329,6 +1325,13 @@ function HardPattern5(num) {
     // Add spaces between the stars
     for (let m = 1; m <= space; m++) {
       row += " ";
+    }
+
+    // for right side * print
+    if (i === num) {
+      starCount = 4;
+    } else {
+      starCount = 2 * i - 1;
     }
 
     // Add right side  stars
@@ -1342,7 +1345,7 @@ function HardPattern5(num) {
   return pattern;
 }
 
-// console.log(HardPattern5(hardNum5));
+console.log(HardPattern5(hardNum5));
 
 // *         *
 // ***     ***
