@@ -200,6 +200,7 @@ function pattern6(num) {
 const num7 = 3;
 function pattern7(num) {
   let pattern = "";
+
   let num1 = 1;
   for (let i = 1; i <= num; i++) {
     let row = "";
