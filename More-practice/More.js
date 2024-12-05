@@ -388,8 +388,121 @@ const num12 = 5;
 
 const pattern12 = (num) => {
   let pattern = "";
- for(let i = 1; i <= num)
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = num; j > num - i; j--) {
+      row = row + j;
+    }
+    pattern = pattern + row + "\n";
+  }
   return pattern;
 };
 
-console.log(pattern12(num12));
+// console.log(pattern12(num12));
+// 5
+// 54
+// 543
+// 5432
+// 54321
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//     1
+//    12
+//   123
+//  1234
+// 12345
+// ---------------------------------------------------
+
+const num13 = 5;
+
+const pattern13 = (num) => {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + k;
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern13(num13));
+//     1
+//    12
+//   123
+//  1234
+// 12345
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// 11111
+// 1   1
+// 1   1
+// 11111
+// ---------------------------------------------------
+
+const row = 4;
+const col = 5;
+
+const pattern14 = (rows, cols) => {
+  let pattern = "";
+  for (let i = 1; i <= rows; i++) {
+    let row = "";
+    for (let j = 1; j <= cols; j++) {
+      if (i == 1 || i == rows || j == 1 || j == cols) {
+        row = row + "1";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern14(row, col));
+// 11111
+// 1   1
+// 1   1
+// 11111
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// *****
+// *****
+// *****
+// *****
+// *****
+// ---------------------------------------------------
+
+const num15 = 5;
+
+const pattern15 = (num) => {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num; j++) {
+      row = row + "*";
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern15(num15));
+// *****
+// *****
+// *****
+// *****
+// *****
