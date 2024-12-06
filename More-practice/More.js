@@ -745,7 +745,7 @@ const pattern23 = (num) => {
   return pattern;
 };
 
-console.log(pattern23(num23));
+// console.log(pattern23(num23));
 // *****
 //  ****
 //   ***
@@ -765,4 +765,275 @@ console.log(pattern23(num23));
 //   ***
 //    **
 //     *
+// ---------------------------------------------------
+
+const num24 = 5;
+
+const pattern24 = (num) => {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + "*";
+    }
+    pattern = pattern + row + "\n";
+  }
+
+  for (let i = num - 1; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + "*";
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern24(num24));
+//     *
+//    **
+//   ***
+//  ****
+// *****
+//  ****
+//   ***
+//    **
+//     *
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+// ---------------------------------------------------
+
+const num25 = 5;
+
+const pattern25 = (num) => {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row = row + "*";
+    }
+    pattern = pattern + row + "\n";
+  }
+  for (let i = num - 1; i > 0; i--) {
+    let row2 = "";
+    for (let j = 1; j <= num - i; j++) {
+      row2 = row2 + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      row2 += "*";
+    }
+    pattern += row2 + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern25(num25));
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//    *
+//   * *
+//  *   *
+// *******
+// ---------------------------------------------------
+
+const num26 = 4;
+
+const pattern26 = (num) => {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (k == 1 || k == 2 * i - 1 || i == num) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern26(num26));
+//    *
+//   * *
+//  *   *
+// *******
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//    *
+//   * *
+//  * * *
+// * * * *
+//  * * *
+//   * *
+//    *
+// ---------------------------------------------------
+
+const num27 = 4;
+
+function pattern27(num) {
+  let pattern = "";
+  console.log("Pattern No.27");
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + "* "; // extra space after star for proper output
+    }
+    pattern += row + "\n";
+  }
+  for (let i = num - 1; i > 0; i--) {
+    let row2 = "";
+    for (let j = 1; j <= num - i; j++) {
+      row2 += " ";
+    }
+    for (let k = 1; k <= i; k++) {
+      row2 = row2 + "* "; // extra space after star for proper output
+    }
+    pattern += row2 + "\n";
+  }
+  return pattern;
+}
+
+// console.log(pattern27(num27));
+//    *
+//   * *
+//  * * *
+// * * * *
+//  * * *
+//   * *
+//    *
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// *
+// **
+// ***
+// ****
+// *****
+// ****
+// ***
+// **
+// *
+// ---------------------------------------------------
+
+const num28 = 5;
+
+function pattern28(num) {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "*";
+    }
+    pattern += row + "\n";
+  }
+
+  for (let i = num - 1; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "*";
+    }
+    pattern += row + "\n";
+  }
+  return pattern;
+}
+// console.log(pattern28(num28));
+// *
+// **
+// ***
+// ****
+// *****
+// ****
+// ***
+// **
+// *
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// A
+// AA
+// AAA
+// AAAA
+// AAAAA
+// ---------------------------------------------------
+
+const num29 = 5;
+
+const pattern29 = (num) => {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "A";
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+console.log(pattern29(num29));
+// A
+// AA
+// AAA
+// AAAA
+// AAAAA
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// AAAAA
+// AAAA
+// AAA
+// AA
+// A
 // ---------------------------------------------------
