@@ -1168,3 +1168,49 @@ const pattern32 = (num) => {
 //  *   *
 // *******
 // ---------------------------------
+
+const num33 = 4;
+
+const pattern33 = (num) => {
+  let pattern = "";
+  for (let i = num; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == num || k == 2 * i - 1 || k == 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+
+  for (let i = 2; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      if (i == num || k == 2 * i - 1 || k == 1) {
+        row = row + "*";
+      } else {
+        row = row + " ";
+      }
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern33(num33));
+// *******
+//  *   *
+//   * *
+//    *
+//   * *
+//  *   *
+// *******
