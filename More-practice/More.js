@@ -1138,15 +1138,33 @@ const pattern32 = (num) => {
       row = row + " ";
     }
 
-    for (let k = 0; k <= i; k++) {
-      row = row + alphabets[k];
+    for (let k = 0; k < i; k++) {
+      row = row + alphabets[k] + " ";
     }
-    for (let l = i - 2; l >= 1; l--) {
-      row = row + alphabets[l];
+    for (let l = i - 2; l >= 0; l--) {
+      row = row + alphabets[l] + " ";
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
 };
 
-console.log(pattern32(num32));
+// console.log(pattern32(num32));
+//     A
+//    A B A
+//   A B C B A
+//  A B C D C B A
+// A B C D E D C B A
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------
+// *******
+//  *   *
+//   * *
+//    *
+//   * *
+//  *   *
+// *******
+// ---------------------------------
