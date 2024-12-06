@@ -1020,7 +1020,7 @@ const pattern29 = (num) => {
   return pattern;
 };
 
-console.log(pattern29(num29));
+// console.log(pattern29(num29));
 // A
 // AA
 // AAA
@@ -1037,3 +1037,116 @@ console.log(pattern29(num29));
 // AA
 // A
 // ---------------------------------------------------
+
+const num30 = 5;
+
+const pattern30 = (num) => {
+  let pattern = "";
+  for (let i = num; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "A";
+    }
+    pattern += row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern30(num30));
+// AAAAA
+// AAAA
+// AAA
+// AA
+// A
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// $
+// $$
+// $$$
+// $$$$
+// %%%%%
+// %%%%
+// %%%
+// %%
+// %
+// ---------------------------------------------------
+
+const num31 = 4;
+
+const pattern31 = (num) => {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "$";
+    }
+    pattern = pattern + row + "\n";
+  }
+
+  for (let i = num + 1; i > 0; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row = row + "%";
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern31(num31));
+// $
+// $$
+// $$$
+// $$$$
+// %%%%%
+// %%%%
+// %%%
+// %%
+// %
+
+// ===================================================
+// ===================================================
+//? ===================================================
+//? ===================================================
+//! ---------------------------------
+//! Difficulty  level insane
+//! ---------------------------------
+//? ===================================================
+//? ===================================================
+// ===================================================
+// ===================================================
+
+// ---------------------------------
+//     A
+//    A B A
+//   A B C B A
+//  A B C D C B A
+// A B C D E D C B A
+// ---------------------------------
+
+const num32 = 5;
+
+const pattern32 = (num) => {
+  let pattern = "";
+  let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+
+    for (let k = 0; k <= i; k++) {
+      row = row + alphabets[k];
+    }
+    for (let l = i - 2; l >= 1; l--) {
+      row = row + alphabets[l];
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+console.log(pattern32(num32));
