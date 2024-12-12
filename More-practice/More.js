@@ -1269,7 +1269,7 @@ const pattern34 = (num) => {
   return pattern;
 };
 
-console.log(pattern34(num34));
+// console.log(pattern34(num34));
 //     *
 //    * *
 //   *   *
@@ -1286,3 +1286,30 @@ console.log(pattern34(num34));
 //     * *
 //   * * *
 // * * * *
+
+const num35 = 4;
+
+const pattern35 = (num) => {
+  let pattern = "";
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+    for (let j = 1; j <= num - i; j++) {
+      if (i == 1) {
+        row = row + "";
+      } else {
+        row = row + " ";
+      }
+    }
+    for (let k = 1; k <= i; k++) {
+      row = row + "*";
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern35(num35));
+// *
+//   **
+//  ***
+// ****
