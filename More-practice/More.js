@@ -1241,7 +1241,7 @@ const pattern34 = (num) => {
     }
 
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (k == 1 || i == 1 || k == 2 * i - 1) {
+      if (k == 1 || k == 2 * i - 1) {
         row = row + "*";
       } else {
         row = row + " ";
@@ -1250,7 +1250,7 @@ const pattern34 = (num) => {
     pattern = pattern + row + "\n";
   }
 
-  for (let i = num - 1; i > 0; i++) {
+  for (let i = num - 1; i > 0; i--) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
@@ -1270,3 +1270,19 @@ const pattern34 = (num) => {
 };
 
 console.log(pattern34(num34));
+//     *
+//    * *
+//   *   *
+//  *     *
+// *       *
+//  *     *
+//   *   *
+//    * *
+//     *
+// ===================================================
+// ===================================================
+
+// *
+//     * *
+//   * * *
+// * * * *
