@@ -291,3 +291,21 @@ const result = multiplyMatrices(A, B);
 //   [58, 64],
 //   [139, 154]
 // ]
+
+//! ===============================
+// Find the element in array
+//! =============================
+
+function searchUsingLoop(array, element) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      return `Element found at index: ${i}`;
+    }
+  }
+  return "Element not found";
+}
+
+let array = [10, 20, 30, 40, 50];
+let result111 = searchUsingLoop(array, 30);
+// console.log(result111);
+// Element found at index: 2
