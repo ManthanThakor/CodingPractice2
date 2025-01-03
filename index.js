@@ -2,25 +2,16 @@
 // leap year or not
 //! ===============================
 
-const leap = 2000;
-
 function leapYear(year) {
-  if (year % 4 === 0) {
-    if (year % 100 === 0) {
-      if (year % 400 === 0) {
-        console.log(year + " is a leap year");
-      } else {
-        console.log(year + " is not a leap year");
-      }
-    } else {
-      console.log(year + " is a leap year");
-    }
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    return year + " is a leap year";
   } else {
-    console.log(year + " is not a leap year");
+    return year + " is not a leap year";
   }
 }
 
-// leapYear(leap); // 2000 is a leap year
+// console.log(leapYear(2000)); // "2000 is a leap year"
+// console.log(leapYear(1900)); // "1900 is not a leap year"
 
 //! ===============================
 // a,b,c  no of this three greater than
@@ -115,7 +106,7 @@ if (prime(primeNum)) {
 //17 is a prime number.
 
 //! ===============================
-// Factorial
+// factorial
 //! ===============================
 
 const factNum = 5;
@@ -127,6 +118,53 @@ function fact(numb) {
   return numb * fact(numb - 1);
 }
 // console.log(fact(factNum)); // 120
+
+function factorialSeries(n) {
+  if (n < 0) {
+    console.log("Factorial is not defined for negative numbers.");
+    return;
+  }
+
+  let result = 1; // Initialize the factorial result
+  console.log("Factorial Series:");
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+    console.log(`${i}! = ${result}`);
+  }
+}
+
+// Example: Print factorial series for numbers from 1 to 5
+// factorialSeries(5);
+
+// ----------------ODD FACTORIAL------------------------
+
+function factorialSeriesOdd(n) {
+  if (n < 0) {
+    console.log("Factorial is not defined for negative numbers.");
+    return;
+  }
+
+  let result = 1; // Initialize the factorial result
+  console.log("Factorial Series for Odd Numbers:");
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 !== 0) {
+      // Check if the number is odd
+      result *= i;
+      console.log(`${i}! = ${result}`);
+    }
+  }
+}
+
+// Example: Print factorial series for odd numbers from 1 to 5
+factorialSeriesOdd(5);
+
+/*
+Output:
+Factorial Series for Odd Numbers:
+1! = 1
+3! = 3
+5! = 15
+*/
 
 //! ===============================
 // Even or odd

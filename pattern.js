@@ -181,7 +181,7 @@ function pattern6(num) {
   }
   return pattern;
 }
-// console.log(pattern6(num6));
+console.log(pattern6(num6));
 //     1
 //    123
 //   12345
