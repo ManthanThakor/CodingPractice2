@@ -1,10 +1,13 @@
 
-function factorial2(num) {
+function factorialOfOddNumbers(num) {
   let result = 1;
-
   for (let i = 1; i <= num; i++) {
-    console.log((result = result * i + " "));
+    if (i % 2 != 0) {
+      console.log((result = result * i));
+    } else {
+      result = result * i;
+    }
   }
+  return result;
 }
-const factNum2 = 5;
-factorial2(factNum2);
+factorialOfOddNumbers(5);
