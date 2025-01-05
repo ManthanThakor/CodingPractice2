@@ -1533,3 +1533,45 @@ function printPattern(rows) {
 
 // ===================================================
 // ===================================================
+
+//     1
+//    212
+//   32123
+//  4321234
+// 543212345
+const num111 = 5;
+
+function generatePattern111(num) {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+
+    // Add leading spaces
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+
+    // Add decreasing numbers
+    for (let k = i; k >= 1; k--) {
+      row += k;
+    }
+
+    // Add increasing numbers
+    for (let k = 2; k <= i; k++) {
+      row += k;
+    }
+
+    // Append the row to the pattern
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(generatePattern111(num111));
+//     1
+//    212
+//   32123
+//  4321234
+// 543212345
