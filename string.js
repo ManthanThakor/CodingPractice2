@@ -297,8 +297,8 @@ function countVowelsAndConsonants3(str) {
 const result3 = countVowelsAndConsonants3(strVowel3);
 // console.log(`Vowels Count: ${result3.vowelsCount}`); // Output: Vowels Count: 3
 // console.log(`Consonants Count: ${result3.consonantCount}`); // Output: Consonants Count: 7
-// console.log(`Vowels: ${result3.vowels.join(", ")}`); // Output: Vowels: e, o, o
-// console.log(`Consonants: ${result3.consonants.join(", ")}`); // Output: Consonants: H, l, l, W, r, l, d
+// console.log(`Vowels: ${result3.vowels}`); // Output: Vowels: e, o, o
+// console.log(`Consonants: ${result3.consonants}`); // Output: Consonants: H, l, l, W, r, l, d
 
 //! ===============================
 // String Compression :
@@ -445,7 +445,7 @@ const result = characterFrequencyCount(inputString);
 
 let strLargest = "the dog is the danger then the cat";
 
-function strLargestfun(str) {
+function strLargest(str) {
   let largestWord = "";
   let arr = str.split(" ");
   for (let i = 0; i < arr.length; i++) {
@@ -457,7 +457,7 @@ function strLargestfun(str) {
   return { largestWord, lengthOfLargestWord };
 }
 
-// console.log(strLargestfun(strLargest));
+// console.log(strLargest(strLargest));
 // { largestWord: 'danger', lengthOfLargestWord: 6 }
 
 //! ===============================

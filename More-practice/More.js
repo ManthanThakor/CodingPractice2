@@ -7,6 +7,7 @@
 // ---------------------------------------------------
 
 const num1 = 5;
+
 function pattern1(num) {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
@@ -14,7 +15,7 @@ function pattern1(num) {
     for (let j = 1; j <= i; j++) {
       row = row + j;
     }
-    pattern = pattern + row + "\n";
+    pattern += row + "\n";
   }
   return pattern;
 }
@@ -42,17 +43,20 @@ function pattern1(num) {
 // ---------------------------------------------------
 
 const num2 = 10;
-function pattern2(num) {
+
+const pattern2 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
+
     for (let j = 1; j <= i; j++) {
       row = row + j;
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern2(num2));
 // 1
 // 12
@@ -76,9 +80,11 @@ function pattern2(num) {
 // ---------------------------------------------------
 
 const num3 = 4;
-function pattern3(num) {
-  let pattern = "";
+
+const pattern3 = (num) => {
   let number = 1;
+  let pattern = "";
+
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
@@ -88,7 +94,8 @@ function pattern3(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern3(num3));
 // 1
 // 23
@@ -107,17 +114,19 @@ function pattern3(num) {
 // ---------------------------------------------------
 
 const num4 = 5;
-function pattern4(num) {
+
+const pattern4 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row = row + i;
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern4(num4));
 // 1
 // 22
@@ -137,9 +146,10 @@ function pattern4(num) {
 // ---------------------------------------------------
 
 const num5 = 5;
-function pattern5(num) {
+
+const pattern5 = (num) => {
   let pattern = "";
-  for (let i = num; i > 0; i--) {
+  for (let i = num; i >= 1; i--) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row = row + j;
@@ -147,7 +157,8 @@ function pattern5(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern5(num5));
 // 12345
 // 1234
@@ -167,21 +178,23 @@ function pattern5(num) {
 // ---------------------------------------------------
 
 const num6 = 5;
-function pattern6(num) {
+
+const pattern6 = (num6) => {
   let pattern = "";
-  for (let i = 1; i <= num; i++) {
+  for (let i = 1; i <= num6; i++) {
     let row = "";
-    for (let j = 1; j <= num - i; j++) {
+    for (let j = 1; j <= num6 - i; j++) {
       row = row + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
       row = row + k;
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
-console.log(pattern6(num6));
+};
+
+// console.log(pattern6(num6));
 //     1
 //    123
 //   12345
@@ -198,23 +211,24 @@ console.log(pattern6(num6));
 // ---------------------------------------------------
 
 const num7 = 3;
-function pattern7(num) {
-  let pattern = "";
 
-  let num1 = 1;
+const pattern7 = (num) => {
+  let pattern = "";
+  let number = 1;
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row = row + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      row = row + num1;
-      num1++;
+      row = row + number;
+      number++;
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern7(num7));
 //   1
 //  234
@@ -230,31 +244,28 @@ function pattern7(num) {
 // 681012
 // ---------------------------------------------------
 
-const num998 = 4;
-function pattern998(num) {
+const num8 = 4;
+
+const pattern8 = (num) => {
   let pattern = "";
-  let oddNum = 1;
-  let evenNum = 2;
+  let odd = 1;
+  let even = 2;
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       if (i % 2 === 0) {
-        row = row + evenNum;
-        evenNum += 2;
+        row = row + even;
+        even += 2;
       } else {
-        row = row + oddNum;
-        oddNum += 2;
+        row = row + odd;
+        odd += 2;
       }
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern998(num998));
-// 1
-// 24
-// 357
-// 681012
+};
+// console.log(pattern8(num8));
 
 // ===================================================
 // ===================================================
@@ -266,8 +277,8 @@ function pattern998(num) {
 // 681012
 // ---------------------------------------------------
 
-const num999 = 4;
-function pattern999(num) {
+const num9 = 4;
+function pattern9(num) {
   let pattern = "";
   let oddNum = 1;
   let evenNum = 2;
@@ -289,7 +300,7 @@ function pattern999(num) {
   }
   return pattern;
 }
-// console.log(pattern999(num999));
+// console.log(pattern9(num9));
 //    1
 //   24
 //  357
@@ -303,57 +314,59 @@ function pattern999(num) {
 // 5
 // ---------------------------------------------------
 
-const num13 = 5;
+const num10 = 5;
 
-function pattern13(num) {
+const pattern10 = (num) => {
   let pattern = "";
-  for (let i = num; i > 0; i--) {
+
+  for (let i = num; i >= 1; i--) {
     let row = "";
     for (let j = num; j > num - i; j--) {
-      row += j;
-    }
-    pattern += row + "\n";
-  }
-
-  return pattern;
-}
-
-// console.log(pattern13(num13));
-// 54321
-// 5432
-// 543
-// 54
-// 5
-
-// ===================================================
-// ===================================================
-
-// ---------------------------------------------------
-// 54321
-//  4321
-//   321
-//    21
-//     1
-// ---------------------------------------------------
-
-const num14 = 5;
-
-function pattern14(num) {
-  let pattern = "";
-  for (let i = num; i > 0; i--) {
-    let row = "";
-    for (let k = 1; k <= num - i; k++) {
-      row = row + " ";
-    }
-    for (let j = i; j > 0; j--) {
       row = row + j;
     }
     pattern = pattern + row + "\n";
   }
-  return pattern;
-}
 
-// console.log(pattern14(num14));
+  return pattern;
+};
+
+// console.log(pattern10(num10));
+// 54321
+// 5432
+// 543
+// 54
+// 5
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+// 54321
+//  4321
+//   321
+//    21
+//     1
+// ---------------------------------------------------
+
+const num11 = 5;
+
+const pattern11 = (num) => {
+  let pattern = "";
+  for (let i = num; i > 0; i--) {
+    let row = "";
+
+    for (let j = 1; j <= num - i; j++) {
+      row = row + " ";
+    }
+    for (let k = i; k > 0; k--) {
+      row = row + k;
+    }
+    pattern = pattern + row + "\n";
+  }
+  return pattern;
+};
+
+// console.log(pattern11(num11));
 // 54321
 //  4321
 //   321
@@ -371,9 +384,9 @@ function pattern14(num) {
 // 54321
 // ---------------------------------------------------
 
-const num15 = 5;
+const num12 = 5;
 
-function pattern15(num) {
+const pattern12 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
@@ -383,8 +396,9 @@ function pattern15(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern15(num15));
+};
+
+// console.log(pattern12(num12));
 // 5
 // 54
 // 543
@@ -402,11 +416,10 @@ function pattern15(num) {
 // 12345
 // ---------------------------------------------------
 
-const num16 = 5;
+const num13 = 5;
 
-function pattern16(num) {
+const pattern13 = (num) => {
   let pattern = "";
-
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
@@ -418,8 +431,9 @@ function pattern16(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern16(num16));
+};
+
+// console.log(pattern13(num13));
 //     1
 //    12
 //   123
@@ -436,15 +450,15 @@ function pattern16(num) {
 // 11111
 // ---------------------------------------------------
 
-let num1111 = 4;
-let num2222 = 5;
+const row = 4;
+const col = 5;
 
-function square(num1, num2) {
+const pattern14 = (rows, cols) => {
   let pattern = "";
-  for (let i = 1; i <= num1; i++) {
+  for (let i = 1; i <= rows; i++) {
     let row = "";
-    for (let j = 1; j <= num2; j++) {
-      if (i == 1 || i == num1 || j == 1 || j == num2) {
+    for (let j = 1; j <= cols; j++) {
+      if (i == 1 || i == rows || j == 1 || j == cols) {
         row = row + "1";
       } else {
         row = row + " ";
@@ -453,9 +467,9 @@ function square(num1, num2) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
 
-// console.log(square(num1111, num2222));
+// console.log(pattern14(row, col));
 // 11111
 // 1   1
 // 1   1
@@ -472,19 +486,21 @@ function square(num1, num2) {
 // *****
 // ---------------------------------------------------
 
-const num8 = 5;
-function pattern8(num) {
+const num15 = 5;
+
+const pattern15 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
-    row = "";
+    let row = "";
     for (let j = 1; j <= num; j++) {
       row = row + "*";
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern8(num8));
+};
+
+// console.log(pattern15(num15));
 // *****
 // *****
 // *****
@@ -502,14 +518,14 @@ function pattern8(num) {
 // *****
 // ---------------------------------------------------
 
-const num9 = 5;
+const num16 = 5;
 
-function pattern9(num2) {
+const pattern16 = (num) => {
   let pattern = "";
-  for (let i = 1; i <= num2; i++) {
+  for (let i = 1; i <= num; i++) {
     let row = "";
-    for (let j = 1; j <= num2; j++) {
-      if (i == 1 || i == num2 || j == 1 || j == num2) {
+    for (let j = 1; j <= num; j++) {
+      if (i == 1 || j == 1 || i == num || j == num) {
         row = row + "*";
       } else {
         row = row + " ";
@@ -518,8 +534,9 @@ function pattern9(num2) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern9(num9));
+};
+
+// console.log(pattern16(num16));
 // *****
 // *   *
 // *   *
@@ -536,9 +553,9 @@ function pattern9(num2) {
 // *****
 // ---------------------------------------------------
 
-const num10 = 5;
+const num17 = 5;
 
-function pattern10(num) {
+const pattern17 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
@@ -551,8 +568,9 @@ function pattern10(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern10(num10));
+};
+
+// console.log(pattern17(num17));
 //     *
 //    **
 //   ***
@@ -569,20 +587,23 @@ function pattern10(num) {
 // ****
 // *****
 // ---------------------------------------------------
-const num11 = 5;
 
-function pattern11(num) {
+const num19 = 5;
+
+const pattern19 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
-    row = "";
+    let row = "";
+
     for (let j = 1; j <= i; j++) {
       row = row + "*";
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern11(num11));
+};
+
+// console.log(pattern19(num19));
 // *
 // **
 // ***
@@ -600,23 +621,26 @@ function pattern11(num) {
 // *********
 // ---------------------------------------------------
 
-const num12 = 5;
+const num20 = 5;
 
-function pattern12(num) {
+const pattern20 = (num) => {
   let pattern = "";
+
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
     }
+
     for (let k = 1; k <= 2 * i - 1; k++) {
       row = row + "*";
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern12(num12));
+};
+
+// console.log(pattern20(num20));
 //     *
 //    ***
 //   *****
@@ -634,24 +658,26 @@ function pattern12(num) {
 // ******
 // ---------------------------------------------------
 
-const num20 = 6;
+const num21 = 6;
 
-function pattern20(num) {
+const pattern21 = (num) => {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
-      if (j == 1 || j == i || i == num) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
+      // if (j == 1 || i == num || j == i) {
+      //   row = row + "*";
+      // } else {
+      //   row = row + " ";
+      // }
+      row = j == 1 || i == num || j == i ? row + "*" : row + " "; // ternary operator
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern20(num20));
+};
+
+// console.log(pattern21(num21));
 // *
 // **
 // * *
@@ -670,9 +696,9 @@ function pattern20(num) {
 // *
 // ---------------------------------------------------
 
-const num21 = 5;
+const num22 = 6;
 
-function pattern21(num) {
+const pattern22 = (num) => {
   let pattern = "";
   for (let i = num; i > 0; i--) {
     let row = "";
@@ -682,8 +708,9 @@ function pattern21(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern21(num21));
+};
+
+// console.log(pattern22(num22));
 // *****
 // ****
 // ***
@@ -703,7 +730,7 @@ function pattern21(num) {
 
 const num23 = 5;
 
-function pattern23(num) {
+const pattern23 = (num) => {
   let pattern = "";
   for (let i = num; i > 0; i--) {
     let row = "";
@@ -716,7 +743,8 @@ function pattern23(num) {
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
+
 // console.log(pattern23(num23));
 // *****
 //  ****
@@ -741,7 +769,7 @@ function pattern23(num) {
 
 const num24 = 5;
 
-function pattern24(num) {
+const pattern24 = (num) => {
   let pattern = "";
 
   for (let i = 1; i <= num; i++) {
@@ -757,7 +785,6 @@ function pattern24(num) {
 
   for (let i = num - 1; i > 0; i--) {
     let row = "";
-
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
     }
@@ -766,9 +793,9 @@ function pattern24(num) {
     }
     pattern = pattern + row + "\n";
   }
-
   return pattern;
-}
+};
+
 // console.log(pattern24(num24));
 //     *
 //    **
@@ -797,33 +824,31 @@ function pattern24(num) {
 
 const num25 = 5;
 
-function pattern25(num) {
+const pattern25 = (num) => {
   let pattern = "";
-
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row = row + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      row += "*";
+      row = row + "*";
     }
     pattern = pattern + row + "\n";
   }
-
   for (let i = num - 1; i > 0; i--) {
-    let row = "";
+    let row2 = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row2 = row2 + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      row += "*";
+      row2 += "*";
     }
-    pattern = pattern + row + "\n";
+    pattern += row2 + "\n";
   }
-
   return pattern;
-}
+};
+
 // console.log(pattern25(num25));
 //     *
 //    ***
@@ -845,28 +870,28 @@ function pattern25(num) {
 // *******
 // ---------------------------------------------------
 
-let num = 4;
+const num26 = 4;
 
-function patt(num) {
-  let patt = "";
+const pattern26 = (num) => {
+  let pattern = "";
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row = row + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i === 1 || i === num || k === 1 || k === 2 * i - 1) {
-        row += "*";
+      if (k == 1 || k == 2 * i - 1 || i == num) {
+        row = row + "*";
       } else {
-        row += " ";
+        row = row + " ";
       }
     }
-    patt += row + "\n";
+    pattern = pattern + row + "\n";
   }
-  return patt;
-}
+  return pattern;
+};
 
-// console.log(patt(num));
+// console.log(pattern26(num26));
 //    *
 //   * *
 //  *   *
@@ -885,36 +910,35 @@ function patt(num) {
 //    *
 // ---------------------------------------------------
 
-const num212 = 4;
+const num27 = 4;
 
-function pattern212(num) {
+function pattern27(num) {
   let pattern = "";
-
+  console.log("Pattern No.27");
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row = row + " ";
     }
     for (let k = 1; k <= i; k++) {
-      row += "* ";
+      row = row + "* "; // extra space after star for proper output
     }
-    pattern = pattern + row + "\n";
+    pattern += row + "\n";
   }
-
   for (let i = num - 1; i > 0; i--) {
-    let row = "";
+    let row2 = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row2 += " ";
     }
     for (let k = 1; k <= i; k++) {
-      row += "* ";
+      row2 = row2 + "* "; // extra space after star for proper output
     }
-    pattern = pattern + row + "\n";
+    pattern += row2 + "\n";
   }
-
   return pattern;
 }
-// console.log(pattern212(num212));
+
+// console.log(pattern27(num27));
 //    *
 //   * *
 //  * * *
@@ -938,32 +962,28 @@ function pattern212(num) {
 // *
 // ---------------------------------------------------
 
-const num26 = 5;
+const num28 = 5;
 
-function pattern26(num) {
+function pattern28(num) {
   let pattern = "";
-
   for (let i = 1; i <= num; i++) {
     let row = "";
-
-    for (let k = 1; k <= i; k++) {
+    for (let j = 1; j <= i; j++) {
       row = row + "*";
     }
-    pattern = pattern + row + "\n";
+    pattern += row + "\n";
   }
 
   for (let i = num - 1; i > 0; i--) {
     let row = "";
-
-    for (let k = 1; k <= i; k++) {
+    for (let j = 1; j <= i; j++) {
       row = row + "*";
     }
-    pattern = pattern + row + "\n";
+    pattern += row + "\n";
   }
-
   return pattern;
 }
-// console.log(pattern26(num26));
+// console.log(pattern28(num28));
 // *
 // **
 // ***
@@ -985,22 +1005,22 @@ function pattern26(num) {
 // AAAAA
 // ---------------------------------------------------
 
-const num27 = 5;
+const num29 = 5;
 
-function pattern27(num) {
+const pattern29 = (num) => {
   let pattern = "";
 
   for (let i = 1; i <= num; i++) {
     let row = "";
-
-    for (let k = 1; k <= i; k++) {
+    for (let j = 1; j <= i; j++) {
       row = row + "A";
     }
     pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(pattern27(num27));
+};
+
+// console.log(pattern29(num29));
 // A
 // AA
 // AAA
@@ -1018,22 +1038,21 @@ function pattern27(num) {
 // A
 // ---------------------------------------------------
 
-const num28 = 5;
+const num30 = 5;
 
-function pattern28(num) {
+const pattern30 = (num) => {
   let pattern = "";
-
   for (let i = num; i > 0; i--) {
     let row = "";
-
-    for (let k = 1; k <= i; k++) {
+    for (let j = 1; j <= i; j++) {
       row = row + "A";
     }
-    pattern = pattern + row + "\n";
+    pattern += row + "\n";
   }
   return pattern;
-}
-// console.log(pattern28(num28));
+};
+
+// console.log(pattern30(num30));
 // AAAAA
 // AAAA
 // AAA
@@ -1054,35 +1073,35 @@ function pattern28(num) {
 // %
 // ---------------------------------------------------
 
-const num29 = 4;
+const num31 = 4;
 
-function pattern29(num) {
+const pattern31 = (num) => {
   let pattern = "";
 
   for (let i = 1; i <= num; i++) {
     let row = "";
-
-    for (let k = 1; k <= i; k++) {
+    for (let j = 1; j <= i; j++) {
       row = row + "$";
     }
     pattern = pattern + row + "\n";
   }
 
-  for (let i = num; i > 0; i--) {
+  for (let i = num + 1; i > 0; i--) {
     let row = "";
     for (let j = 1; j <= i; j++) {
-      row += "%";
+      row = row + "%";
     }
     pattern = pattern + row + "\n";
   }
-
   return pattern;
-}
-// console.log(pattern29(num29));
+};
+
+// console.log(pattern31(num31));
 // $
 // $$
 // $$$
 // $$$$
+// %%%%%
 // %%%%
 // %%%
 // %%
@@ -1108,35 +1127,34 @@ function pattern29(num) {
 // A B C D E D C B A
 // ---------------------------------
 
-let hardNum = 5;
+const num32 = 5;
 
-function HardPattern(num) {
-  let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const pattern32 = (num) => {
   let pattern = "";
+  let alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
-      row += " ";
+      row = row + " ";
     }
 
-    // increasing part of the pattern
     for (let k = 0; k < i; k++) {
-      row += alphabets[k];
+      row = row + alphabets[k] + " ";
     }
-    // decreasing part of the pattern
-    for (let m = i - 2; m >= 0; m--) {
-      row += alphabets[m];
+    for (let l = i - 2; l >= 0; l--) {
+      row = row + alphabets[l] + " ";
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
-// console.log(HardPattern(hardNum));
-//      A
-//     ABA
-//    ABCBA
-//   ABCDCBA
-//  ABCDEDCBA
+};
+
+// console.log(pattern32(num32));
+//     A
+//    A B A
+//   A B C B A
+//  A B C D C B A
+// A B C D E D C B A
 
 // ===================================================
 // ===================================================
@@ -1151,9 +1169,9 @@ function HardPattern(num) {
 // *******
 // ---------------------------------
 
-let hardNum2 = 4;
+const num33 = 4;
 
-function HardPattern2(num) {
+const pattern33 = (num) => {
   let pattern = "";
   for (let i = num; i > 0; i--) {
     let row = "";
@@ -1161,14 +1179,13 @@ function HardPattern2(num) {
       row = row + " ";
     }
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+      if (i == num || k == 2 * i - 1 || k == 1) {
         row = row + "*";
       } else {
         row = row + " ";
       }
     }
-
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
 
   for (let i = 2; i <= num; i++) {
@@ -1176,19 +1193,20 @@ function HardPattern2(num) {
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
     }
+
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
+      if (i == num || k == 2 * i - 1 || k == 1) {
         row = row + "*";
       } else {
         row = row + " ";
       }
     }
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
-}
+};
 
-// console.log(HardPattern2(hardNum2));
+// console.log(pattern33(num33));
 // *******
 //  *   *
 //   * *
@@ -1212,18 +1230,18 @@ function HardPattern2(num) {
 //     *
 // ---------------------------------
 
-let hardNum3 = 5;
+const num34 = 4;
 
-function HardPattern3(num) {
+const pattern34 = (num) => {
   let pattern = "";
-
   for (let i = 1; i <= num; i++) {
     let row = "";
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
     }
+
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (k == 1 || k == 2 * i - 1 || i == 1) {
+      if (k == 1 || k == 2 * i - 1) {
         row = row + "*";
       } else {
         row = row + " ";
@@ -1237,8 +1255,9 @@ function HardPattern3(num) {
     for (let j = 1; j <= num - i; j++) {
       row = row + " ";
     }
+
     for (let k = 1; k <= 2 * i - 1; k++) {
-      if (k == 1 || k == 2 * i - 1 || i == 1) {
+      if (k == 1 || k == 2 * i - 1) {
         row = row + "*";
       } else {
         row = row + " ";
@@ -1246,10 +1265,11 @@ function HardPattern3(num) {
     }
     pattern = pattern + row + "\n";
   }
-  return pattern;
-}
 
-// console.log(HardPattern3(hardNum3));
+  return pattern;
+};
+
+// console.log(pattern34(num34));
 //     *
 //    * *
 //   *   *
@@ -1267,312 +1287,29 @@ function HardPattern3(num) {
 //   * * *
 // * * * *
 
-let hardNum4 = 4;
+const num35 = 4;
 
-function HardPattern4(num) {
+const pattern35 = (num) => {
   let pattern = "";
-
   for (let i = 1; i <= num; i++) {
     let row = "";
-
-    // Add leading spaces
     for (let j = 1; j <= num - i; j++) {
       if (i == 1) {
         row = row + "";
       } else {
-        row = row + "  "; // double space  for proper vision //! we can use single space also
+        row = row + " ";
       }
     }
-
     for (let k = 1; k <= i; k++) {
-      row += "* "; //  space after star for proper vision
+      row = row + "*";
     }
-
-    pattern += row + "\n";
+    pattern = pattern + row + "\n";
   }
-
   return pattern;
-}
+};
 
-// console.log(HardPattern4(hardNum4));
+// console.log(pattern35(num35));
 // *
-//     * *
-//   * * *
-// * * * *
-
-// ===================================================
-// ===================================================
-
-// *         *
-// ***     ***
-// ***** *****
-// ***********
-
-let hardNum5 = 4;
-
-function HardPattern5(num) {
-  let pattern = "";
-  let space = 9; // Start with 9 spaces between the stars
-
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-    let starCount;
-
-    // Add starting stars
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      row += "*";
-    }
-
-    // Add spaces between the stars
-    for (let m = 1; m <= space; m++) {
-      row += " ";
-    }
-
-    // for right side * print
-    if (i === num) {
-      starCount = 4;
-    } else {
-      starCount = 2 * i - 1;
-    }
-
-    // Add right side  stars
-    for (let n = 1; n <= starCount; n++) {
-      row += "*";
-    }
-
-    pattern += row + "\n";
-    space -= 4; // Reduce the spaces by 4 for the next row
-  }
-  return pattern;
-}
-
-console.log(HardPattern5(hardNum5));
-
-// *         *
-// ***     ***
-// ***** *****
-// ***********
-
-// ===================================================
-// ===================================================
-
-// *********************
-//  *   *  *   *  *   *
-//   * *    * *    * *
-//    *      *      *
-//   * *    * *    * *
-//  *   *  *   *  *   *
-// *********************
-let hardNum6 = 4;
-
-function HardPattern6(num) {
-  let pattern = "";
-  for (let i = num; i > 0; i--) {
-    let row = "";
-    // =========== For left main  side upper part : number 1 =============
-
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    // =========== For right side upper part : number 2 =============
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    // =========== For right side upper part : number 3 =============
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    pattern += row + "\n";
-  }
-  // ====================================
-  // =========== bottom part ============
-  // ====================================
-
-  for (let i = 2; i <= num; i++) {
-    let row = "";
-
-    // =========== For left main side bottom part : number 1 =============
-
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    // =========== For right   side bottom part : number 2 =============
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    // =========== For right   side bottom part : number 3 =============
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let j = 1; j <= num - i; j++) {
-      row = row + " ";
-    }
-    for (let k = 1; k <= 2 * i - 1; k++) {
-      if (i == 1 || i == num || k == 1 || k == 2 * i - 1) {
-        row = row + "*";
-      } else {
-        row = row + " ";
-      }
-    }
-    pattern += row + "\n";
-  }
-
-  return pattern;
-}
-
-// console.log(HardPattern6(hardNum6));
-// *********************
-//  *   *  *   *  *   *
-//   * *    * *    * *
-//    *      *      *
-//   * *    * *    * *
-//  *   *  *   *  *   *
-// *********************
-
-// ===================================================
-// ===================================================
-
-// **********
-// ****  ****
-// ***    ***
-// **      **
-// *        *
-// **      **
-// ***    ***
-// ****  ****
-// **********
-
-function printPattern(rows) {
-  let pattern = "";
-
-  // Upper part of the pattern
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < rows - i; j++) {
-      pattern += "*";
-    }
-    for (let j = 0; j < i * 2; j++) {
-      pattern += " ";
-    }
-    for (let j = 0; j < rows - i; j++) {
-      pattern += "*";
-    }
-    pattern += "\n";
-  }
-
-  // Lower part of the pattern
-  for (let i = 1; i < rows; i++) {
-    for (let j = -1; j < i; j++) {
-      pattern += "*";
-    }
-    for (let j = (rows - i - 1) * 2; j > 0; j--) {
-      pattern += " ";
-    }
-    for (let j = -1; j < i; j++) {
-      pattern += "*";
-    }
-    pattern += "\n";
-  }
-
-  console.log(pattern);
-}
-
-// Call the function with the number of rows for the upper part of the diamond
-// printPattern(5);
-// **********
-// ****  ****
-// ***    ***
-// **      **
-// *        *
-// **      **
-// ***    ***
-// ****  ****
-// **********
-
-// ===================================================
-// ===================================================
-
-//     1
-//    212
-//   32123
-//  4321234
-// 543212345
-const num111 = 5;
-
-function generatePattern111(num) {
-  let pattern = "";
-
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-
-    // Add leading spaces
-    for (let j = 1; j <= num - i; j++) {
-      row += " ";
-    }
-
-    // Add decreasing numbers
-    for (let k = i; k >= 1; k--) {
-      row += k;
-    }
-
-    // Add increasing numbers
-    for (let k = 2; k <= i; k++) {
-      row += k;
-    }
-
-    // Append the row to the pattern
-    pattern += row + "\n";
-  }
-
-  return pattern;
-}
-
-// console.log(generatePattern111(num111));
-//     1
-//    212
-//   32123
-//  4321234
-// 543212345
+//   **
+//  ***
+// ****

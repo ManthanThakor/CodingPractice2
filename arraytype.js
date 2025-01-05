@@ -56,7 +56,6 @@ let arr3d = [
 
 function arr3D(arr) {
   let result = "";
-
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
       for (let k = 0; k < arr[i][j].length; k++) {
@@ -116,7 +115,6 @@ function add2DArrays(arr1, arr2) {
   }
 
   let result = [];
-
   for (let i = 0; i < arr1.length; i++) {
     let row = [];
     for (let j = 0; j < arr1[i].length; j++) {
@@ -267,7 +265,7 @@ function multiplyMatrices(A, B) {
     for (let j = 0; j < p; j++) {
       result[i][j] = 0;
       for (let k = 0; k < n; k++) {
-        result[i][j] += A[i][k] * B[k][j]; // Multiply and accumulate
+        result[i][j] += A[i][k] * B[k][j];
       }
     }
   }
@@ -293,3 +291,21 @@ const result = multiplyMatrices(A, B);
 //   [58, 64],
 //   [139, 154]
 // ]
+
+//! ===============================
+// Find the element in array
+//! =============================
+
+function searchUsingLoop(array, element) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      return `Element found at index: ${i}`;
+    }
+  }
+  return "Element not found";
+}
+
+let array = [10, 20, 30, 40, 50];
+let result111 = searchUsingLoop(array, 30);
+// console.log(result111);
+// Element found at index: 2
