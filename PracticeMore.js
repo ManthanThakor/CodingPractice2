@@ -50,7 +50,7 @@ function circle(radius) {
 }
 circle(7); // Circle - Area: 153.93804002589985, Circumference: 43.982297150257104
 
-//! ============= Circle ==================
+//! ============= Triangle ==================
 // Triangle (assuming base and height):
 // Area: 0.5 * base * height
 // Perimeter: Sum of all three sides
