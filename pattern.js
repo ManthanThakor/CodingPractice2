@@ -1540,6 +1540,7 @@ function printPattern(rows) {
 //   32123
 //  4321234
 // 543212345
+
 const num111 = 5;
 
 function generatePattern111(num) {
