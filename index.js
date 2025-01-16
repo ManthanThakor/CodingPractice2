@@ -1,185 +1,185 @@
-//! ===============================
-// leap year or not
-//! ===============================
+// //! ===============================
+// // leap year or not
+// //! ===============================
 
-function leapYear(year) {
-  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-    return year + " is a leap year";
-  } else {
-    return year + " is not a leap year";
-  }
-}
+// function leapYear(year) {
+//   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+//     return year + " is a leap year";
+//   } else {
+//     return year + " is not a leap year";
+//   }
+// }
 
-// console.log(leapYear(2000)); // "2000 is a leap year"
-// console.log(leapYear(1900)); // "1900 is not a leap year"
+// // console.log(leapYear(2000)); // "2000 is a leap year"
+// // console.log(leapYear(1900)); // "1900 is not a leap year"
 
-//! ===============================
-// a,b,c  no of this three greater than
-//! ===============================
+// //! ===============================
+// // a,b,c  no of this three greater than
+// //! ===============================
 
-const numA = 10;
-const numB = 20;
-const numC = 5;
+// const numA = 10;
+// const numB = 20;
+// const numC = 5;
 
-function GreaterNum(a, b, c) {
-  if (a >= b && a >= c) {
-    console.log(` ${a} is the Greatest number`);
-  } else if (b >= c) {
-    console.log(` ${b} is the Greatest number`);
-  } else {
-    console.log(` ${c} is the Greatest number`);
-  }
-}
-// console.log(GreaterNum(numA, numB, numC)); // 20 is the Greatest number
+// function GreaterNum(a, b, c) {
+//   if (a >= b && a >= c) {
+//     console.log(` ${a} is the Greatest number`);
+//   } else if (b >= c) {
+//     console.log(` ${b} is the Greatest number`);
+//   } else {
+//     console.log(` ${c} is the Greatest number`);
+//   }
+// }
+// // console.log(GreaterNum(numA, numB, numC)); // 20 is the Greatest number
 
-//! ===============================
-// find temp in c pass in f and then check given temp is cold normal or hot
-//! ===============================
+// //! ===============================
+// // find temp in c pass in f and then check given temp is cold normal or hot
+// //! ===============================
 
-const temperature = 30;
-const temperature2 = 60;
-const temperature3 = 80;
+// const temperature = 30;
+// const temperature2 = 60;
+// const temperature3 = 80;
 
-function temp(fahrenheit) {
-  const celsius = (fahrenheit - 32) * (5 / 9);
-  if (celsius < 15) {
-    console.log(`${celsius.toFixed(2)}°C - Cold`);
-  } else if (celsius >= 15 && celsius <= 25) {
-    console.log(`${celsius.toFixed(2)}°C - normal`);
-  } else {
-    console.log(`${celsius.toFixed(2)}°C - hot`);
-  }
-}
-// temp(temperature); //-1.11°C - Cold
-// temp(temperature2); //15.56°C - normal
-// temp(temperature3); //26.67°C - hot
+// function temp(fahrenheit) {
+//   const celsius = (fahrenheit - 32) * (5 / 9);
+//   if (celsius < 15) {
+//     console.log(`${celsius.toFixed(2)}°C - Cold`);
+//   } else if (celsius >= 15 && celsius <= 25) {
+//     console.log(`${celsius.toFixed(2)}°C - normal`);
+//   } else {
+//     console.log(`${celsius.toFixed(2)}°C - hot`);
+//   }
+// }
+// // temp(temperature); //-1.11°C - Cold
+// // temp(temperature2); //15.56°C - normal
+// // temp(temperature3); //26.67°C - hot
 
-//! ===============================
-// Table of any Number
-//! ===============================
+// //! ===============================
+// // Table of any Number
+// //! ===============================
 
-const tableNum = 10;
+// const tableNum = 10;
 
-function multiply(num, range = 10) {
-  console.log(`Table of Number ${num} :`);
-  for (let i = 1; i <= range; i++) {
-    const result = num * i;
-    console.log(`${num} * ${i} = ${result}`);
-  }
-}
-// console.log(multiply(tableNum));
-// Table of Number 10 :
-// 10 * 1 = 10
-// 10 * 2 = 20
-// 10 * 3 = 30
-// 10 * 4 = 40
-// 10 * 5 = 50
-// 10 * 6 = 60
-// 10 * 7 = 70
-// 10 * 8 = 80
-// 10 * 9 = 90
-// 10 * 10 = 100
+// function multiply(num, range = 10) {
+//   console.log(`Table of Number ${num} :`);
+//   for (let i = 1; i <= range; i++) {
+//     const result = num * i;
+//     console.log(`${num} * ${i} = ${result}`);
+//   }
+// }
+// // console.log(multiply(tableNum));
+// // Table of Number 10 :
+// // 10 * 1 = 10
+// // 10 * 2 = 20
+// // 10 * 3 = 30
+// // 10 * 4 = 40
+// // 10 * 5 = 50
+// // 10 * 6 = 60
+// // 10 * 7 = 70
+// // 10 * 8 = 80
+// // 10 * 9 = 90
+// // 10 * 10 = 100
 
-//! ===============================
-// Prime Number OR NOT
-//! ===============================
+// //! ===============================
+// // Prime Number OR NOT
+// //! ===============================
 
-const primeNum = 17;
-function prime(num) {
-  if (num <= 1) {
-    return false;
-  }
+// const primeNum = 17;
+// function prime(num) {
+//   if (num <= 1) {
+//     return false;
+//   }
 
-  for (let i = 2; i <= num / 2; i++) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
+//   for (let i = 2; i <= num / 2; i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-if (prime(primeNum)) {
-  // console.log(`${primeNum} is a prime number.`);
-} else {
-  // console.log(`${primeNum} is not a prime number.`);
-}
-//17 is a prime number.
+// if (prime(primeNum)) {
+//   // console.log(`${primeNum} is a prime number.`);
+// } else {
+//   // console.log(`${primeNum} is not a prime number.`);
+// }
+// //17 is a prime number.
 
-//! ===============================
-// factorial
-//! ===============================
+// //! ===============================
+// // factorial
+// //! ===============================
 
-const factNum = 5;
+// const factNum = 5;
 
-function fact(numb) {
-  if (numb === 0 || numb === 1) {
-    return 1;
-  }
-  return numb * fact(numb - 1);
-}
-// console.log(fact(factNum)); // 120
+// function fact(numb) {
+//   if (numb === 0 || numb === 1) {
+//     return 1;
+//   }
+//   return numb * fact(numb - 1);
+// }
+// // console.log(fact(factNum)); // 120
 
-function factorialSeries(n) {
-  if (n < 0) {
-    console.log("Factorial is not defined for negative numbers.");
-    return;
-  }
+// function factorialSeries(n) {
+//   if (n < 0) {
+//     console.log("Factorial is not defined for negative numbers.");
+//     return;
+//   }
 
-  let result = 1; // Initialize the factorial result
-  console.log("Factorial Series:");
-  for (let i = 1; i <= n; i++) {
-    result *= i;
-    console.log(`${i}! = ${result}`);
-  }
-}
+//   let result = 1; // Initialize the factorial result
+//   console.log("Factorial Series:");
+//   for (let i = 1; i <= n; i++) {
+//     result *= i;
+//     console.log(`${i}! = ${result}`);
+//   }
+// }
 
-// Example: Print factorial series for numbers from 1 to 5
-// factorialSeries(5);
+// // Example: Print factorial series for numbers from 1 to 5
+// // factorialSeries(5);
 
-// ----------------ODD FACTORIAL------------------------
+// // ----------------ODD FACTORIAL------------------------
 
-function factorialSeriesOdd(n) {
-  if (n < 0) {
-    console.log("Factorial is not defined for negative numbers.");
-    return;
-  }
+// function factorialSeriesOdd(n) {
+//   if (n < 0) {
+//     console.log("Factorial is not defined for negative numbers.");
+//     return;
+//   }
 
-  let result = 1; // Initialize the factorial result
-  console.log("Factorial Series for Odd Numbers:");
-  for (let i = 1; i <= n; i++) {
-    if (i % 2 !== 0) {
-      // Check if the number is odd
-      result *= i;
-      console.log(`${i}! = ${result}`);
-    }
-  }
-}
+//   let result = 1; // Initialize the factorial result
+//   console.log("Factorial Series for Odd Numbers:");
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 2 !== 0) {
+//       // Check if the number is odd
+//       result *= i;
+//       console.log(`${i}! = ${result}`);
+//     }
+//   }
+// }
 
-// Example: Print factorial series for odd numbers from 1 to 5
-factorialSeriesOdd(5);
+// // Example: Print factorial series for odd numbers from 1 to 5
+// factorialSeriesOdd(5);
 
-/*
-Output:
-Factorial Series for Odd Numbers:
-1! = 1
-3! = 3
-5! = 15
-*/
+// /*
+// Output:
+// Factorial Series for Odd Numbers:
+// 1! = 1
+// 3! = 3
+// 5! = 15
+// */
 
-//! ===============================
-// Even or odd
-//! ===============================
+// //! ===============================
+// // Even or odd
+// //! ===============================
 
-const numbb1 = 19;
+// const numbb1 = 19;
 
-function oddEven(num) {
-  if (num % 2 === 0) {
-    console.log(`The given Number ${num} is even number`);
-  } else {
-    console.log(`The given Number ${num} is odd number`);
-  }
-}
-// console.log(oddEven(numbb1)); //The given Number 19 is odd number
+// function oddEven(num) {
+//   if (num % 2 === 0) {
+//     console.log(`The given Number ${num} is even number`);
+//   } else {
+//     console.log(`The given Number ${num} is odd number`);
+//   }
+// }
+// // console.log(oddEven(numbb1)); //The given Number 19 is odd number
 
 //! ===============================
 // Sum of array
@@ -251,108 +251,108 @@ function reverseNumber(number) {
   }
   return reverse;
 }
-// console.log(reverseNumber(number)); // Outputs: 54321
+console.log(reverseNumber(number)); // Outputs: 54321
 
-//! ===============================
-// Armstrong  Number
-//! ===============================
+// //! ===============================
+// // Armstrong  Number
+// //! ===============================
 
-const num13 = 153;
-function ArmstrongNum(num) {
-  let sum = 0;
-  temp = num;
+// const num13 = 153;
+// function ArmstrongNum(num) {
+//   let sum = 0;
+//   temp = num;
 
-  while (temp > 0) {
-    let remainder = temp % 10;
-    sum = sum + remainder * remainder * remainder;
-    temp = parseInt(temp / 10);
-  }
-  if (sum === num) {
-    console.log("It is an Armstrong Number");
-  } else {
-    console.log("It is not an  Armstrong Number");
-  }
-}
-// console.log(ArmstrongNum(num13)); // It is an Armstrong Number
+//   while (temp > 0) {
+//     let remainder = temp % 10;
+//     sum = sum + remainder * remainder * remainder;
+//     temp = parseInt(temp / 10);
+//   }
+//   if (sum === num) {
+//     console.log("It is an Armstrong Number");
+//   } else {
+//     console.log("It is not an  Armstrong Number");
+//   }
+// }
+// // console.log(ArmstrongNum(num13)); // It is an Armstrong Number
 
-//! ===============================
-// Fibonacci Sequence
-//! ===============================
+// //! ===============================
+// // Fibonacci Sequence
+// //! ===============================
 
-function Fibonacci(num) {
-  if (num === 0) {
-    return 0;
-  }
-  if (num === 1) {
-    return 1;
-  }
-  return Fibonacci(num - 1) + Fibonacci(num - 2);
-}
-//! If We Want direct output At 10
-const numFor = 10;
-// console.log(Fibonacci(10));
-// Outputs: 55
+// function Fibonacci(num) {
+//   if (num === 0) {
+//     return 0;
+//   }
+//   if (num === 1) {
+//     return 1;
+//   }
+//   return Fibonacci(num - 1) + Fibonacci(num - 2);
+// }
+// //! If We Want direct output At 10
+// const numFor = 10;
+// // console.log(Fibonacci(10));
+// // Outputs: 55
 
-//! If We Want Sequence
-for (let i = 0; i <= numFor; i++) {
-  // console.log(Fibonacci(i));
-}
-// 0
-// 1
-// 1
-// 2
-// 3
-// 5
-// 8
-// 13
-// 21
-// 34
-// 55
+// //! If We Want Sequence
+// for (let i = 0; i <= numFor; i++) {
+//   // console.log(Fibonacci(i));
+// }
+// // 0
+// // 1
+// // 1
+// // 2
+// // 3
+// // 5
+// // 8
+// // 13
+// // 21
+// // 34
+// // 55
 
-//! ===============================
-// Add two number without multiplication symbol
-//! ===============================
+// //! ===============================
+// // Add two number without multiplication symbol
+// //! ===============================
 
-const nu1 = 5;
-const nu2 = 4;
+// const nu1 = 5;
+// const nu2 = 4;
 
-function multi(a, b) {
-  let result = 0;
-  for (let i = 1; i <= b; i++) {
-    result = result + a;
-  }
-  return result;
-}
-// console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
+// function multi(a, b) {
+//   let result = 0;
+//   for (let i = 1; i <= b; i++) {
+//     result = result + a;
+//   }
+//   return result;
+// }
+// // console.log(`multiply num= ${nu1} * ${nu2} = ${multi(nu1, nu2)}`); // multiply num= 5 * 4 = 20
 
-//! ===============================
-// power calculations in JavaScript without using built-in methods
-//! ==============================
+// //! ===============================
+// // power calculations in JavaScript without using built-in methods
+// //! ==============================
 
-//! =========== Method -1 ===================
+// //! =========== Method -1 ===================
 
-function power(base, exponent) {
-  let result = 1;
-  for (let i = 0; i < exponent; i++) {
-    result *= base;
-  }
-  return result;
-}
+// function power(base, exponent) {
+//   let result = 1;
+//   for (let i = 0; i < exponent; i++) {
+//     result *= base;
+//   }
+//   return result;
+// }
 
-// console.log(power(2, 3)); // Output: 8 (2^3)
-// console.log(power(5, 0)); // Output: 1 (5^0)
+// // console.log(power(2, 3)); // Output: 8 (2^3)
+// // console.log(power(5, 0)); // Output: 1 (5^0)
 
-//! =========== Method -2  ===================
+// //! =========== Method -2  ===================
 
-function power(base, exponent) {
-  if (exponent === 0) {
-    return 1;
-  }
-  return base * power(base, exponent - 1); // Recursive case
-}
+// function power(base, exponent) {
+//   if (exponent === 0) {
+//     return 1;
+//   }
+//   return base * power(base, exponent - 1); // Recursive case
+// }
 
-// console.log(power(2, 3)); // Output: 8 (2^3)
-// console.log(power(5, 0)); // Output: 1 (5^0)
+// // console.log(power(2, 3)); // Output: 8 (2^3)
+// // console.log(power(5, 0)); // Output: 1 (5^0)
 
 //! ===============================
 // Find Duplicate Number in Array

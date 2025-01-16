@@ -53,6 +53,7 @@ function pattern2(num) {
   }
   return pattern;
 }
+
 // console.log(pattern2(num2));
 // 1
 // 12

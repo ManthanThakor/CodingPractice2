@@ -245,7 +245,7 @@ series3(5);
 //! ================================================================================================
 
 //! ===============================
-// 1,8,27,64,125,......,N
+//! 1,8,27,64,125,......,N
 //! ===============================
 
 function series4(num) {
@@ -259,6 +259,31 @@ series4(5);
 // 3 * 3 * 3 = 27
 // 4 * 4 * 4 = 64
 // 5 * 5 * 5 = 125
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! 2, 12 ,36,80,.....,N
+//! ===============================
+
+const numPart113 = 10;
+function SeriesPart3(num) {
+  for (let i = 1; i <= num; i++) {
+    console.log(i ** 2 + i ** 3);
+  }
+}
+// console.log(SeriesPart3(numPart113));
+// 2
+// 12
+// 36
+// 80
+// 150
+// 252
+// 392
+// 576
+// 810
+// 1100
 
 //! ================================================================================================
 //! ================================================================================================
@@ -399,6 +424,232 @@ factorialOfOddNumbers2(5);
 // The factorial of odd number 1 is: 1
 // The factorial of odd number 3 is: 6
 // The factorial of odd number 5 is: 120
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Different Between '==' and '==='
+//! ===============================
+
+var x = 7;
+var y = "7";
+// console.log(x == y); // true
+// console.log(x === y); //  false
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//!  find a even or odd number
+//! ===============================
+
+const OddOrEven = (num) => {
+  if (num % 2 == 0) {
+    console.log(`The given Number: ${num} is even Number`);
+  } else {
+    console.log(`The given Number: ${num} is odd Number`);
+  }
+};
+
+OddOrEven(4); // The given Number: 4 is even Number
+OddOrEven(7); // The given Number: 7 is odd Number
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Prime Number or Not
+//! ===============================
+
+// A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. In other words, a prime number is only divisible by 1 and itself.
+
+const PrimeOrNot = (num) => {
+  if (num <= 1) {
+    return `The Number: ${num} is not a prime number`;
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return `The Number: ${num} is not a prime number`;
+    }
+  }
+
+  return `The Number: ${num} is a prime number`;
+};
+
+console.log(PrimeOrNot(5)); // The Number: 5 is a prime number
+
+// For num = 7, the loop checks if 7 is divisible by 2, finds that it’s not, and ends the process as 7 is a prime number.
+// For num = 10, it finds that 10 is divisible by 2 and immediately concludes that it’s not a prime number.
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//!  Table of any Number
+//! ===============================
+
+const TablePrint = (num, range = 10) => {
+  console.log(`Table of Number ${num} :`);
+
+  let result = "";
+  for (let i = 1; i <= range; i++) {
+    result = num * i;
+    console.log(`${num} * ${i} = ${result}`);
+  }
+};
+TablePrint(12);
+// Table of Number 12 :
+// 12 * 1 = 12
+// 12 * 2 = 24
+// 12 * 3 = 36
+// 12 * 4 = 48
+// 12 * 5 = 60
+// 12 * 6 = 72
+// 12 * 7 = 84
+// 12 * 8 = 96
+// 12 * 9 = 108
+// 12 * 10 = 120
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// leap year or not
+//! ===============================
+
+// The code you provided checks whether a given year is a leap year or not. Here's a detailed explanation:
+
+// Leap Year Rule:
+// A leap year is a year that:
+// Is divisible by 4, but not divisible by 100, unless it is also divisible by 400.
+
+// This means:
+// Years like 2000 and 1600 are leap years because they are divisible by 400.
+// Years like 1900 and 2100 are not leap years because they are divisible by 100 but not by 400.
+// Years like 2020 and 2024 are leap years because they are divisible by 4 but not divisible by 100.
+
+function leapYear(year) {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    return year + " is a leap year"; // Case for being divisible by 4 but not 100
+  } else if (year % 400 === 0) {
+    return year + " is a leap year"; // Case for being divisible by 400
+  } else {
+    return year + " is not a leap year"; // If it doesn't satisfy either of the above conditions
+  }
+}
+
+console.log(leapYear(2000)); // "2000 is a leap year"
+console.log(leapYear(1900)); // "1900 is not a leap year"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// a,b,c  no of this three greater than
+//! ===============================
+
+const numA = 10;
+const numB = 20;
+const numC = 5;
+
+function GreaterNum(a, b, c) {
+  if (a >= b && a >= c) {
+    console.log(` ${a} is the Greatest number`);
+  } else if (b >= c) {
+    console.log(` ${b} is the Greatest number`);
+  } else {
+    console.log(` ${c} is the Greatest number`);
+  }
+}
+GreaterNum(numA, numB, numC); // 20 is the Greatest number
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// find temp in c pass in f and then check given temp is cold normal or hot
+//! ===============================
+
+const temperature = 30;
+const temperature2 = 60;
+const temperature3 = 80;
+
+function temp(fahrenheit) {
+  const celsius = (fahrenheit - 32) * (5 / 9);
+  if (celsius < 15) {
+    console.log(`${celsius.toFixed(2)}°C - Cold`);
+  } else if (celsius >= 15 && celsius <= 25) {
+    console.log(`${celsius.toFixed(2)}°C - normal`);
+  } else {
+    console.log(`${celsius.toFixed(2)}°C - hot`);
+  }
+}
+temp(temperature); //-1.11°C - Cold
+temp(temperature2); //15.56°C - normal
+temp(temperature3); //26.67°C - hot
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//!  Armstrong  Number
+//! ===============================
+
+//? An Armstrong number (also known as a Narcissistic number) for a given number of digits is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+//* For example:
+// 153 is an Armstrong number because:
+// 1^3 +5^3 +3^3 =153
+// The formula for an Armstrong number is: abcd = a4 + b4 + c4 + d4.
+
+const isArmstrongNumber = (num) => {
+  let numStr = num.toString();
+  let sum = 0;
+  for (let i = 0; i <= numStr.length; i++) {
+    sum = sum + Number(numStr[i]) ** numStr.length;
+  }
+  if (sum === num) {
+    return `${num} is an Armstrong number`;
+  } else {
+    return `${num} is not an Armstrong number`;
+  }
+};
+
+console.log(isArmstrongNumber(153)); // "153 is an Armstrong number"
+console.log(isArmstrongNumber(9474)); // "9474 is an Armstrong number"
+console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Reverse the Number
+//! ===============================
+
+const ReverseNum = (num) => {
+  const rev = 0;
+  while (num > 0) {
+    const lastDegit = num % 10; // Get the last digit
+  }
+};
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! iterate over an array
+//! ===============================
+
+let arr123 = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr123.length; i++) {
+  console.log(arr123[i]);
+}
+// 1
+// 2
+// 3
+// 4
+// 5
 
 //! ================================================================================================
 //! ================================================================================================
