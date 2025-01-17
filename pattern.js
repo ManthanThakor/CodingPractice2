@@ -10,15 +10,15 @@ const num1 = 5;
 function pattern1(num) {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
-    let row = "";
+    let pattern = "";
     for (let j = 1; j <= i; j++) {
-      row = row + j;
+      pattern = pattern + j;
     }
-    pattern = pattern + row + "\n";
+    pattern = pattern + pattern + "\n";
   }
   return pattern;
 }
-// console.log(pattern1(num1));
+console.log(pattern1(num1));
 // 1
 // 12
 // 123
