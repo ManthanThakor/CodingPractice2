@@ -620,6 +620,46 @@ console.log(isArmstrongNumber(153)); // "153 is an Armstrong number"
 console.log(isArmstrongNumber(9474)); // "9474 is an Armstrong number"
 console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 
+//! =======================================
+
+function isArmstrong(num) {
+  let originalNum = num;
+  let n = 0;
+  let result = 0;
+
+  // Count the number of digits
+  while (originalNum > 0) {
+    originalNum = Math.floor(originalNum / 10);
+    n++;
+  }
+
+  originalNum = num;
+
+  // Calculate the sum of each digit raised to the power of n
+  while (originalNum > 0) {
+    let remainder = originalNum % 10;
+
+    // Compute the power of remainder^n manually
+    let power = 1;
+    for (let i = 0; i < n; i++) {
+      power *= remainder;
+    }
+
+    result += power;
+    originalNum = Math.floor(originalNum / 10);
+  }
+
+  return result === num;
+}
+
+const num = parseInt(prompt("Enter a number: "), 10);
+
+if (isArmstrong(num)) {
+  console.log(`${num} is an Armstrong number.`);
+} else {
+  console.log(`${num} is not an Armstrong number.`);
+}
+
 //! ================================================================================================
 //! ================================================================================================
 
@@ -628,11 +668,37 @@ console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 //! ===============================
 
 const ReverseNum = (num) => {
-  const rev = 0;
+  let reversed = 0;
   while (num > 0) {
-    const lastDegit = num % 10; // Get the last digit
+    const lastDigit = num % 10; // Get the last digit
+    reversed = reversed * 10 + lastDigit; // Add to reversed number
+    num = Math.floor(num / 10); // Remove the last digit
   }
+  return reversed;
 };
+const number = 12345;
+console.log(ReverseNum(number)); // Output: 54321
+
+//?=============================================
+//?=============================================
+
+const ReverseNum2 = (num) => {
+  let reversed = 0;
+  const isNegative = num < 0; // Check if the number is negative
+  num = Math.abs(num); // Work with the absolute value of the number
+
+  while (num > 0) {
+    const lastDigit = num % 10;
+    reversed = reversed * 10 + lastDigit;
+    num = Math.floor(num / 10);
+  }
+
+  return isNegative ? -reversed : reversed;
+};
+
+const number2 = -12345;
+console.log(ReverseNum2(number)); // Output: -54321
+
 //! ================================================================================================
 //! ================================================================================================
 
