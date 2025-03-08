@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marquee Effect</title>
+    <style>
+      body {
+        background-color: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+      .marquee {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .marquee span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 10s linear infinite;
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee">
+      <span>🔥 Welcome to the Crazy Marquee Effect! 🔥</span>
+    </div>
+    <div class="marquee">
+      <span>
+        <img src="https://via.placeholder.com/150" alt="Image 1" />
+        <img src="https://via.placeholder.com/150" alt="Image 2" />
+        <img src="https://via.placeholder.com/150" alt="Image 3" />
+      </span>
+    </div>
+  </body>
+</html>

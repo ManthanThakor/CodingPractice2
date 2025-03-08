@@ -40,12 +40,13 @@ Square(10);
 
 //! ============= Circle ==================
 // Circle:
+// The radius of a circle is the distance from its center to any point on its edge. It is denoted as r and is used to calculate the area and circumference of the circle.
 // Area: π * radius * radius or π * radius^2
 // Perimeter (Circumference): 2 * π * radius
 
 function circle(radius) {
-  const area = Math.PI * radius * radius;
-  const perimeter = 2 * Math.PI * radius;
+  const area = Math.PI * radius * radius; // π × r²
+  const perimeter = 2 * Math.PI * radius; // 2 × π × r
   console.log(`Circle - Area: ${area}, Circumference: ${perimeter}`);
 }
 circle(7); // Circle - Area: 153.93804002589985, Circumference: 43.982297150257104
@@ -84,8 +85,52 @@ const checkNum = (StartingRange, EndingRage, InputValue) => {
 const StartingRange = 2;
 const EndingRage = 5;
 const InputValue = 3;
-checkNum(2, 5, 3);
+checkNum(StartingRange, EndingRage, InputValue);
 // The value 3 falls within the specified range.
+
+//? ----------------------------------------------
+
+const checkNum2 = (StartingRange, EndingRage, InputValue) => {
+  if (InputValue > StartingRange) {
+    if (InputValue < EndingRage) {
+      console.log(`The value ${InputValue} falls within the specified range.`);
+      return;
+    }
+  }
+  console.log(
+    `The value ${InputValue} does not fall within the specified range.`
+  );
+};
+
+checkNum2(2, 5, 3);
+// The value 3 falls within the specified range.
+
+//? ----------------------------------------------
+
+const checkNum3 = (StartingRange, EndingRage, InputValue) => {
+  if (InputValue > StartingRange) {
+    if (InputValue < EndingRage) {
+      console.log(`The value ${InputValue} falls within the specified range.`);
+    } else {
+      console.log(
+        `The value ${InputValue} does not fall within the specified range.`
+      );
+    }
+  } else {
+    console.log(
+      `The value ${InputValue} does not fall within the specified range.`
+    );
+  }
+};
+
+checkNum3(2, 5, 3);
+// The value 3 falls within the specified range.
+
+checkNum3(2, 5, 1);
+// The value 1 does not fall within the specified range.
+
+checkNum3(2, 5, 6);
+// The value 6 does not fall within the specified range.
 
 //! ================================================================================================
 //! ================================================================================================
@@ -94,8 +139,8 @@ checkNum(2, 5, 3);
 //! Get the value between two number
 //! -----------------------
 
-const ValueBetweenTwoNum = (val1, val2) => {
-  for (let i = val1 + 1; i < val2; i++) {
+const ValueBetweenTwoNum = (num1, num2) => {
+  for (let i = num1 + 1; i < num2; i++) {
     console.log(i);
   }
 };
@@ -160,8 +205,176 @@ const calculateExponential = (base, exponent) => {
   }
   return `${base} raised to the power of ${exponent} is : ${result}`;
 };
-console.log(calculateExponential(3, 10));
+console.log(calculateExponential(2, 4));
 // 2 raised to the power of 4 is : 16
+
+//! ================================================================================================
+//! ================================================================================================
+
+//? ----------------------------------------------
+//! // Odd or even
+//? ----------------------------------------------
+
+function checkEvenOdd(num) {
+  if (num % 2 === 0) {
+    console.log(num + " is Even");
+  } else {
+    console.log(num + " is Odd");
+  }
+}
+checkEvenOdd(7);
+checkEvenOdd(10);
+
+//! ================================================================================================
+//! ================================================================================================
+
+//? ----------------------------------------------
+//! // Find the largest of two numbers
+//? ----------------------------------------------
+
+function findLargest(a, b) {
+  if (a > b) {
+    console.log(a + " is larger");
+  } else if (b > a) {
+    console.log(b + " is larger");
+  } else {
+    console.log("Both are equal");
+  }
+}
+findLargest(5, 10);
+findLargest(20, 10);
+findLargest(7, 7);
+
+//! ================================================================================================
+//! ================================================================================================
+
+//? ----------------------------------------------
+//! // Check if a number is positive, negative, or zero
+//? ----------------------------------------------
+
+function checkNumber(num) {
+  if (num > 0) {
+    console.log(num + " is Positive");
+  } else if (num < 0) {
+    console.log(num + " is Negative");
+  } else {
+    console.log(num + " is Zero");
+  }
+}
+checkNumber(5);
+checkNumber(-8);
+checkNumber(0);
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// leap year or not
+//! ===============================
+
+// The code you provided checks whether a given year is a leap year or not. Here's a detailed explanation:
+
+// Leap Year Rule:
+// A leap year is a year that:
+// Is divisible by 4, but not divisible by 100, unless it is also divisible by 400.
+
+// This means:
+// Years like 2000 and 1600 are leap years because they are divisible by 400.
+// Years like 1900 and 2100 are not leap years because they are divisible by 100 but not by 400.
+// Years like 2020 and 2024 are leap years because they are divisible by 4 but not divisible by 100.
+
+function leapYear(year) {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    return year + " is a leap year"; // Case for being divisible by 4 but not 100
+  } else if (year % 400 === 0) {
+    return year + " is a leap year"; // Case for being divisible by 400
+  } else {
+    return year + " is not a leap year"; // If it doesn't satisfy either of the above conditions
+  }
+}
+
+console.log(leapYear(2000)); // "2000 is a leap year"
+console.log(leapYear(1900)); // "1900 is not a leap year"
+console.log(leapYear(2024)); // "2024 is a leap year"
+console.log(leapYear(2025)); // "2025 is not a leap year"
+
+//? ----------------------------------------------
+
+function leapYear(year) {
+  if (year % 400 === 0) {
+    console.log(year + " is a leap year");
+  } else if (year % 100 === 0) {
+    console.log(year + " is not a leap year");
+  } else if (year % 4 === 0) {
+    console.log(year + " is a leap year");
+  } else {
+    console.log(year + " is not a leap year");
+  }
+}
+
+leapYear(2000); // "2000 is a leap year"
+leapYear(1900); // "1900 is not a leap year"
+leapYear(2024); // "2024 is a leap year"
+leapYear(2025); // "2025 is not a leap year"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// a,b,c  no of this three greater than
+//! ===============================
+
+const numA = 10;
+const numB = 20;
+const numC = 5;
+
+function GreaterNum(a, b, c) {
+  if (a >= b && a >= c) {
+    console.log(` ${a} is the Greatest number`);
+  } else if (b >= c) {
+    console.log(` ${b} is the Greatest number`);
+  } else {
+    console.log(` ${c} is the Greatest number`);
+  }
+}
+GreaterNum(numA, numB, numC); // 20 is the Greatest number
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// find temp in c pass in f and then check given temp is cold normal or hot
+//! ===============================
+
+const temperature = 30;
+const temperature2 = 60;
+const temperature3 = 80;
+
+function temp(fahrenheit) {
+  const celsius = (fahrenheit - 32) * (5 / 9);
+
+  if (celsius < 15) {
+    console.log(`${celsius.toFixed(2)}°C - Cold`);
+  } else if (celsius <= 25) {
+    // No need to check celsius >= 15 because the first condition already ensures this.
+    console.log(`${celsius.toFixed(2)}°C - normal`);
+  } else {
+    console.log(`${celsius.toFixed(2)}°C - hot`);
+  }
+}
+
+temp(temperature); //-1.11°C - Cold
+temp(temperature2); //15.56°C - normal
+temp(temperature3); //26.67°C - hot
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ================================================================================================
+//! ================================================================================================
 
 //! ================================================================================================
 //! ================================================================================================
@@ -441,24 +654,6 @@ var y = "7";
 //! ================================================================================================
 
 //! ===============================
-//!  find a even or odd number
-//! ===============================
-
-const OddOrEven = (num) => {
-  if (num % 2 == 0) {
-    console.log(`The given Number: ${num} is even Number`);
-  } else {
-    console.log(`The given Number: ${num} is odd Number`);
-  }
-};
-
-OddOrEven(4); // The given Number: 4 is even Number
-OddOrEven(7); // The given Number: 7 is odd Number
-
-//! ================================================================================================
-//! ================================================================================================
-
-//! ===============================
 //! Prime Number or Not
 //! ===============================
 
@@ -516,79 +711,27 @@ TablePrint(12);
 //! ================================================================================================
 
 //! ===============================
-// leap year or not
+//!  countDigits
 //! ===============================
 
-// The code you provided checks whether a given year is a leap year or not. Here's a detailed explanation:
-
-// Leap Year Rule:
-// A leap year is a year that:
-// Is divisible by 4, but not divisible by 100, unless it is also divisible by 400.
-
-// This means:
-// Years like 2000 and 1600 are leap years because they are divisible by 400.
-// Years like 1900 and 2100 are not leap years because they are divisible by 100 but not by 400.
-// Years like 2020 and 2024 are leap years because they are divisible by 4 but not divisible by 100.
-
-function leapYear(year) {
-  if (year % 4 === 0 && year % 100 !== 0) {
-    return year + " is a leap year"; // Case for being divisible by 4 but not 100
-  } else if (year % 400 === 0) {
-    return year + " is a leap year"; // Case for being divisible by 400
-  } else {
-    return year + " is not a leap year"; // If it doesn't satisfy either of the above conditions
+function countDigits(number) {
+  if (number === 0) {
+    return 1;
   }
+  number = Math.abs(number);
+
+  let count = 0;
+  while (number != 0) {
+    number = Math.floor(number / 10);
+    count++;
+  }
+
+  return count;
 }
 
-console.log(leapYear(2000)); // "2000 is a leap year"
-console.log(leapYear(1900)); // "1900 is not a leap year"
-
-//! ================================================================================================
-//! ================================================================================================
-
-//! ===============================
-// a,b,c  no of this three greater than
-//! ===============================
-
-const numA = 10;
-const numB = 20;
-const numC = 5;
-
-function GreaterNum(a, b, c) {
-  if (a >= b && a >= c) {
-    console.log(` ${a} is the Greatest number`);
-  } else if (b >= c) {
-    console.log(` ${b} is the Greatest number`);
-  } else {
-    console.log(` ${c} is the Greatest number`);
-  }
-}
-GreaterNum(numA, numB, numC); // 20 is the Greatest number
-
-//! ================================================================================================
-//! ================================================================================================
-
-//! ===============================
-// find temp in c pass in f and then check given temp is cold normal or hot
-//! ===============================
-
-const temperature = 30;
-const temperature2 = 60;
-const temperature3 = 80;
-
-function temp(fahrenheit) {
-  const celsius = (fahrenheit - 32) * (5 / 9);
-  if (celsius < 15) {
-    console.log(`${celsius.toFixed(2)}°C - Cold`);
-  } else if (celsius >= 15 && celsius <= 25) {
-    console.log(`${celsius.toFixed(2)}°C - normal`);
-  } else {
-    console.log(`${celsius.toFixed(2)}°C - hot`);
-  }
-}
-temp(temperature); //-1.11°C - Cold
-temp(temperature2); //15.56°C - normal
-temp(temperature3); //26.67°C - hot
+console.log(countDigits(12345)); // Output: 5
+console.log(countDigits(-678)); // Output: 3
+console.log(countDigits(0)); // Output: 1
 
 //! ================================================================================================
 //! ================================================================================================
@@ -719,3 +862,7 @@ for (let i = 0; i < arr123.length; i++) {
 
 //! ================================================================================================
 //! ================================================================================================
+
+a = 20;
+b = ++a;
+console.log(b);
