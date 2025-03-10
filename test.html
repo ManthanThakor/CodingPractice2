@@ -3,47 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marquee Effect</title>
-    <style>
-      body {
-        background-color: #111;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        overflow: hidden;
-      }
-      .marquee {
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        position: relative;
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      .marquee span {
-        display: inline-block;
-        padding-left: 100%;
-        animation: marquee 10s linear infinite;
-      }
-      @keyframes marquee {
-        from {
-          transform: translateX(0%);
-        }
-        to {
-          transform: translateX(-100%);
-        }
-      }
-    </style>
+    <title>Bootstrap 5 Grid Example (Nested)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="marquee">
-      <span>🔥 Welcome to the Crazy Marquee Effect! 🔥</span>
+    <div class="container">
+      <!-- Row with 3 equal-width columns -->
+      <div class="row">
+        <div class="col">
+          <div class="p-3 border bg-light">Column 1</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border bg-light">Column 2</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border bg-light">Column 3</div>
+        </div>
+      </div>
+
+      <!-- Row with 2 columns: 8 units and 4 units -->
+      <div class="row mt-3">
+        <div class="col-8">
+          <div class="p-3 border bg-light">Column 1 (8 units wide)</div>
+        </div>
+        <div class="col-4">
+          <div class="p-3 border bg-light">Column 2 (4 units wide)</div>
+        </div>
+      </div>
+
+      <!-- Responsive example: columns on smaller screens stack vertically -->
+      <div class="row mt-3">
+        <div class="col-md-6 col-sm-12">
+          <div class="p-3 border bg-light">
+            Column 1 (6 units on medium, full width on small)
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="p-3 border bg-light">
+            Column 2 (6 units on medium, full width on small)
+          </div>
+        </div>
+      </div>
+
+      <!-- Nested Columns Example -->
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="p-3 border bg-light">
+            Parent Column 1 (6 units wide)
+            <div class="row mt-3">
+              <div class="col-6">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 1 (6 units of 6)
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 2 (6 units of 6)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="p-3 border bg-light">
+            Parent Column 2 (6 units wide)
+            <div class="row mt-3">
+              <div class="col-4">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 1 (4 units of 6)
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 2 (8 units of 6)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complex column layout -->
+      <div class="row mt-3">
+        <div class="col-4">
+          <div class="p-3 border bg-light">Column 1 (4 units wide)</div>
+        </div>
+        <div class="col-8">
+          <div class="p-3 border bg-light">
+            Column 2 (8 units wide)
+            <div class="row mt-3">
+              <div class="col-3">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 1 (3 units of 8)
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="p-3 border bg-secondary">
+                  Nested Column 2 (9 units of 8)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="marquee">
-      <span>
-        <img src="https://via.placeholder.com/150" alt="Image 1" />
-        <img src="https://via.placeholder.com/150" alt="Image 2" />
-        <img src="https://via.placeholder.com/150" alt="Image 3" />
-      </span>
-    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

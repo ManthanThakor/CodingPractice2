@@ -10,11 +10,11 @@ const num1 = 5;
 function pattern1(num) {
   let pattern = "";
   for (let i = 1; i <= num; i++) {
-    let pattern = "";
+    let row = "";
     for (let j = 1; j <= i; j++) {
-      pattern = pattern + j;
+      row = row + j;
     }
-    pattern = pattern + pattern + "\n";
+    pattern = pattern + row + "\n";
   }
   return pattern;
 }
@@ -90,11 +90,50 @@ function pattern3(num) {
   }
   return pattern;
 }
-// console.log(pattern3(num3));
+console.log(pattern3(num3));
 // 1
 // 23
 // 456
 // 78910
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//    1
+//   232
+//  34543
+// 4567654
+// ---------------------------------------------------
+
+function numberPattern(rows) {
+  for (let i = 1; i <= rows; i++) {
+    let str = "";
+
+    // Print spaces
+    for (let j = 1; j <= rows - i; j++) {
+      str += " ";
+    }
+
+    // Print increasing numbers
+    for (let j = i; j <= 2 * i - 1; j++) {
+      str += j;
+    }
+
+    // Print decreasing numbers
+    for (let j = 2 * i - 2; j >= i; j--) {
+      str += j;
+    }
+
+    console.log(str);
+  }
+}
+
+numberPattern(4);
+//    1
+//   232
+//  34543
+// 4567654
 
 // ===================================================
 // ===================================================
@@ -188,6 +227,52 @@ console.log(pattern6(num6));
 //   12345
 //  1234567
 // 123456789
+
+// ===================================================
+// ===================================================
+
+//     1
+//    212
+//   32123
+//  4321234
+// 543212345
+
+const num111 = 5;
+
+function generatePattern111(num) {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+
+    // Add leading spaces
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+
+    // Add decreasing numbers
+    for (let k = i; k >= 1; k--) {
+      row += k;
+    }
+
+    // Add increasing numbers
+    for (let k = 2; k <= i; k++) {
+      row += k;
+    }
+
+    // Append the row to the pattern
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(generatePattern111(num111));
+//     1
+//    212
+//   32123
+//  4321234
+// 543212345
 
 // ===================================================
 // ===================================================
@@ -319,7 +404,7 @@ function pattern13(num) {
   return pattern;
 }
 
-// console.log(pattern13(num13));
+console.log(pattern13(num13));
 // 54321
 // 5432
 // 543
@@ -526,6 +611,7 @@ function pattern9(num2) {
 // *   *
 // *   *
 // *****
+
 // ===================================================
 // ===================================================
 
@@ -1465,7 +1551,7 @@ function HardPattern6(num) {
   return pattern;
 }
 
-// console.log(HardPattern6(hardNum6));
+console.log(HardPattern6(hardNum6));
 // *********************
 //  *   *  *   *  *   *
 //   * *    * *    * *
@@ -1532,49 +1618,3 @@ function printPattern(rows) {
 // ***    ***
 // ****  ****
 // **********
-
-// ===================================================
-// ===================================================
-
-//     1
-//    212
-//   32123
-//  4321234
-// 543212345
-
-const num111 = 5;
-
-function generatePattern111(num) {
-  let pattern = "";
-
-  for (let i = 1; i <= num; i++) {
-    let row = "";
-
-    // Add leading spaces
-    for (let j = 1; j <= num - i; j++) {
-      row += " ";
-    }
-
-    // Add decreasing numbers
-    for (let k = i; k >= 1; k--) {
-      row += k;
-    }
-
-    // Add increasing numbers
-    for (let k = 2; k <= i; k++) {
-      row += k;
-    }
-
-    // Append the row to the pattern
-    pattern += row + "\n";
-  }
-
-  return pattern;
-}
-
-// console.log(generatePattern111(num111));
-//     1
-//    212
-//   32123
-//  4321234
-// 543212345

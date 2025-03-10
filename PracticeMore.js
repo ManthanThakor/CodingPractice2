@@ -299,6 +299,7 @@ console.log(leapYear(2024)); // "2024 is a leap year"
 console.log(leapYear(2025)); // "2025 is not a leap year"
 
 //? ----------------------------------------------
+//? ----------------------------------------------
 
 function leapYear(year) {
   if (year % 400 === 0) {
@@ -339,11 +340,29 @@ function GreaterNum(a, b, c) {
 }
 GreaterNum(numA, numB, numC); // 20 is the Greatest number
 
+//?  -----------------------------------
+
+function GreaterNum(a, b, c) {
+  if (a >= b) {
+    if (a >= c) {
+      console.log(`${a} is the Greatest number`);
+    } else {
+      console.log(`${c} is the Greatest number`);
+    }
+  } else if (b >= c) {
+    console.log(`${b} is the Greatest number`);
+  } else {
+    console.log(`${c} is the Greatest number`);
+  }
+}
+
+GreaterNum(10, 20, 5); // Output: 20 is the Greatest number
+
 //! ================================================================================================
 //! ================================================================================================
 
 //! ===============================
-// find temp in c pass in f and then check given temp is cold normal or hot
+//? find temp in c pass in f and then check given temp is cold normal or hot
 //! ===============================
 
 const temperature = 30;
@@ -370,11 +389,72 @@ temp(temperature3); //26.67°C - hot
 //! ================================================================================================
 //! ================================================================================================
 
-//! ================================================================================================
-//! ================================================================================================
+//! ===============================
+//? find the greatest number among four numbers:
+//! ===============================
+
+function GreaterNum(a, b, c, d) {
+  if (a >= b && a >= c && a >= d) {
+    console.log(`${a} is the Greatest number`);
+  } else if (b >= c && b >= d) {
+    console.log(`${b} is the Greatest number`);
+  } else if (c >= d) {
+    console.log(`${c} is the Greatest number`);
+  } else {
+    console.log(`${d} is the Greatest number`);
+  }
+}
+
+GreaterNum(10, 20, 5, 30); // Output: 30 is the Greatest number
+GreaterNum(50, 40, 60, 30); // Output: 60 is the Greatest number
+
+//?  -----------------------------------
+
+function GreaterNum(a, b, c, d) {
+  if (a >= b) {
+    if (a >= c) {
+      if (a >= d) {
+        console.log(`${a} is the Greatest number`);
+      } else {
+        console.log(`${d} is the Greatest number`);
+      }
+    } else if (c >= d) {
+      console.log(`${c} is the Greatest number`);
+    } else {
+      console.log(`${d} is the Greatest number`);
+    }
+  } else if (b >= c) {
+    if (b >= d) {
+      console.log(`${b} is the Greatest number`);
+    } else {
+      console.log(`${d} is the Greatest number`);
+    }
+  } else if (c >= d) {
+    console.log(`${c} is the Greatest number`);
+  } else {
+    console.log(`${d} is the Greatest number`);
+  }
+}
+
+GreaterNum(10, 20, 5, 30); // Output: 30 is the Greatest number
+GreaterNum(50, 40, 60, 30); // Output: 60 is the Greatest number
 
 //! ================================================================================================
 //! ================================================================================================
+
+//! ===============================
+//? Check if a person is eligible to vote
+//! ===============================
+
+function canVote(age) {
+  if (age >= 18) {
+    console.log("Eligible to vote");
+  } else {
+    console.log("Not eligible to vote");
+  }
+}
+canVote(20);
+canVote(15);
 
 //! ================================================================================================
 //! ================================================================================================
@@ -480,6 +560,7 @@ series4(5);
 //! 2, 12 ,36,80,.....,N
 //! ===============================
 
+//  raised to the power of two" and "raised to the power of three ( logic )
 const numPart113 = 10;
 function SeriesPart3(num) {
   for (let i = 1; i <= num; i++) {
@@ -497,6 +578,39 @@ function SeriesPart3(num) {
 // 576
 // 810
 // 1100
+
+//?  -----------------------------------
+
+function SeriesPart3(num) {
+  for (let i = 1; i <= num; i++) {
+    let sq = i * i; // Square calculation
+    let cb = i * i * i; // Cube calculation
+    console.log(sq + cb);
+  }
+}
+
+SeriesPart3(10);
+
+//?  -----------------------------------
+
+// Function to calculate square
+function square(n) {
+  return n * n;
+}
+
+// Function to calculate cube
+function cube(n) {
+  return n * n * n;
+}
+
+// Function to generate the series
+function SeriesPart3(num) {
+  for (let i = 1; i <= num; i++) {
+    console.log(square(i) + cube(i));
+  }
+}
+
+SeriesPart3(10);
 
 //! ================================================================================================
 //! ================================================================================================
@@ -517,17 +631,21 @@ function SeriesPart3(num) {
 // 2 + 3 = 5, so the sequence becomes: 0, 1, 1, 2, 3, 5.
 
 function Fibonacci(num) {
-  let a = 0;
-  let b = 1;
+  let a = 0,
+    b = 1;
+  let next; // Declaring next outside the loop
   let result = "";
+
   for (let i = 1; i <= num; i++) {
-    let next = a + b;
+    next = a + b; // Updating the existing variable
     a = b;
     b = next;
-    result = result + a + " ";
+    result += a + " "; // Concatenating the result
   }
+
   return result;
 }
+
 console.log(Fibonacci(10));
 // 1 1 2 3 5 8 13 21 34 55
 
@@ -574,7 +692,7 @@ function factorial2(num) {
   let result = 1;
 
   for (let i = 1; i <= num; i++) {
-    console.log((result = result * i + " "));
+    console.log((result = result * i));
   }
 }
 const factNum2 = 5;
@@ -588,17 +706,17 @@ factorial2(factNum2);
 // IN SHORT LAST RESULT * CURRENT ITERATION MEANS  5! = 5 * 4!(24)
 
 //! The expression result = result * i multiplies the current value of result by i in each iteration of the loop.
-// Initially: result = 1 (since we start with 1).
-// First iteration (i = 1): result =  (result)1 * (i)1 → result = 1.
-// Second iteration (i = 2): result = (result)1 * (i)2 → result = 2.
-// Third iteration (i = 3): result = (result)2 * (i)3 → result = 6.
+//? Initially: result = 1 (since we start with 1).
+//? First iteration (i = 1): result =  (result)1 * (i)1 → result = 1.
+//? Second iteration (i = 2): result = (result)1 * (i)2 → result = 2.
+//? Third iteration (i = 3): result = (result)2 * (i)3 → result = 6.
 // And so on, until i reaches the number num.
 
 //! ================================================================================================
 //! ================================================================================================
 
 //! ===============================
-// 1! 3! 5! 7! .....n (1 ,6, 120...n) (factorial)
+//? 1! 3! 5! 7! .....n (1 ,6, 120...n) (factorial)
 //! ===============================
 
 function factorialOfOddNumbers(num) {
@@ -625,7 +743,7 @@ function factorialOfOddNumbers2(num) {
   let result = 1;
   for (let i = 1; i <= num; i += 2) {
     if (i === 1) {
-      result = result * i * 1;
+      result = result * i;
     } else {
       result = result * i * (i - 1);
     }
@@ -637,6 +755,27 @@ factorialOfOddNumbers2(5);
 // The factorial of odd number 1 is: 1
 // The factorial of odd number 3 is: 6
 // The factorial of odd number 5 is: 120
+
+//? ---------------
+//? above Code is good but alternative way
+//? ---------------
+
+function oddFactorials(n) {
+  for (let i = 1; i <= n; i += 2) {
+    // Loop through odd numbers only
+    let fact = 1;
+
+    // Calculate factorial using a second for loop
+    for (let j = 1; j <= i; j++) {
+      fact *= j;
+    }
+
+    console.log(i + "! =", fact); // Print the factorial of each odd number
+  }
+}
+
+// Call the function
+oddFactorials(7);
 
 //! ================================================================================================
 //! ================================================================================================
@@ -678,6 +817,39 @@ console.log(PrimeOrNot(5)); // The Number: 5 is a prime number
 // For num = 7, the loop checks if 7 is divisible by 2, finds that it’s not, and ends the process as 7 is a prime number.
 // For num = 10, it finds that 10 is divisible by 2 and immediately concludes that it’s not a prime number.
 
+//? ---------------
+
+const isPrime = (num) => {
+  if (num <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const printPrimeSeries = (n) => {
+  console.log(`Prime numbers up to ${n}:`);
+  for (let i = 2; i <= n; i++) {
+    if (isPrime(i)) {
+      console.log(i);
+    }
+  }
+};
+
+// Call function
+printPrimeSeries(20);
+// 2
+// 3
+// 5
+// 7
+// 11
+// 13
+// 17
+// 19
+
 //! ================================================================================================
 //! ================================================================================================
 
@@ -711,7 +883,7 @@ TablePrint(12);
 //! ================================================================================================
 
 //! ===============================
-//!  countDigits
+//?  countDigits
 //! ===============================
 
 function countDigits(number) {
@@ -767,34 +939,34 @@ console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 
 function isArmstrong(num) {
   let originalNum = num;
+  let temp = num;
   let n = 0;
-  let result = 0;
+  let sum = 0;
 
   // Count the number of digits
-  while (originalNum > 0) {
-    originalNum = Math.floor(originalNum / 10);
+  while (temp > 0) {
+    temp = Math.floor(temp / 10);
     n++;
   }
 
-  originalNum = num;
+  temp = num;
 
-  // Calculate the sum of each digit raised to the power of n
-  while (originalNum > 0) {
-    let remainder = originalNum % 10;
-
-    // Compute the power of remainder^n manually
+  while (temp > 0) {
+    let digit = temp % 10;
     let power = 1;
+
     for (let i = 0; i < n; i++) {
-      power *= remainder;
+      power *= digit;
     }
 
-    result += power;
-    originalNum = Math.floor(originalNum / 10);
+    sum += power;
+    temp = Math.floor(temp / 10);
   }
 
-  return result === num;
+  return sum === originalNum;
 }
 
+// Input from the user
 const num = parseInt(prompt("Enter a number: "), 10);
 
 if (isArmstrong(num)) {
@@ -866,3 +1038,105 @@ for (let i = 0; i < arr123.length; i++) {
 a = 20;
 b = ++a;
 console.log(b);
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! reverseString
+//! ===============================
+
+function reverseString(str) {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+console.log(reverseString("hello")); // Output: "olleh"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Check if a String is a Palindrome
+//! ===============================
+
+function isPalindrome(str) {
+  let left = 0,
+    right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello")); // Output: false
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Count Vowels and Consonants in a String
+//! ===============================
+
+function countVowelsAndConsonants(str) {
+  let vowels = "aeiouAEIOU";
+  let vowelCount = 0;
+  let consonantCount = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+      if (vowels.includes(char)) {
+        vowelCount++;
+      } else {
+        consonantCount++;
+      }
+    }
+  }
+
+  return { vowels: vowelCount, consonants: consonantCount };
+}
+
+// Example usage:
+let result = countVowelsAndConsonants("Hello World");
+console.log(result); // Output: { vowels: 3, consonants: 7 }
+
+//? ======================================================================
+
+function countVowelsAndConsonants(str) {
+  let vowelCount = 0;
+  let consonantCount = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    let lowerChar = char.toLowerCase();
+
+    if (lowerChar >= "a" && lowerChar <= "z") {
+      if (
+        lowerChar === "a" ||
+        lowerChar === "e" ||
+        lowerChar === "i" ||
+        lowerChar === "o" ||
+        lowerChar === "u"
+      ) {
+        vowelCount++;
+      } else {
+        consonantCount++;
+      }
+    }
+  }
+
+  return { vowels: vowelCount, consonants: consonantCount };
+}
+
+// Example usage:
+console.log(result); // Output: { vowels: 3, consonants: 7 }
