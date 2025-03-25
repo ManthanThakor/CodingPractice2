@@ -567,7 +567,7 @@ function SeriesPart3(num) {
     console.log(i ** 2 + i ** 3);
   }
 }
-// console.log(SeriesPart3(numPart113));
+console.log(SeriesPart3(numPart113));
 // 2
 // 12
 // 36
@@ -722,7 +722,8 @@ function factorialOfOddNumbers(num) {
   let result = 1;
   for (let i = 1; i <= num; i++) {
     if (i % 2 != 0) {
-      console.log((result = result * i));
+      result = result * i;
+      console.log(result);
     } else {
       result = result * i;
     }
@@ -751,6 +752,7 @@ function factorialOfOddNumbers2(num) {
   return result;
 }
 factorialOfOddNumbers2(5);
+
 // The factorial of odd number 1 is: 1
 // The factorial of odd number 3 is: 6
 // The factorial of odd number 5 is: 120
@@ -819,7 +821,9 @@ console.log(PrimeOrNot(5)); // The Number: 5 is a prime number
 //? ---------------
 
 const isPrime = (num) => {
-  if (num <= 1) return false;
+  if (num <= 1) {
+    return false;
+  }
 
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
@@ -889,6 +893,7 @@ function countDigits(number) {
   if (number === 0) {
     return 1;
   }
+
   number = Math.abs(number);
 
   let count = 0;
@@ -896,7 +901,6 @@ function countDigits(number) {
     number = Math.floor(number / 10);
     count++;
   }
-
   return count;
 }
 
@@ -939,13 +943,13 @@ console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 function isArmstrong(num) {
   let originalNum = num;
   let temp = num;
-  let n = 0;
+  let count = 0;
   let sum = 0;
 
   // Count the number of digits
   while (temp > 0) {
     temp = Math.floor(temp / 10);
-    n++;
+    count++;
   }
 
   temp = num;
@@ -954,14 +958,13 @@ function isArmstrong(num) {
     let digit = temp % 10;
     let power = 1;
 
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < count; i++) {
       power *= digit;
     }
-
     sum += power;
+
     temp = Math.floor(temp / 10);
   }
-
   return sum === originalNum;
 }
 
@@ -996,23 +999,111 @@ console.log(ReverseNum(number)); // Output: 54321
 //?=============================================
 //?=============================================
 
-const ReverseNum2 = (num) => {
-  let reversed = 0;
-  const isNegative = num < 0; // Check if the number is negative
-  num = Math.abs(num); // Work with the absolute value of the number
+// const ReverseNum2 = (num) => {
+//   let reversed = 0;
+//   const isNegative = num < 0; // Check if the number is negative
+//   num = Math.abs(num); // Work with the absolute value of the number
 
-  while (num > 0) {
-    const lastDigit = num % 10;
-    reversed = reversed * 10 + lastDigit;
-    num = Math.floor(num / 10);
+//   while (num > 0) {
+//     const lastDigit = num % 10;
+//     reversed = reversed * 10 + lastDigit;
+//     num = Math.floor(num / 10);
+//   }
+
+//   return isNegative ? -reversed : reversed;
+// };
+
+// const number2 = -12345;
+// console.log(ReverseNum2(number)); // Output: -54321
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//  7
+//  7 5
+//  7 5 2
+//  7 5 2 3
+//! ===============================
+
+function printReversePattern(n) {
+  let numStr = n.toString();
+  let length = numStr.length;
+
+  for (let i = 0; i < length; i++) {
+    let row = "";
+
+    for (let j = length - 1; j >= length - 1 - i; j--) {
+      row = row + " " + numStr[j];
+    }
+
+    console.log(row);
   }
+}
 
-  return isNegative ? -reversed : reversed;
-};
+printReversePattern(3257);
+//  7
+//  7 5
+//  7 5 2
+//  7 5 2 3
 
-const number2 = -12345;
-console.log(ReverseNum2(number)); // Output: -54321
+//! ================================================================================================
+//! ================================================================================================
 
+// -----------------------------------------------------
+
+// swap two value Without Using a Temporary Variable (Using Arithmetic)
+
+let aSwap = 5;
+let bSwap = 10;
+console.log(`Before swapping: a = ${aSwap}, b = ${bSwap}`);
+
+aSwap = aSwap + bSwap;
+bSwap = aSwap - bSwap;
+aSwap = aSwap - bSwap;
+
+console.log(`After swapping: a = ${aSwap}, b = ${bSwap}`);
+
+// -----------------------------------------------------
+
+let a = 5,
+  b = 10;
+console.log(`Before swapping: a = ${a}, b = ${b}`);
+
+let temp = a;
+a = b;
+b = temp;
+
+console.log(`After swapping: a = ${a}, b = ${b}`);
+
+// -----------------------------------------------------
+
+console.log(`Before swapping: a = ${a}, b = ${b}`);
+
+[a, b] = [b, a]; // Swapping using destructuring
+
+console.log(`After swapping: a = ${a}, b = ${b}`);
+
+// -----------------------------------------------------
+
+//! ================================================================================================
+//! ================================================================================================
+
+let Aw = 20;
+let Bw = ++Aw;
+console.log(Aw); // 21
+console.log(Bw); // 21
+
+let Aww = 20;
+let Bww = Aww++;
+console.log(Aww); // 21
+console.log(Bww); // 20
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ================================================================================================
+//! ================================================================================================
 //! ================================================================================================
 //! ================================================================================================
 
@@ -1034,12 +1125,165 @@ for (let i = 0; i < arr123.length; i++) {
 //! ================================================================================================
 //! ================================================================================================
 
-a = 20;
-b = ++a;
-console.log(b);
+//! ===============================
+// Find the Maximum and Minimum Element in an Array
+//! ===============================
+
+function findMinMax(arr) {
+  if (arr.length === 0) {
+    return "Array is empty";
+  }
+
+  let min = arr[0];
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i]; // Update min if a smaller value is found
+    }
+    if (arr[i] > max) {
+      max = arr[i]; // Update max if a larger value is found
+    }
+  }
+
+  return { min, max };
+}
+
+let arrMinMax = [3, 1, 8, 2, 7, 5];
+console.log(findMinMax(arrMinMax)); // { min: 1, max: 8 }
 
 //! ================================================================================================
 //! ================================================================================================
+
+//! ===============================
+// Find the Second Largest and Second Smallest Elements
+//! ===============================
+
+function findSecondLargestSmallest(arr) {
+  if (arr.length < 2) return "Array must have at least two elements";
+
+  let largest = arr[0];
+
+  // Find the largest element
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+
+  let secondLargest = arr[0];
+
+  // Find the second largest element
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > secondLargest && arr[i] < largest) {
+      secondLargest = arr[i];
+    }
+  }
+
+  let smallest = arr[0];
+
+  // Find the smallest element
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+
+  let secondSmallest = arr[0];
+
+  // Find the second smallest element
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < secondSmallest && arr[i] > smallest) {
+      secondSmallest = arr[i];
+    }
+  }
+
+  if (secondSmallest === largest || secondLargest === smallest) {
+    return "No second largest or second smallest element";
+  }
+
+  return { secondSmallest, secondLargest };
+}
+
+let arrSecondLargestAndSmallest = [3, 1, 8, 2, 7, 5];
+console.log(findSecondLargestSmallest(arrSecondLargestAndSmallest));
+// { secondSmallest: 2, secondLargest: 7 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! reverseArray
+//! ===============================
+
+function reverseArray(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    // Swap arr[left] and arr[right]
+    let temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+
+    // Move pointers
+    left++;
+    right--;
+  }
+
+  return arr;
+}
+
+let reverseArray = [3, 1, 8, 2, 7, 5];
+console.log(reverseArray(reverseArray)); // [5, 7, 2, 8, 1, 3]
+
+//! --------------------- Method -2 ----------------------------------------
+
+function reverseArray22(arr) {
+  let reversed = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+  return reversed;
+}
+
+let reverseArray2 = [3, 1, 8, 2, 7, 5];
+console.log(reverseArray22(reverseArray2)); // Output: [5, 7, 2, 8, 1, 3]
+
+//! --------------------- Method -3 ----------------------------------------
+
+function reverseArray33(arr) {
+  let reversed = [];
+  let index = 0;
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed[index] = arr[i];
+    index++;
+  }
+
+  return reversed;
+}
+
+console.log(reverseArray33(reverseArray2)); // Output: [5, 7, 2, 8, 1, 3]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// Check if an Array is Sorted
+//! ===============================
+
+function isSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isSorted([1, 2, 3, 4, 5])); // true
+console.log(isSorted([1, 3, 2, 4, 5])); // false
 
 //! ===============================
 //! reverseString
@@ -1054,6 +1298,177 @@ function reverseString(str) {
 }
 
 console.log(reverseString("hello")); // Output: "olleh"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Sum of All Elements in an Array
+//! ===============================
+
+function sumOfArray(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+// Example Usage
+console.log(sumOfArray([1, 2, 3, 4, 5])); // 15
+console.log(sumOfArray([10, 20, 30])); // 60
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Occurrence of an Element in an Array
+//! ===============================
+
+function countOccurrences(arr, target) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countOccurrences([1, 2, 3, 2, 4, 2, 5], 2)); // 3
+console.log(countOccurrences([10, 20, 10, 10, 30], 10)); // 3
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Occurrence Frequency of an  each Element in an Array
+//! ===============================
+
+function countFrequency(arr) {
+  let frequency = {}; // Object to store frequency
+
+  for (let i = 0; i < arr.length; i++) {
+    let key = arr[i]; // Get the current element
+    if (frequency[key] === undefined) {
+      frequency[key] = 1; // If not found, initialize to 1
+    } else {
+      frequency[key]++; // Increment count
+    }
+  }
+
+  return frequency;
+}
+
+// Example Usage
+console.log(countFrequency([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]));
+// Output: { '1': 1, '2': 2, '3': 3, '4': 4 }
+
+console.log(countFrequency([10, 20, 10, 30, 20, 30, 30]));
+// Output: { '10': 2, '20': 2, '30': 3 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! sortArray
+//! ===============================
+
+function sortArray(arr) {
+  // Simple Bubble Sort (to sort the array manually)
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap arr[j] and arr[j+1]
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeDuplicates from sorted array
+//! ===============================
+
+function removeDuplicates(arr) {
+  arr = sortArray(arr); // First, sort the array
+  let result = [];
+
+  if (arr.length === 0) return result;
+
+  result.push(arr[0]); // First element is always unique
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] !== arr[i - 1]) {
+      result.push(arr[i]); // Push unique elements
+    }
+  }
+
+  return result;
+}
+
+let arrRemoveDuplicate = [1, 1, 2, 3, 4, 5, 2, 2];
+console.log(removeDuplicates(arrRemoveDuplicate));
+// Output: [1, 2, 3, 4, 5]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeDuplicates from string
+//! ===============================
+
+function removeDuplicateChars(str) {
+  let result = ""; // Store unique characters
+
+  for (let i = 0; i < str.length; i++) {
+    if (!result.includes(str[i])) {
+      // Check if character is already in result
+      result += str[i]; // Add unique character
+    }
+  }
+
+  return result;
+}
+
+// Example Usage:
+console.log(removeDuplicateChars("programming")); // Output: "progamin"
+console.log(removeDuplicateChars("hello")); // Output: "helo"
+
+//--------------------------------------------
+
+function removeDuplicateChars2(str) {
+  let result = ""; // Store unique characters
+
+  for (let i = 0; i < str.length; i++) {
+    let isDuplicate = false;
+
+    // Check if the character already exists in the result
+    for (let j = 0; j < result.length; j++) {
+      if (str[i] === result[j]) {
+        isDuplicate = true;
+        break; // No need to check further
+      }
+    }
+
+    // If not duplicate, add it to result
+    if (!isDuplicate) {
+      result += str[i];
+    }
+  }
+
+  return result;
+}
+
+console.log(removeDuplicateChars2("programming")); // Output: "progamin"
+console.log(removeDuplicateChars2("hello")); // Output: "helo"
 
 //! ================================================================================================
 //! ================================================================================================

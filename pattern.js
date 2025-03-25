@@ -279,6 +279,50 @@ function generatePattern111(num) {
 
 // ---------------------------------------------------
 //   1
+//  121
+// 12321
+// ---------------------------------------------------
+
+const num121 = 3;
+
+function generatePattern121(num) {
+  let pattern = "";
+
+  for (let i = 1; i <= num; i++) {
+    let row = "";
+
+    // Add leading spaces
+    for (let j = 1; j <= num - i; j++) {
+      row += " ";
+    }
+
+    // Add increasing numbers
+    for (let k = 1; k <= i; k++) {
+      row += k;
+    }
+
+    // Add decreasing numbers
+    for (let k = i - 1; k >= 1; k--) {
+      row += k;
+    }
+
+    // Append the row to the pattern
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+console.log(generatePattern121(num121));
+//   1
+//  121
+// 12321
+
+// ===================================================
+// ===================================================
+
+// ---------------------------------------------------
+//   1
 //  234
 // 56789
 // ---------------------------------------------------
@@ -560,17 +604,15 @@ function square(num1, num2) {
 
 const num8 = 5;
 function pattern8(num) {
-  let pattern = "";
   for (let i = 1; i <= num; i++) {
     row = "";
     for (let j = 1; j <= num; j++) {
       row = row + "*";
     }
-    pattern = pattern + row + "\n";
+    console.log(row);
   }
-  return pattern;
 }
-// console.log(pattern8(num8));
+pattern8(num8);
 // *****
 // *****
 // *****
@@ -953,7 +995,7 @@ function patt(num) {
   return patt;
 }
 
-// console.log(patt(num));
+console.log(patt(num));
 //    *
 //   * *
 //  *   *
@@ -1577,14 +1619,14 @@ function printPattern(rows) {
   let pattern = "";
 
   // Upper part of the pattern
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < rows - i; j++) {
+  for (let i = rows; i > 0; i--) {
+    for (let j = 1; j <= i; j++) {
       pattern += "*";
     }
-    for (let j = 0; j < i * 2; j++) {
+    for (let j = 1; j <= 2 * (rows - i); j++) {
       pattern += " ";
     }
-    for (let j = 0; j < rows - i; j++) {
+    for (let j = 1; j <= i; j++) {
       pattern += "*";
     }
     pattern += "\n";
@@ -1592,13 +1634,13 @@ function printPattern(rows) {
 
   // Lower part of the pattern
   for (let i = 1; i < rows; i++) {
-    for (let j = -1; j < i; j++) {
+    for (let j = 0; j <= i; j++) {
       pattern += "*";
     }
     for (let j = (rows - i - 1) * 2; j > 0; j--) {
       pattern += " ";
     }
-    for (let j = -1; j < i; j++) {
+    for (let j = 0; j <= i; j++) {
       pattern += "*";
     }
     pattern += "\n";
@@ -1608,7 +1650,7 @@ function printPattern(rows) {
 }
 
 // Call the function with the number of rows for the upper part of the diamond
-// printPattern(5);
+printPattern(5);
 // **********
 // ****  ****
 // ***    ***
