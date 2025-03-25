@@ -1271,6 +1271,22 @@ console.log(reverseArray33(reverseArray2)); // Output: [5, 7, 2, 8, 1, 3]
 //! ================================================================================================
 
 //! ===============================
+// Check if an Array is Sorted
+//! ===============================
+
+function isSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isSorted([1, 2, 3, 4, 5])); // true
+console.log(isSorted([1, 3, 2, 4, 5])); // false
+
+//! ===============================
 //! reverseString
 //! ===============================
 
@@ -1283,6 +1299,177 @@ function reverseString(str) {
 }
 
 console.log(reverseString("hello")); // Output: "olleh"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Sum of All Elements in an Array
+//! ===============================
+
+function sumOfArray(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+// Example Usage
+console.log(sumOfArray([1, 2, 3, 4, 5])); // 15
+console.log(sumOfArray([10, 20, 30])); // 60
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Occurrence of an Element in an Array
+//! ===============================
+
+function countOccurrences(arr, target) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countOccurrences([1, 2, 3, 2, 4, 2, 5], 2)); // 3
+console.log(countOccurrences([10, 20, 10, 10, 30], 10)); // 3
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Occurrence Frequency of an  each Element in an Array
+//! ===============================
+
+function countFrequency(arr) {
+  let frequency = {}; // Object to store frequency
+
+  for (let i = 0; i < arr.length; i++) {
+    let key = arr[i]; // Get the current element
+    if (frequency[key] === undefined) {
+      frequency[key] = 1; // If not found, initialize to 1
+    } else {
+      frequency[key]++; // Increment count
+    }
+  }
+
+  return frequency;
+}
+
+// Example Usage
+console.log(countFrequency([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]));
+// Output: { '1': 1, '2': 2, '3': 3, '4': 4 }
+
+console.log(countFrequency([10, 20, 10, 30, 20, 30, 30]));
+// Output: { '10': 2, '20': 2, '30': 3 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! sortArray
+//! ===============================
+
+function sortArray(arr) {
+  // Simple Bubble Sort (to sort the array manually)
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap arr[j] and arr[j+1]
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeDuplicates from sorted array
+//! ===============================
+
+function removeDuplicates(arr) {
+  arr = sortArray(arr); // First, sort the array
+  let result = [];
+
+  if (arr.length === 0) return result;
+
+  result.push(arr[0]); // First element is always unique
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] !== arr[i - 1]) {
+      result.push(arr[i]); // Push unique elements
+    }
+  }
+
+  return result;
+}
+
+let arrRemoveDuplicate = [1, 1, 2, 3, 4, 5, 2, 2];
+console.log(removeDuplicates(arrRemoveDuplicate));
+// Output: [1, 2, 3, 4, 5]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeDuplicates from string
+//! ===============================
+
+function removeDuplicateChars(str) {
+  let result = ""; // Store unique characters
+
+  for (let i = 0; i < str.length; i++) {
+    if (!result.includes(str[i])) {
+      // Check if character is already in result
+      result += str[i]; // Add unique character
+    }
+  }
+
+  return result;
+}
+
+// Example Usage:
+console.log(removeDuplicateChars("programming")); // Output: "progamin"
+console.log(removeDuplicateChars("hello")); // Output: "helo"
+
+//--------------------------------------------
+
+function removeDuplicateChars2(str) {
+  let result = ""; // Store unique characters
+
+  for (let i = 0; i < str.length; i++) {
+    let isDuplicate = false;
+
+    // Check if the character already exists in the result
+    for (let j = 0; j < result.length; j++) {
+      if (str[i] === result[j]) {
+        isDuplicate = true;
+        break; // No need to check further
+      }
+    }
+
+    // If not duplicate, add it to result
+    if (!isDuplicate) {
+      result += str[i];
+    }
+  }
+
+  return result;
+}
+
+console.log(removeDuplicateChars2("programming")); // Output: "progamin"
+console.log(removeDuplicateChars2("hello")); // Output: "helo"
 
 //! ================================================================================================
 //! ================================================================================================

@@ -40,7 +40,7 @@ function sortByFrequencyDescending(arr) {
   while (result.length < arr.length) {
     for (let i = 0; i < arr.length; i++) {
       let num = arr[i];
-      if (freq[num] === maxFreq && freq[num] > 0) {
+      if (freq[num] === maxFreq) {
         for (let j = 0; j < freq[num]; j++) {
           result.push(num); // Add elements at the end (descending order)
         }
@@ -57,24 +57,6 @@ let arr2 = [3, 2, 3, 1, 2, 2];
 console.log(sortByFrequencyDescending(arr2));
 
 // Output: [2, 2, 2, 3, 3, 1]
-
-function printReversePattern(n) {
-  let numStr = n.toString();
-  let length = numStr.length;
-
-  for (let i = 0; i < length; i++) {
-    let line = "";
-
-    for (let j = length - 1; j >= length - 1 - i; j--) {
-      line = line + " " + numStr[j];
-    }
-
-    console.log(line);
-  }
-}
-
-// Call with n = 3257
-printReversePattern(3257);
 
 function printReversePattern(n) {
   let numStr = n.toString();
