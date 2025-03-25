@@ -567,7 +567,7 @@ function SeriesPart3(num) {
     console.log(i ** 2 + i ** 3);
   }
 }
-// console.log(SeriesPart3(numPart113));
+console.log(SeriesPart3(numPart113));
 // 2
 // 12
 // 36
@@ -820,7 +820,9 @@ console.log(PrimeOrNot(5)); // The Number: 5 is a prime number
 //? ---------------
 
 const isPrime = (num) => {
-  if (num <= 1) return false;
+  if (num <= 1) {
+    return false;
+  }
 
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
@@ -890,6 +892,7 @@ function countDigits(number) {
   if (number === 0) {
     return 1;
   }
+
   number = Math.abs(number);
 
   let count = 0;
@@ -897,7 +900,6 @@ function countDigits(number) {
     number = Math.floor(number / 10);
     count++;
   }
-
   return count;
 }
 
@@ -940,13 +942,13 @@ console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 function isArmstrong(num) {
   let originalNum = num;
   let temp = num;
-  let n = 0;
+  let count = 0;
   let sum = 0;
 
   // Count the number of digits
   while (temp > 0) {
     temp = Math.floor(temp / 10);
-    n++;
+    count++;
   }
 
   temp = num;
@@ -955,14 +957,13 @@ function isArmstrong(num) {
     let digit = temp % 10;
     let power = 1;
 
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < count; i++) {
       power *= digit;
     }
 
     sum += power;
     temp = Math.floor(temp / 10);
   }
-
   return sum === originalNum;
 }
 
