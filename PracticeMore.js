@@ -642,7 +642,6 @@ function Fibonacci(num) {
     b = next;
     result += a + " "; // Concatenating the result
   }
-
   return result;
 }
 

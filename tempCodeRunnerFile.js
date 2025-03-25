@@ -1,13 +1,17 @@
+function printReversePattern(n) {
+  let numStr = n.toString();
+  let length = numStr.length;
 
-function factorialOfOddNumbers(num) {
-  let result = 1;
-  for (let i = 1; i <= num; i++) {
-    if (i % 2 != 0) {
-      console.log((result = result * i));
-    } else {
-      result = result * i;
+  for (let i = 0; i < length; i++) {
+    let line = "";
+
+    for (let j = length - 1; j >= length - 1 - i; j--) {
+      line = line + " " + numStr[j];
     }
+
+    console.log(line);
   }
-  return result;
 }
-factorialOfOddNumbers(5);
+
+// Call with n = 3257
+printReversePattern(3257);
