@@ -642,7 +642,6 @@ function Fibonacci(num) {
     b = next;
     result += a + " "; // Concatenating the result
   }
-
   return result;
 }
 
@@ -1380,6 +1379,96 @@ console.log(frequencyObject.3); // Output: 3 (count of number 3)
 //! ================================================================================================
 
 //! ===============================
+//! Find the Occurrence Frequency of an  each Element in an String
+//! ===============================
+
+function countCharFrequency(str) {
+  let frequency = {}; // Object to store character frequency
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]; // Get the current character
+    if (frequency[char] === undefined) {
+      frequency[char] = 1; // If not found, initialize to 1
+    } else {
+      frequency[char]++; // Increment count
+    }
+  }
+
+  return frequency;
+}
+
+console.log(countCharFrequency("programming"));
+// Output: { p: 1, r: 2, o: 1, g: 2, a: 1, m: 2, i: 1, n: 1 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the duplicate Element in an String
+//! ===============================
+
+function findDuplicateChars(str) {
+  let frequency = {}; // Object to store character frequency
+  let duplicates = []; // Array to store duplicate characters
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (frequency[char] === undefined) {
+      frequency[char] = 1; // If not found, initialize to 1
+    } else {
+      frequency[char]++; // Increment count
+    }
+  }
+
+  // Find characters with frequency > 1
+  for (let char in frequency) {
+    if (frequency[char] > 1) {
+      duplicates.push(char);
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(findDuplicateChars("programming"));
+// Output: ['r', 'g', 'm']
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the duplicate Element in an array
+//! ===============================
+
+function findDuplicateElements(arr) {
+  let frequency = {}; // Object to store element frequency
+  let duplicates = []; // Array to store duplicate elements
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+    if (frequency[element] === undefined) {
+      frequency[element] = 1; // If not found, initialize to 1
+    } else {
+      frequency[element]++; // Increment count
+    }
+  }
+  // Find elements with frequency > 1
+  for (let key in frequency) {
+    if (frequency[key] > 1) {
+      duplicates.push(Number(key)); // Convert key back to number (optional for numbers)
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(findDuplicateElements([1, 2, 3, 4, 3, 2, 1, 5]));
+// Output: [1, 2, 3]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
 //! sortArray
 //! ===============================
 
@@ -1407,7 +1496,7 @@ function sortArray(arr) {
 //! ===============================
 
 function removeDuplicates(arr) {
-  arr = sortArray(arr); // First, sort the array
+  arr = sortArray(arr); // First, sort the array (First we have to  sort array)
   let result = [];
 
   if (arr.length === 0) return result;
