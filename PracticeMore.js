@@ -1368,6 +1368,14 @@ console.log(countFrequency([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]));
 console.log(countFrequency([10, 20, 10, 30, 20, 30, 30]));
 // Output: { '10': 2, '20': 2, '30': 3 }
 
+let frequencyObject = countFrequency([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]);
+
+console.log(frequencyObject); // Output: { '1': 1, '2': 2, '3': 3, '4': 4 }
+console.log(frequencyObject[2]); // Output: 2 (count of number 2)
+console.log(frequencyObject[3]); // Output: 3 (count of number 3)
+console.log(frequencyObject.3); // Output: 3 (count of number 3)
+
+
 //! ================================================================================================
 //! ================================================================================================
 
