@@ -642,7 +642,6 @@ function Fibonacci(num) {
     b = next;
     result += a + " "; // Concatenating the result
   }
-
   return result;
 }
 
@@ -1361,10 +1360,6 @@ function countFrequency(arr) {
   return frequency;
 }
 
-// Example Usage
-console.log(countFrequency([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]));
-// Output: { '1': 1, '2': 2, '3': 3, '4': 4 }
-
 console.log(countFrequency([10, 20, 10, 30, 20, 30, 30]));
 // Output: { '10': 2, '20': 2, '30': 3 }
 
@@ -1374,6 +1369,97 @@ console.log(frequencyObject); // Output: { '1': 1, '2': 2, '3': 3, '4': 4 }
 console.log(frequencyObject[2]); // Output: 2 (count of number 2)
 console.log(frequencyObject[3]); // Output: 3 (count of number 3)
 console.log(frequencyObject); // Output: 3 (count of number 3)
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Occurrence Frequency of an  each Element in an String
+//! ===============================
+
+function countCharFrequency(str) {
+  let frequency = {}; // Object to store character frequency
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]; // Get the current character
+    if (frequency[char] === undefined) {
+      frequency[char] = 1; // If not found, initialize to 1
+    } else {
+      frequency[char]++; // Increment count
+    }
+  }
+
+  return frequency;
+}
+
+console.log(countCharFrequency("programming"));
+// Output: { p: 1, r: 2, o: 1, g: 2, a: 1, m: 2, i: 1, n: 1 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the duplicate Element in an String
+//! ===============================
+
+function findDuplicateChars(str) {
+  let frequency = {}; // Object to store character frequency
+  let duplicates = []; // Array to store duplicate characters
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (frequency[char] === undefined) {
+      frequency[char] = 1; // If not found, initialize to 1
+    } else {
+      frequency[char]++; // Increment count
+    }
+  }
+
+  // Find characters with frequency > 1
+  for (let char in frequency) {
+    console.log(frequency[char]);
+    if (frequency[char] > 1) {
+      duplicates.push(char);
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(findDuplicateChars("programming"));
+// Output: ['r', 'g', 'm']
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the duplicate Element in an array
+//! ===============================
+
+function findDuplicateElements(arr) {
+  let frequency = {}; // Object to store element frequency
+  let duplicates = []; // Array to store duplicate elements
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+    if (frequency[element] === undefined) {
+      frequency[element] = 1; // If not found, initialize to 1
+    } else {
+      frequency[element]++; // Increment count
+    }
+  }
+  // Find elements with frequency > 1
+  for (let key in frequency) {
+    if (frequency[key] > 1) {
+      duplicates.push(Number(key)); // Convert key back to number (optional for numbers)
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(findDuplicateElements([1, 2, 3, 4, 3, 2, 1, 5]));
+// Output: [1, 2, 3]
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1406,7 +1492,7 @@ function sortArray(arr) {
 //! ===============================
 
 function removeDuplicates(arr) {
-  arr = sortArray(arr); // First, sort the array
+  arr = sortArray(arr); // First, sort the array (First we have to  sort array)
   let result = [];
 
   if (arr.length === 0) return result;
@@ -1425,6 +1511,30 @@ function removeDuplicates(arr) {
 let arrRemoveDuplicate = [1, 1, 2, 3, 4, 5, 2, 2];
 console.log(removeDuplicates(arrRemoveDuplicate));
 // Output: [1, 2, 3, 4, 5]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeDuplicates from string
+//! ===============================
+
+function removeDuplicateChars(arr) {
+  let result = []; // Store unique characters
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!result.includes(arr[i])) {
+      // Check if character is already in result
+      result.push(arr[i]); // Add unique character
+    }
+  }
+
+  return result;
+}
+
+// Example Usage:
+console.log(removeDuplicateChars([1, 2, 3, 2, 2, 2, 3, 4, 5, 6]));
+// [ 1, 2, 3, 4, 5, 6 ]
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1452,31 +1562,31 @@ console.log(removeDuplicateChars("hello")); // Output: "helo"
 
 //--------------------------------------------
 
-function removeDuplicateChars2(str) {
-  let result = ""; // Store unique characters
+// function removeDuplicateChars2(str) {
+//   let result = ""; // Store unique characters
 
-  for (let i = 0; i < str.length; i++) {
-    let isDuplicate = false;
+//   for (let i = 0; i < str.length; i++) {
+//     let isDuplicate = false;
 
-    // Check if the character already exists in the result
-    for (let j = 0; j < result.length; j++) {
-      if (str[i] === result[j]) {
-        isDuplicate = true;
-        break; // No need to check further
-      }
-    }
+//     // Check if the character already exists in the result
+//     for (let j = 0; j < result.length; j++) {
+//       if (str[i] === result[j]) {
+//         isDuplicate = true;
+//         break; // No need to check further
+//       }
+//     }
 
-    // If not duplicate, add it to result
-    if (!isDuplicate) {
-      result += str[i];
-    }
-  }
+//     // If not duplicate, add it to result
+//     if (!isDuplicate) {
+//       result += str[i];
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(removeDuplicateChars2("programming")); // Output: "progamin"
-console.log(removeDuplicateChars2("hello")); // Output: "helo"
+// console.log(removeDuplicateChars2("programming")); // Output: "progamin"
+// console.log(removeDuplicateChars2("hello")); // Output: "helo"
 
 //! ================================================================================================
 //! ================================================================================================
