@@ -12,7 +12,8 @@
 //! Example: The length of a fence needed to surround a yard or the distance around a running track.
 // Units: Regular units (e.g., meters, centimeters).
 
-//! ============= Rectangle ==================
+//! ============= Rectangle ==============
+
 // Rectangle:
 // Area: length * width
 // Perimeter: 2 * (length + width)
@@ -1180,6 +1181,8 @@ function findSecondLargestSmallest(arr) {
     }
   }
 
+  //? ===================================================
+
   let smallest = arr[0];
 
   // Find the smallest element
@@ -1465,7 +1468,7 @@ console.log(findDuplicateElements([1, 2, 3, 4, 3, 2, 1, 5]));
 //! ================================================================================================
 
 //! ===============================
-//! sortArray
+//! sortArray (bubble sort)
 //! ===============================
 
 function sortArray(arr) {
@@ -1483,6 +1486,9 @@ function sortArray(arr) {
   }
   return arr;
 }
+
+console.log(sortArray([1, 3, 4, 5, 2]));
+// [ 1, 2, 3, 4, 5 ]
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1560,33 +1566,93 @@ function removeDuplicateChars(str) {
 console.log(removeDuplicateChars("programming")); // Output: "progamin"
 console.log(removeDuplicateChars("hello")); // Output: "helo"
 
-//--------------------------------------------
+//! ================================================================================================
+//! ================================================================================================
 
-// function removeDuplicateChars2(str) {
-//   let result = ""; // Store unique characters
+//! ===============================
+//! Merge two sorted arrays.
+//! ===============================
 
-//   for (let i = 0; i < str.length; i++) {
-//     let isDuplicate = false;
+function mergeSortedArrays(arr1, arr2) {
+  let mergedArray = [];
+  let i = 0,
+    j = 0;
 
-//     // Check if the character already exists in the result
-//     for (let j = 0; j < result.length; j++) {
-//       if (str[i] === result[j]) {
-//         isDuplicate = true;
-//         break; // No need to check further
-//       }
-//     }
+  // Compare elements from both arrays and push the smaller one
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      mergedArray.push(arr1[i]);
+      i++;
+    } else {
+      mergedArray.push(arr2[j]);
+      j++;
+    }
+  }
 
-//     // If not duplicate, add it to result
-//     if (!isDuplicate) {
-//       result += str[i];
-//     }
-//   }
+  // Push remaining elements from arr1 (if any)
+  while (i < arr1.length) {
+    mergedArray.push(arr1[i]);
+    i++;
+  }
 
-//   return result;
-// }
+  // Push remaining elements from arr2 (if any)
+  while (j < arr2.length) {
+    mergedArray.push(arr2[j]);
+    j++;
+  }
 
-// console.log(removeDuplicateChars2("programming")); // Output: "progamin"
-// console.log(removeDuplicateChars2("hello")); // Output: "helo"
+  return mergedArray;
+}
+
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6, 7, 8];
+const resultMerged = mergeSortedArrays(arr1, arr2);
+console.log(resultMerged); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+
+/*
+Iteration explanation:
+
+Initial arrays:
+arr1 = [1, 3, 5]
+arr2 = [2, 4, 6, 7, 8]
+
+Step 1: Compare 1 and 2 -> 1 is smaller, push 1 -> mergedArray = [1]
+Step 2: Compare 3 and 2 -> 2 is smaller, push 2 -> mergedArray = [1, 2]
+Step 3: Compare 3 and 4 -> 3 is smaller, push 3 -> mergedArray = [1, 2, 3]
+Step 4: Compare 5 and 4 -> 4 is smaller, push 4 -> mergedArray = [1, 2, 3, 4]
+Step 5: Compare 5 and 6 -> 5 is smaller, push 5 -> mergedArray = [1, 2, 3, 4, 5]
+
+Now arr1 is fully traversed.
+
+Step 6: Push remaining arr2 elements: 6 -> mergedArray = [1, 2, 3, 4, 5, 6]
+Step 7: Push remaining arr2 elements: 7 -> mergedArray = [1, 2, 3, 4, 5, 6, 7]
+Step 8: Push remaining arr2 elements: 8 -> mergedArray = [1, 2, 3, 4, 5, 6, 7, 8]
+
+Final merged array:
+[1, 2, 3, 4, 5, 6, 7, 8]
+*/
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Check if two arrays are equal or not.
+//! ===============================
+
+function areArraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(areArraysEqual([1, 2, 3], [1, 2, 3])); // true
+console.log(areArraysEqual([1, 2, 3], [3, 2, 1])); // false
 
 //! ================================================================================================
 //! ================================================================================================
