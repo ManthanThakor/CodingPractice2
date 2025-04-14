@@ -181,42 +181,42 @@
 // }
 // // console.log(oddEven(numbb1)); //The given Number 19 is odd number
 
-//! ===============================
-// Sum of array
-//! ===============================
+// //! ===============================
+// // Sum of array
+// //! ===============================
 
-const numberSumArr = [10, 20, 30, 40, 50];
+// const numberSumArr = [10, 20, 30, 40, 50];
 
-function numberSum(arr) {
-  let sum = 0;
+// function numberSum(arr) {
+//   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
-}
-// console.log(`Sum of Array : ${numberSum(numberSumArr)}`); //Sum of Array : 150
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
+// // console.log(`Sum of Array : ${numberSum(numberSumArr)}`); //Sum of Array : 150
 
-//! ===============================
-// Find The Maximum Of ARRAY
-//! ===============================
-const maxNumArray = [10, 28, 42, 11, 23];
+// //! ===============================
+// // Find The Maximum Of ARRAY
+// //! ===============================
+// const maxNumArray = [10, 28, 42, 11, 23];
 
-function maxNum(arr) {
-  if (arr.length === 0) {
-    return 0;
-  }
+// function maxNum(arr) {
+//   if (arr.length === 0) {
+//     return 0;
+//   }
 
-  let max = arr[0];
+//   let max = arr[0];
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-  return max;
-}
-// console.log(`max numb in array ${maxNum(maxNumArray)}`);// max numb in array 42
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       max = arr[i];
+//     }
+//   }
+//   return max;
+// }
+// // console.log(`max numb in array ${maxNum(maxNumArray)}`);// max numb in array 42
 
 //! ===============================
 // Sum of All even Number in Array
@@ -346,33 +346,33 @@ function SumEvenNum(Arr12) {
 
 // function power(base, exponent) {
 //   if (exponent === 0) {
-//     return 1;
+// //     return 1;
+// //   }
+// //   return base * power(base, exponent - 1); // Recursive case
+// // }
+
+// // // console.log(power(2, 3)); // Output: 8 (2^3)
+// // // console.log(power(5, 0)); // Output: 1 (5^0)
+
+// //! ===============================
+// // Find Duplicate Number in Array
+// //! ===============================
+
+// let arr = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+
+// function findDuplicates(arr) {
+//   let duplicates = [];
+//   let index = 0;
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] == arr[j]) {
+//         duplicates[index] = arr[i];
+//         index++;
+//       }
+//     }
 //   }
-//   return base * power(base, exponent - 1); // Recursive case
+//   return duplicates;
 // }
-
-// // console.log(power(2, 3)); // Output: 8 (2^3)
-// // console.log(power(5, 0)); // Output: 1 (5^0)
-
-//! ===============================
-// Find Duplicate Number in Array
-//! ===============================
-
-let arr = [1, 2, 3, 4, 2, 3, 5, 6, 1];
-
-function findDuplicates(arr) {
-  let duplicates = [];
-  let index = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] == arr[j]) {
-        duplicates[index] = arr[i];
-        index++;
-      }
-    }
-  }
-  return duplicates;
-}
 
 // console.log("Duplicate elements are: ", findDuplicates(arr));
 // Output: Duplicate elements are: [1, 2, 3]
@@ -395,172 +395,172 @@ function findDuplicatesStr(str) {
   return duplicates;
 }
 // console.log("Duplicate elements in string are: ", findDuplicatesStr(strDup));
-// Output: Duplicate elements in string are:  an
+// // Output: Duplicate elements in string are:  an
 
-//! ===============================
-// Remove Duplicate number from array
-//! ===============================
+// //! ===============================
+// // Remove Duplicate number from array
+// //! ===============================
 
-let arr21 = [1, 2, 3, 4, 2, 3, 5, 6, 1];
-function removeDuplicate(arr) {
-  let withoutDuplicate = [];
-  // let index = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let isDuplicate = false; // this is the flag for exit loop
-    for (let j = 0; j < withoutDuplicate.length; j++) {
-      if (arr[i] == withoutDuplicate[j]) {
-        isDuplicate = true;
-      }
-    }
-    if (!isDuplicate) {
-      withoutDuplicate.push(arr[i]);
-      // // or
-      // withoutDuplicate[index] = arr[i];
-      // index++;
-    }
-  }
-  return withoutDuplicate;
-}
+// let arr21 = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+// function removeDuplicate(arr) {
+//   let withoutDuplicate = [];
+//   // let index = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     let isDuplicate = false; // this is the flag for exit loop
+//     for (let j = 0; j < withoutDuplicate.length; j++) {
+//       if (arr[i] == withoutDuplicate[j]) {
+//         isDuplicate = true;
+//       }
+//     }
+//     if (!isDuplicate) {
+//       withoutDuplicate.push(arr[i]);
+//       // // or
+//       // withoutDuplicate[index] = arr[i];
+//       // index++;
+//     }
+//   }
+//   return withoutDuplicate;
+// }
 
-// console.log("Array without duplicates: ", removeDuplicate(arr21));
+// // console.log("Array without duplicates: ", removeDuplicate(arr21));
 
-//========== method - 2 =============
+// //========== method - 2 =============
 
-let arrdupli = [1, 2, 3, 4, 2, 3, 5, 6, 1];
+// let arrdupli = [1, 2, 3, 4, 2, 3, 5, 6, 1];
 
-function dupliarr2(arr) {
-  let withoutDuplicateArr = [];
-  for (let i = 0; i <= arr.length - 1; i++) {
-    if (!withoutDuplicateArr.includes(arr[i])) {
-      withoutDuplicateArr.push(arr[i]);
-    }
-  }
-  return withoutDuplicateArr;
-}
-// console.log(dupliarr2(arrdupli));
-// [ 1, 2, 3, 4, 5, 6 ]
+// function dupliarr2(arr) {
+//   let withoutDuplicateArr = [];
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (!withoutDuplicateArr.includes(arr[i])) {
+//       withoutDuplicateArr.push(arr[i]);
+//     }
+//   }
+//   return withoutDuplicateArr;
+// }
+// // console.log(dupliarr2(arrdupli));
+// // [ 1, 2, 3, 4, 5, 6 ]
 
-//! ===============================
-// Remove Duplicate character from string
-//! ===============================
+// //! ===============================
+// // Remove Duplicate character from string
+// //! ===============================
 
-let strRemoveDuplicate = "manthan";
-function strRemoveDuplicateFun(str) {
-  let withoutDuplicateString = "";
-  for (let i = 0; i < str.length; i++) {
-    let duplicate = false;
-    for (let j = 0; j < withoutDuplicateString.length; j++) {
-      if (str[i] == withoutDuplicateString[j]) {
-        duplicate = true;
-      }
-    }
-    if (!duplicate) {
-      withoutDuplicateString += str[i];
-    }
-  }
-  return withoutDuplicateString;
-}
+// let strRemoveDuplicate = "manthan";
+// function strRemoveDuplicateFun(str) {
+//   let withoutDuplicateString = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let duplicate = false;
+//     for (let j = 0; j < withoutDuplicateString.length; j++) {
+//       if (str[i] == withoutDuplicateString[j]) {
+//         duplicate = true;
+//       }
+//     }
+//     if (!duplicate) {
+//       withoutDuplicateString += str[i];
+//     }
+//   }
+//   return withoutDuplicateString;
+// }
 
-// console.log(
-//   "Array without duplicates: ",
-//   strRemoveDuplicateFun(strRemoveDuplicate)
-// );
+// // console.log(
+// //   "Array without duplicates: ",
+// //   strRemoveDuplicateFun(strRemoveDuplicate)
+// // );
 
 // output:  Array without duplicates: manth
 
-//! ===============================
-// sort array with bubble sort
-//! ===============================
+// //! ===============================
+// // sort array with bubble sort
+// //! ===============================
 
-const sortArr = [10, 2, 23, 13, 42, 11, 45, 22, 12];
-function bubble(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-        // [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // using destructuring
-      }
-    }
-  }
-  return arr;
-}
-// console.log(bubble(sortArr));
-// [2, 10, 11, 12, 13, 22, 23, 42, 45]
+// const sortArr = [10, 2, 23, 13, 42, 11, 45, 22, 12];
+// function bubble(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = 0; j < arr.length - 1 - i; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//         // [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // using destructuring
+//       }
+//     }
+//   }
+//   return arr;
+// }
+// // console.log(bubble(sortArr));
+// // [2, 10, 11, 12, 13, 22, 23, 42, 45]
 
-//! ===============================
-// reverse the arr
-//! ===============================
+// //! ===============================
+// // reverse the arr
+// //! ===============================
 
-const arr32 = [1, 2, 3, 4, 5];
+// const arr32 = [1, 2, 3, 4, 5];
 
-function revArr(arr) {
-  let arr2 = [];
+// function revArr(arr) {
+//   let arr2 = [];
 
-  for (let i = arr.length - 1; i >= 0; i--) {
-    arr2.push(arr[i]);
-  }
-  return arr2;
-}
-// console.log(revArr(arr32));
-// [ 5, 4, 3, 2, 1 ]
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     arr2.push(arr[i]);
+//   }
+//   return arr2;
+// }
+// // console.log(revArr(arr32));
+// // [ 5, 4, 3, 2, 1 ]
 
 //! ===============================
 // remove duplicate from Array and then sort array with bubble sort
 //! ===============================
 
-const dupliarr = [
-  1, 2, 3, 4, 2, 2, 10, 2, 3, 4, 5, 6, 7, 8, 33, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 2, 90, 2, 2, 2, 2, 2,
-];
+// const dupliarr = [
+//   1, 2, 3, 4, 2, 2, 10, 2, 3, 4, 5, 6, 7, 8, 33, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3,
+//   3, 3, 3, 2, 90, 2, 2, 2, 2, 2,
+// ];
 
-function removeDup(arr) {
-  let pureArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (!pureArr.includes(arr[i])) {
-      pureArr.push(arr[i]);
-    }
-  }
-  // console.log(`without Duplicate Array : ${pureArr}`);
-  // without Duplicate Array [1, 2, 3, 4, 10, 5, 6, 7, 8, 33, 90];
+// function removeDup(arr) {
+//   let pureArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!pureArr.includes(arr[i])) {
+//       pureArr.push(arr[i]);
+//     }
+//   }
+//   // console.log(`without Duplicate Array : ${pureArr}`);
+//   // without Duplicate Array [1, 2, 3, 4, 10, 5, 6, 7, 8, 33, 90];
 
-  sorttArr(pureArr);
+//   sorttArr(pureArr);
 
-  return pureArr;
-}
+//   return pureArr;
+// }
 
-function sorttArr(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-}
-// console.log(`without Duplicate + sorted Array ${removeDup(dupliarr)}`);
+// function sorttArr(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = 0; j < arr.length - 1 - i; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
+// }
+// // console.log(`without Duplicate + sorted Array ${removeDup(dupliarr)}`);
 // without Duplicate + sorted Array 1,2,3,4,5,6,7,8,10,33,90
 
-//! ===============================
-// flat the Array
-//! ===============================
+// //! ===============================
+// // flat the Array
+// //! ===============================
 
-function flattenArray(arr) {
-  let flatArray = [];
+// function flattenArray(arr) {
+//   let flatArray = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      flatArray = flatArray.concat(flattenArray(arr[i]));
-    } else {
-      flatArray.push(arr[i]);
-    }
-  }
-  return flatArray;
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       flatArray = flatArray.concat(flattenArray(arr[i]));
+//     } else {
+//       flatArray.push(arr[i]);
+//     }
+//   }
+//   return flatArray;
+// }
 
-const nestedArray = [1, [2, [3, 4]], 5];
-// console.log(flattenArray(nestedArray));
-// Output: [1, 2, 3, 4, 5]
+// const nestedArray = [1, [2, [3, 4]], 5];
+// // console.log(flattenArray(nestedArray));
+// // Output: [1, 2, 3, 4, 5]

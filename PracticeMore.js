@@ -2123,8 +2123,7 @@ function flattenArray(arr) {
     let value = stack.pop(); // Pop value from stack
 
     if (Array.isArray(value)) {
-      // If value is array, push its elements in reverse order
-      for (let i = value.length - 1; i >= 0; i--) {
+      for (let i = 0; i < value.length; i++) {
         stack.push(value[i]);
       }
     } else {
@@ -2182,6 +2181,25 @@ console.log(flattenArray([1, [2, [3, [4]], 5]]));
 // Final step: reverse the result array
 // Before reverse: [5, 4, 3, 2, 1]
 // After reverse: [1, 2, 3, 4, 5]
+
+// -------------------------- METHOD 3 ----------------------------------------
+
+function flattenArray(arr) {
+  let flatArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flatArray = flatArray.concat(flattenArray(arr[i]));
+    } else {
+      flatArray.push(arr[i]);
+    }
+  }
+  return flatArray;
+}
+
+const nestedArray = [1, [2, [3, 4]], 5];
+console.log(flattenArray(nestedArray));
+// Output: [1, 2, 3, 4, 5]
 
 //! ================================================================================================
 //! ================================================================================================
