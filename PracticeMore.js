@@ -2255,33 +2255,27 @@ function countVowelsAndConsonants(str) {
 let result = countVowelsAndConsonants("Hello World");
 console.log(result); // Output: { vowels: 3, consonants: 7 }
 
-//? ======================================================================
+//! ================================================================================================
+//! ================================================================================================
 
-function countVowelsAndConsonants(str) {
-  let vowelCount = 0;
-  let consonantCount = 0;
+//! ===============================
+//! Find the length of the string (without using .length)
+//! ===============================
 
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    let lowerChar = char.toLowerCase();
-
-    if (lowerChar >= "a" && lowerChar <= "z") {
-      if (
-        lowerChar === "a" ||
-        lowerChar === "e" ||
-        lowerChar === "i" ||
-        lowerChar === "o" ||
-        lowerChar === "u"
-      ) {
-        vowelCount++;
-      } else {
-        consonantCount++;
-      }
-    }
+function getStringLength(str) {
+  let count = 0;
+  for (let char of str) {
+    count++;
   }
-
-  return { vowels: vowelCount, consonants: consonantCount };
+  return count;
 }
 
-// Example usage:
-console.log(result); // Output: { vowels: 3, consonants: 7 }
+let str = "Hello, world!";
+console.log(getStringLength(str)); // Output: 13
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Count Vowels and Consonants in a String
+//! ===============================
