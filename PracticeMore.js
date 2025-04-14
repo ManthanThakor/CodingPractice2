@@ -269,6 +269,28 @@ checkNumber(0);
 //! ================================================================================================
 //! ================================================================================================
 
+//? ----------------------------------------------
+//! Grade Checker
+//? ----------------------------------------------
+
+function assignGrade(marks) {
+  if (marks >= 90) {
+    console.log("Grade: A");
+  } else if (marks >= 75) {
+    console.log("Grade: B");
+  } else if (marks >= 50) {
+    console.log("Grade: C");
+  } else {
+    console.log("Fail");
+  }
+}
+
+// Example usage
+assignGrade(85); // Output: Grade: B
+
+//! ================================================================================================
+//! ================================================================================================
+
 //! ===============================
 // leap year or not
 //! ===============================
@@ -439,6 +461,27 @@ function GreaterNum(a, b, c, d) {
 
 GreaterNum(10, 20, 5, 30); // Output: 30 is the Greatest number
 GreaterNum(50, 40, 60, 30); // Output: 60 is the Greatest number
+
+//?  -----------------------------------
+
+function GreaterNum(a, b, c, d) {
+  // Compare all the numbers and find the greatest
+  let largest = a;
+
+  if (b > largest) {
+    largest = b;
+  }
+  if (c > largest) {
+    largest = c;
+  }
+  if (d > largest) {
+    largest = d;
+  }
+
+  console.log(largest + " is the greatest number");
+}
+
+GreaterNum(10, 20, 5, 30); // Output: 30 is the greatest number
 
 //! ================================================================================================
 //! ================================================================================================
@@ -692,11 +735,14 @@ function factorial2(num) {
   let result = 1;
 
   for (let i = 1; i <= num; i++) {
-    console.log((result = result * i));
+    result = result * i; // first multiply
+    console.log(result); // then log
   }
 }
+
 const factNum2 = 5;
 factorial2(factNum2);
+// Output:
 // 1
 // 2
 // 6
@@ -711,6 +757,28 @@ factorial2(factNum2);
 //? Second iteration (i = 2): result = (result)1 * (i)2 → result = 2.
 //? Third iteration (i = 3): result = (result)2 * (i)3 → result = 6.
 // And so on, until i reaches the number num.
+
+//! ============ FOR PRINT SERIES OF FACTORIAL with  helper loop===================
+
+function factorial2(num) {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result = result * i;
+  }
+  return result;
+}
+
+const factNum234 = 5;
+
+// Call the function for each step
+for (let i = 1; i <= factNum234; i++) {
+  console.log(factorial2(i));
+}
+// 1
+// 2
+// 6
+// 24
+// 120
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1099,9 +1167,6 @@ let Aww = 20;
 let Bww = Aww++;
 console.log(Aww); // 21
 console.log(Bww); // 20
-
-//! ================================================================================================
-//! ================================================================================================
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1636,11 +1701,100 @@ Final merged array:
 //! ================================================================================================
 
 //! ===============================
+//! flattenArray
+//! ===============================
+
+// ------------------------------------------------------------------
+
+let arr = [1, [2, [3, [4]], 5]];
+let flatArr = arr.flat(Infinity);
+console.log(flatArr); // [1, 2, 3, 4, 5]
+
+// ------------------------------------------------------------------
+
+function flattenArray(arr) {
+  let stack = [...arr]; // Initial stack: [1, [2, [3, [4]], 5]]
+  let result = []; // Initial result: []
+
+  while (stack.length) {
+    let value = stack.pop(); // Pop value from stack
+
+    // Iteration log:
+    // After pop:
+    // stack = [...current stack values...]
+    // result = [...current result values...]
+
+    if (Array.isArray(value)) {
+      // If value is array, push its elements in reverse order
+      for (let i = value.length - 1; i >= 0; i--) {
+        stack.push(value[i]);
+      }
+    } else {
+      // If value is not array, push to result
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+flattenArray([1, [2, [3, [4]], 5]]);
+
+// Example logs:
+// Iteration 1:
+// Popped: [2, [3, [4]], 5]
+// stack: [1, 2, [3, [4]], 5]
+// result: []
+
+// Iteration 2:
+// Popped: 5
+// stack: [1, 2, [3, [4]]]
+// result: [5]
+
+// Iteration 3:
+// Popped: [3, [4]]
+// stack: [1, 2, 3, [4]]
+// result: [5]
+
+// Iteration 4:
+// Popped: [4]
+// stack: [1, 2, 3, 4]
+// result: [5]
+
+// Iteration 5:
+// Popped: 4
+// stack: [1, 2, 3]
+// result: [5, 4]
+
+// Iteration 6:
+// Popped: 3
+// stack: [1, 2]
+// result: [5, 4, 3]
+
+// Iteration 7:
+// Popped: 2
+// stack: [1]
+// result: [5, 4, 3, 2]
+
+// Iteration 8:
+// Popped: 1
+// stack: []
+// result: [5, 4, 3, 2, 1]
+
+// Final step: reverse the result array
+// Before reverse: [5, 4, 3, 2, 1]
+// After reverse: [1, 2, 3, 4, 5]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
 //! Check if two arrays are equal or not.
 //! ===============================
 
 function areArraysEqual(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false;
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
 
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
@@ -1653,6 +1807,36 @@ function areArraysEqual(arr1, arr2) {
 
 console.log(areArraysEqual([1, 2, 3], [1, 2, 3])); // true
 console.log(areArraysEqual([1, 2, 3], [3, 2, 1])); // false
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Move all zeros to the end of the array.
+//! ===============================
+
+function moveZerosToEnd(arr) {
+  let result = [];
+  let zeroCount = 0;
+
+  // Push non-zero elements to result
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      result.push(arr[i]);
+    } else {
+      zeroCount++;
+    }
+  }
+
+  // Push zeros at the end
+  for (let i = 0; i < zeroCount; i++) {
+    result.push(0);
+  }
+
+  return result;
+}
+
+console.log(moveZerosToEnd([0, 1, 0, 3, 12])); // [1, 3, 12, 0, 0]
 
 //! ================================================================================================
 //! ================================================================================================
