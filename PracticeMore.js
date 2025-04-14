@@ -1701,93 +1701,6 @@ Final merged array:
 //! ================================================================================================
 
 //! ===============================
-//! flattenArray
-//! ===============================
-
-// ------------------------------------------------------------------
-
-let arr = [1, [2, [3, [4]], 5]];
-let flatArr = arr.flat(Infinity);
-console.log(flatArr); // [1, 2, 3, 4, 5]
-
-// ------------------------------------------------------------------
-
-function flattenArray(arr) {
-  let stack = [...arr]; // Initial stack: [1, [2, [3, [4]], 5]]
-  let result = []; // Initial result: []
-
-  while (stack.length) {
-    let value = stack.pop(); // Pop value from stack
-
-    // Iteration log:
-    // After pop:
-    // stack = [...current stack values...]
-    // result = [...current result values...]
-
-    if (Array.isArray(value)) {
-      // If value is array, push its elements in reverse order
-      for (let i = value.length - 1; i >= 0; i--) {
-        stack.push(value[i]);
-      }
-    } else {
-      // If value is not array, push to result
-      result.push(value);
-    }
-  }
-  return result;
-}
-
-flattenArray([1, [2, [3, [4]], 5]]);
-
-// Example logs:
-// Iteration 1:
-// Popped: [2, [3, [4]], 5]
-// stack: [1, 2, [3, [4]], 5]
-// result: []
-
-// Iteration 2:
-// Popped: 5
-// stack: [1, 2, [3, [4]]]
-// result: [5]
-
-// Iteration 3:
-// Popped: [3, [4]]
-// stack: [1, 2, 3, [4]]
-// result: [5]
-
-// Iteration 4:
-// Popped: [4]
-// stack: [1, 2, 3, 4]
-// result: [5]
-
-// Iteration 5:
-// Popped: 4
-// stack: [1, 2, 3]
-// result: [5, 4]
-
-// Iteration 6:
-// Popped: 3
-// stack: [1, 2]
-// result: [5, 4, 3]
-
-// Iteration 7:
-// Popped: 2
-// stack: [1]
-// result: [5, 4, 3, 2]
-
-// Iteration 8:
-// Popped: 1
-// stack: []
-// result: [5, 4, 3, 2, 1]
-
-// Final step: reverse the result array
-// Before reverse: [5, 4, 3, 2, 1]
-// After reverse: [1, 2, 3, 4, 5]
-
-//! ================================================================================================
-//! ================================================================================================
-
-//! ===============================
 //! Check if two arrays are equal or not.
 //! ===============================
 
@@ -2055,29 +1968,38 @@ console.log(add3DArrays(arr1111, arr2222));
 //! =============================
 
 function multiplyMatrices(A, B) {
-  const m = A.length;
-  const n = A[0].length;
-  const p = B[0].length;
+  // Get matrix dimensions
+  const m = A.length; // Number of rows in A
+  const n = A[0].length; // Number of columns in A (and rows in B)
+  const p = B[0].length; // Number of columns in B
 
+  // Validate matrix multiplication condition: A's columns must match B's rows
   if (n !== B.length) {
     throw new Error("Number of columns in A must equal number of rows in B.");
   }
 
-  const result = [];
+  const result = []; // Initialize the result matrix
 
+  // Loop over each row of matrix A
   for (let i = 0; i < m; i++) {
-    const row = []; // Create a new row for each iteration
+    const row = []; // Start a new row for the result matrix
+
+    // Loop over each column of matrix B
     for (let j = 0; j < p; j++) {
-      let sum = 0;
+      let sum = 0; // Temporary sum for the current cell [i][j]
+
+      // Perform dot product between A's row and B's column
       for (let k = 0; k < n; k++) {
-        sum += A[i][k] * B[k][j];
+        sum += A[i][k] * B[k][j]; // Multiply and accumulate
       }
-      row.push(sum); // Push the calculated sum into the row
+
+      row.push(sum); // Add the computed value to the current row
     }
-    result.push(row); // Push the completed row into the result
+
+    result.push(row); // Add the completed row to the result matrix
   }
 
-  return result;
+  return result; // Return the resulting matrix
 }
 
 // Example matrices
@@ -2098,6 +2020,171 @@ console.log(resultS);
 //   [58, 64],
 //   [139, 154],
 // ];
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Matrix Diagonal Traversal (3D)
+//! Traverse all diagonals in a 3D matrix (if applicable).Matrix Diagonal Traversal (3D)
+//! ===============================
+
+// ✅ In 3D, diagonal means:
+// Elements where all indices are the same: matrix[x][x][x] (main diagonal).
+// We can also think of "cross-section diagonals" if needed.
+// For simplicity, let’s do main diagonal (easy to understand and implement).
+
+function traverseMainDiagonal(matrix) {
+  const n = matrix.length;
+  const diagonal = [];
+
+  for (let i = 0; i < n; i++) {
+    diagonal.push(matrix[i][i][i]);
+  }
+
+  return diagonal;
+}
+const matrix = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ],
+  [
+    [10, 11, 12],
+    [13, 14, 15],
+    [16, 17, 18],
+  ],
+  [
+    [19, 20, 21],
+    [22, 23, 24],
+    [25, 26, 27],
+  ],
+];
+
+console.log(traverseMainDiagonal(matrix)); // Output: [1, 14, 27]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Find the Maximum Element in a 3D Array
+//! ===============================
+
+const matrix2 = [
+  [
+    [1, 5, 3],
+    [4, 2, 6],
+  ],
+  [
+    [7, 0, 9],
+    [3, 8, 2],
+  ],
+];
+
+function findMaxIn3D(matrix) {
+  let max = -Infinity;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      for (let k = 0; k < matrix[i][j].length; k++) {
+        if (matrix[i][j][k] > max) {
+          max = matrix[i][j][k];
+        }
+      }
+    }
+  }
+
+  return max;
+}
+
+console.log(findMaxIn3D(matrix2)); // Output: 9
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! flattenArray
+//! ===============================
+
+// ------------------------- METHOD 1 -----------------------------------------
+
+let arr = [1, [2, [3, [4]], 5]];
+let flatArr = arr.flat(3);
+console.log(flatArr); // [1, 2, 3, 4, 5]
+
+// -------------------------- METHOD 2 ----------------------------------------
+
+function flattenArray(arr) {
+  let stack = [...arr]; // Initial stack: [1, [2, [3, [4]], 5]]
+  let result = []; // Initial result: []
+
+  while (stack.length > 0) {
+    let value = stack.pop(); // Pop value from stack
+
+    if (Array.isArray(value)) {
+      // If value is array, push its elements in reverse order
+      for (let i = value.length - 1; i >= 0; i--) {
+        stack.push(value[i]);
+      }
+    } else {
+      // If value is not array, push to result
+      result.push(value);
+    }
+  }
+  return result.reverse(); // Reverse to get correct order
+}
+
+console.log(flattenArray([1, [2, [3, [4]], 5]]));
+// Output: [1, 2, 3, 4, 5]
+
+// Example logs:
+// Iteration 1:
+// Popped: [2, [3, [4]], 5]
+// stack: [1, 2, [3, [4]], 5]
+// result: []
+
+// Iteration 2:
+// Popped: 5
+// stack: [1, 2, [3, [4]]]
+// result: [5]
+
+// Iteration 3:
+// Popped: [3, [4]]
+// stack: [1, 2, 3, [4]]
+// result: [5]
+
+// Iteration 4:
+// Popped: [4]
+// stack: [1, 2, 3, 4]
+// result: [5]
+
+// Iteration 5:
+// Popped: 4
+// stack: [1, 2, 3]
+// result: [5, 4]
+
+// Iteration 6:
+// Popped: 3
+// stack: [1, 2]
+// result: [5, 4, 3]
+
+// Iteration 7:
+// Popped: 2
+// stack: [1]
+// result: [5, 4, 3, 2]
+
+// Iteration 8:
+// Popped: 1
+// stack: []
+// result: [5, 4, 3, 2, 1]
+
+// Final step: reverse the result array
+// Before reverse: [5, 4, 3, 2, 1]
+// After reverse: [1, 2, 3, 4, 5]
+
+//! ================================================================================================
+//! ================================================================================================
 
 //! ===============================
 //! Check if a String is a Palindrome
