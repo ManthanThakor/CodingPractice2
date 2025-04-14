@@ -1842,6 +1842,264 @@ console.log(moveZerosToEnd([0, 1, 0, 3, 12])); // [1, 3, 12, 0, 0]
 //! ================================================================================================
 
 //! ===============================
+// iterate over an 2D array
+//! ===============================
+
+let Arr2d = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+function Arr2D(arr) {
+  let result = []; // Use an array to collect the rows
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      result.push(arr[i][j]); // Push elements into the row array
+    }
+  }
+  return result; // Return the result array
+}
+
+console.log(Arr2D(Arr2d));
+// [
+//   1, 2, 3, 4, 5,
+//   6, 7, 8, 9
+// ]
+
+//?  ----------------------- Print in string -----------------------------------
+
+function Arr2D(arr) {
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      result += arr[i][j] + " "; // Add a space between elements
+    }
+    result += "\n"; // Add a line break after each row
+  }
+  return result;
+}
+
+console.log(Arr2D(Arr2d));
+// 1 2 3
+// 4 5 6
+// 7 8 9
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// iterate over an 3D array
+//! ===============================
+
+let arr3d = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+  [
+    [7, 8, 9],
+    [10, 11, 12],
+  ],
+];
+
+function arr3D(arr) {
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      for (let k = 0; k < arr[i][j].length; k++) {
+        result = result + arr[i][j][k];
+      }
+      result = result + "\n";
+    }
+  }
+  return result;
+}
+
+console.log(arr3D(arr3d));
+// 123
+// 456
+// 789
+// 101112
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// addition of array
+//! =============================
+
+let arr122 = [1, 2, 3];
+let arr222 = [4, 5, 6];
+
+function addArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return "Arrays must be of the same length";
+  }
+
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i] + arr2[i]);
+  }
+
+  return result;
+}
+
+console.log(addArrays(arr122, arr222)); // Output: [5, 7, 9]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// addition of 2d array
+//! =============================
+
+let arr11 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+let arr22 = [
+  [7, 8, 9],
+  [10, 11, 12],
+];
+
+function add2DArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length || arr1[0].length !== arr2[0].length) {
+    return "Arrays must have the same dimensions";
+  }
+
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let row = [];
+    for (let j = 0; j < arr1[i].length; j++) {
+      row.push(arr1[i][j] + arr2[i][j]);
+    }
+    result.push(row);
+  }
+  return result;
+}
+
+console.log(add2DArrays(arr11, arr22));
+// Output:
+// [
+//   [8, 10, 12],
+//   [14, 16, 18]
+// ]
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// addition of 3d array
+//! =============================
+
+let arr1111 = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+  [
+    [7, 8, 9],
+    [10, 11, 12],
+  ],
+];
+
+let arr2222 = [
+  [
+    [1, 1, 1],
+    [2, 2, 2],
+  ],
+  [
+    [3, 3, 3],
+    [4, 4, 4],
+  ],
+];
+
+function add3DArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length)
+    return "Arrays must have the same dimensions";
+
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let twoDResult = [];
+    for (let j = 0; j < arr1[i].length; j++) {
+      let oneDResult = [];
+      for (let k = 0; k < arr1[i][j].length; k++) {
+        oneDResult.push(arr1[i][j][k] + arr2[i][j][k]);
+      }
+      twoDResult.push(oneDResult);
+    }
+    result.push(twoDResult);
+  }
+
+  return result;
+}
+console.log(add3DArrays(arr1111, arr2222));
+// [
+//   [
+//     [2, 3, 4],
+//     [6, 7, 8],
+//   ],
+//   [
+//     [10, 11, 12],
+//     [14, 15, 16],
+//   ],
+// ];
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// multiplyMatrices
+//! =============================
+
+function multiplyMatrices(A, B) {
+  const m = A.length;
+  const n = A[0].length;
+  const p = B[0].length;
+
+  if (n !== B.length) {
+    throw new Error("Number of columns in A must equal number of rows in B.");
+  }
+
+  const result = [];
+
+  for (let i = 0; i < m; i++) {
+    const row = []; // Create a new row for each iteration
+    for (let j = 0; j < p; j++) {
+      let sum = 0;
+      for (let k = 0; k < n; k++) {
+        sum += A[i][k] * B[k][j];
+      }
+      row.push(sum); // Push the calculated sum into the row
+    }
+    result.push(row); // Push the completed row into the result
+  }
+
+  return result;
+}
+
+// Example matrices
+const A = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+const B = [
+  [7, 8],
+  [9, 10],
+  [11, 12],
+];
+
+const resultS = multiplyMatrices(A, B);
+console.log(resultS);
+// [
+//   [58, 64],
+//   [139, 154],
+// ];
+
+//! ===============================
 //! Check if a String is a Palindrome
 //! ===============================
 
