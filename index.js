@@ -558,7 +558,6 @@ function flattenArray(arr) {
       flatArray.push(arr[i]);
     }
   }
-
   return flatArray;
 }
 
