@@ -647,7 +647,7 @@ function pattern9(num2) {
   }
   return pattern;
 }
-// console.log(pattern9(num9));
+console.log(pattern9(num9));
 // *****
 // *   *
 // *   *

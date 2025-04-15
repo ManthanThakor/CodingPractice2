@@ -837,7 +837,7 @@ function oddFactorials(n) {
 
     // Calculate factorial using a second for loop
     for (let j = 1; j <= i; j++) {
-      fact *= j;
+      fact = fact * j;
     }
 
     console.log(i + "! =", fact); // Print the factorial of each odd number
@@ -878,7 +878,6 @@ const PrimeOrNot = (num) => {
       return `The Number: ${num} is not a prime number`;
     }
   }
-
   return `The Number: ${num} is a prime number`;
 };
 
@@ -993,7 +992,7 @@ console.log(countDigits(0)); // Output: 1
 const isArmstrongNumber = (num) => {
   let numStr = num.toString();
   let sum = 0;
-  for (let i = 0; i <= numStr.length; i++) {
+  for (let i = 0; i < numStr.length; i++) {
     sum = sum + Number(numStr[i]) ** numStr.length;
   }
   if (sum === num) {
@@ -1003,7 +1002,32 @@ const isArmstrongNumber = (num) => {
   }
 };
 
-console.log(isArmstrongNumber(153)); // "153 is an Armstrong number"
+//! =======================================
+
+function customPower(base, exponent) {
+  let result = 1;
+  for (let i = 0; i < exponent; i++) {
+    result = result * base;
+  }
+  return result;
+}
+
+const isArmstrongNumber2 = (num) => {
+  let numStr = num.toString();
+  let sum = 0;
+
+  for (let i = 0; i < numStr.length; i++) {
+    sum += customPower(Number(numStr[i]), numStr.length);
+  }
+
+  if (sum === num) {
+    return `${num} is an Armstrong number`;
+  } else {
+    return `${num} is not an Armstrong number`;
+  }
+};
+
+console.log(isArmstrongNumber2(153)); // "153 is an Armstrong number"
 console.log(isArmstrongNumber(9474)); // "9474 is an Armstrong number"
 console.log(isArmstrongNumber(123)); // "123 is not an Armstrong number"
 
@@ -1092,7 +1116,7 @@ console.log(ReverseNum(number)); // Output: 54321
 //  7
 //  7 5
 //  7 5 2
-//  7 5 2 3
+//  7 5 2 3  || take n = 3257
 //! ===============================
 
 function printReversePattern(n) {
@@ -1103,7 +1127,7 @@ function printReversePattern(n) {
     let row = "";
 
     for (let j = length - 1; j >= length - 1 - i; j--) {
-      row = row + " " + numStr[j];
+      row = row + numStr[j];
     }
 
     console.log(row);
@@ -1587,7 +1611,7 @@ console.log(removeDuplicates(arrRemoveDuplicate));
 //! ================================================================================================
 
 //! ===============================
-//! removeDuplicates from string
+//! removeDuplicates from array
 //! ===============================
 
 function removeDuplicateChars(arr) {
@@ -1755,7 +1779,7 @@ console.log(moveZerosToEnd([0, 1, 0, 3, 12])); // [1, 3, 12, 0, 0]
 //! ================================================================================================
 
 //! ===============================
-// iterate over an 2D array
+// Iterate over an 2D array
 //! ===============================
 
 let Arr2d = [

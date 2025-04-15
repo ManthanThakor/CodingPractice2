@@ -16,7 +16,6 @@ function revStr(str) {
 // Check Palindrome or Not
 //! ===============================
 
-const testString = "RaceCar";
 function isPalindrome(str) {
   let lowerStr = "";
   for (let i = 0; i < str.length; i++) {
@@ -35,7 +34,8 @@ function isPalindrome(str) {
   return true;
 }
 
-// console.log(isPalindrome(testString)); // Outputs: true
+const testString = "RaceCar";
+console.log(isPalindrome(testString)); // Outputs: true
 
 //! ===============================
 // take input a character  and determine  its an lowercase alphabet , upper alphabet  or  digit or other character
