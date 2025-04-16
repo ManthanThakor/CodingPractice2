@@ -1,41 +1,41 @@
-//! ===============================
-// reverse the string
-//! ===============================
+// //! ===============================
+// // reverse the string
+// //! ===============================
 
-const str = "Hi, How are You?";
-function revStr(str) {
-  let result = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    result = result + str[i];
-  }
-  return result;
-}
-// console.log(`Reversed Str = ${revStr(str)}`); // Reversed Str = ?uoY era woH ,iH
+// const str = "Hi, How are You?";
+// function revStr(str) {
+//   let result = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     result = result + str[i];
+//   }
+//   return result;
+// }
+// // console.log(`Reversed Str = ${revStr(str)}`); // Reversed Str = ?uoY era woH ,iH
 
-//! ===============================
-// Check Palindrome or Not
-//! ===============================
+// //! ===============================
+// // Check Palindrome or Not
+// //! ===============================
 
-function isPalindrome(str) {
-  let lowerStr = "";
-  for (let i = 0; i < str.length; i++) {
-    lowerStr = lowerStr + str[i].toLowerCase();
-  }
-  let start = 0;
-  let end = str.length - 1;
+// function isPalindrome(str) {
+//   let lowerStr = "";
+//   for (let i = 0; i < str.length; i++) {
+//     lowerStr = lowerStr + str[i].toLowerCase();
+//   }
+//   let start = 0;
+//   let end = str.length - 1;
 
-  while (start < end) {
-    if (lowerStr[start] !== lowerStr[end]) {
-      return false;
-    }
-    start++;
-    end--;
-  }
-  return true;
-}
+//   while (start < end) {
+//     if (lowerStr[start] !== lowerStr[end]) {
+//       return false;
+//     }
+//     start++;
+//     end--;
+//   }
+//   return true;
+// }
 
-const testString = "RaceCar";
-console.log(isPalindrome(testString)); // Outputs: true
+// const testString = "RaceCar";
+// console.log(isPalindrome(testString)); // Outputs: true
 
 //! ===============================
 // take input a character  and determine  its an lowercase alphabet , upper alphabet  or  digit or other character
@@ -157,197 +157,197 @@ const lowerStr = toLowerCase(inputStr);
 //   return upperStr;
 // }
 
-//! ===============================
-// Count Vowels in String
-//! ===============================
+// //! ===============================
+// // Count Vowels in String
+// //! ===============================
 
-const Str2 = "ManthanRocks";
+// const Str2 = "ManthanRocks";
 
-function Vowels(Str2) {
-  let VowelsCount = 0;
-  let Vowels = "aeiouAEIOU";
-  for (let i = 0; i < Str2.length; i++) {
-    if (Vowels.includes(Str2[i])) {
-      VowelsCount++;
-    }
-  }
-  return VowelsCount;
-}
-// console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
+// function Vowels(Str2) {
+//   let VowelsCount = 0;
+//   let Vowels = "aeiouAEIOU";
+//   for (let i = 0; i < Str2.length; i++) {
+//     if (Vowels.includes(Str2[i])) {
+//       VowelsCount++;
+//     }
+//   }
+//   return VowelsCount;
+// }
+// // console.log(`Total VowelCount of string is : ${Vowels(Str2)}`); //Total VowelCount of string is : 3
 
-//? ---------
-//? Method-2
-//? ---------
+// //? ---------
+// //? Method-2
+// //? ---------
 
-function Vowels2(Str2) {
-  let VowelsCount = 0;
-  for (let i = 0; i < Str2.length; i++) {
-    let char = Str2[i];
-    if (
-      char === "a" ||
-      char === "e" ||
-      char === "i" ||
-      char === "o" ||
-      char === "u" ||
-      char === "A" ||
-      char === "E" ||
-      char === "I" ||
-      char === "O" ||
-      char === "U"
-    ) {
-      VowelsCount++;
-    }
-  }
-  return VowelsCount;
-}
+// function Vowels2(Str2) {
+//   let VowelsCount = 0;
+//   for (let i = 0; i < Str2.length; i++) {
+//     let char = Str2[i];
+//     if (
+//       char === "a" ||
+//       char === "e" ||
+//       char === "i" ||
+//       char === "o" ||
+//       char === "u" ||
+//       char === "A" ||
+//       char === "E" ||
+//       char === "I" ||
+//       char === "O" ||
+//       char === "U"
+//     ) {
+//       VowelsCount++;
+//     }
+//   }
+//   return VowelsCount;
+// }
 
-// console.log(`Total VowelCount of string is : ${Vowels2(Str29)}`); //Total VowelCount of string is : 3
+// // console.log(`Total VowelCount of string is : ${Vowels2(Str29)}`); //Total VowelCount of string is : 3
 
-//! ===============================
-// check the character is Counting Vowels or Consonants
-//! ===============================
+// //! ===============================
+// // check the character is Counting Vowels or Consonants
+// //! ===============================
 
-let ch = "U";
+// let ch = "U";
 
-if (
-  ch === "a" ||
-  ch === "A" ||
-  ch === "e" ||
-  ch === "E" ||
-  ch === "i" ||
-  ch === "I" ||
-  ch === "o" ||
-  ch === "O" ||
-  ch === "u" ||
-  ch === "U"
-) {
-  // console.log(`The character ${ch} is a vowel.`);
-} else {
-  // console.log(`The character ${ch} is a consonant.`);
-}
+// if (
+//   ch === "a" ||
+//   ch === "A" ||
+//   ch === "e" ||
+//   ch === "E" ||
+//   ch === "i" ||
+//   ch === "I" ||
+//   ch === "o" ||
+//   ch === "O" ||
+//   ch === "u" ||
+//   ch === "U"
+// ) {
+//   // console.log(`The character ${ch} is a vowel.`);
+// } else {
+//   // console.log(`The character ${ch} is a consonant.`);
+// }
 
-//! ===============================
-// Counting Vowels and Consonants
-//! ===============================
+// //! ===============================
+// // Counting Vowels and Consonants
+// //! ===============================
 
-let strVowel = "Hello World";
-function countVowelsAndConsonants(str) {
-  let vowelsCount = 0;
-  let consonantCount = 0;
-  const vowel = "aeiouAEIOU";
+// let strVowel = "Hello World";
+// function countVowelsAndConsonants(str) {
+//   let vowelsCount = 0;
+//   let consonantCount = 0;
+//   const vowel = "aeiouAEIOU";
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    const charCode = char.charCodeAt(0); // Get the ASCII code
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     const charCode = char.charCodeAt(0); // Get the ASCII code
 
-    // lowercase letter : a to z (ASCII codes 97 to 122)
-    // uppercase letter : A to Z (ASCII codes 65 to 90)
-    if (
-      (charCode >= 97 && charCode <= 122) ||
-      (charCode >= 65 && charCode <= 90)
-    ) {
-      if (vowel.includes(char)) {
-        vowelsCount++;
-      } else {
-        consonantCount++;
-      }
-    }
-  }
-  return { vowelsCount, consonantCount };
-}
+//     // lowercase letter : a to z (ASCII codes 97 to 122)
+//     // uppercase letter : A to Z (ASCII codes 65 to 90)
+//     if (
+//       (charCode >= 97 && charCode <= 122) ||
+//       (charCode >= 65 && charCode <= 90)
+//     ) {
+//       if (vowel.includes(char)) {
+//         vowelsCount++;
+//       } else {
+//         consonantCount++;
+//       }
+//     }
+//   }
+//   return { vowelsCount, consonantCount };
+// }
 
-// console.log(countVowelsAndConsonants(strVowel)); // Output: { vowelsCount: 3, consonantsCount: 7 }
+// // console.log(countVowelsAndConsonants(strVowel)); // Output: { vowelsCount: 3, consonantsCount: 7 }
 
 //! ===============================
 // Counting Vowels and Consonants and give the which character are vowel and consonants
-//! ===============================
+// //! ===============================
 
-let strVowel3 = "Hello World";
+// let strVowel3 = "Hello World";
 
-function countVowelsAndConsonants3(str) {
-  let vowelsCount = 0;
-  let consonantCount = 0;
-  const vowel = "aeiouAEIOU";
-  const vowels = []; // Array to store vowel characters
-  const consonants = []; // Array to store consonant characters
+// function countVowelsAndConsonants3(str) {
+//   let vowelsCount = 0;
+//   let consonantCount = 0;
+//   const vowel = "aeiouAEIOU";
+//   const vowels = []; // Array to store vowel characters
+//   const consonants = []; // Array to store consonant characters
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    const charCode = char.charCodeAt(0); // Get the ASCII code
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     const charCode = char.charCodeAt(0); // Get the ASCII code
 
-    // Check if the character is a letter
-    if (
-      (charCode >= 97 && charCode <= 122) || // lowercase letters
-      (charCode >= 65 && charCode <= 90) // uppercase letters
-    ) {
-      if (vowel.includes(char)) {
-        vowelsCount++;
-        vowels.push(char); // Add to vowels array
-      } else {
-        consonantCount++;
-        consonants.push(char); // Add to consonants array
-      }
-    }
-  }
+//     // Check if the character is a letter
+//     if (
+//       (charCode >= 97 && charCode <= 122) || // lowercase letters
+//       (charCode >= 65 && charCode <= 90) // uppercase letters
+//     ) {
+//       if (vowel.includes(char)) {
+//         vowelsCount++;
+//         vowels.push(char); // Add to vowels array
+//       } else {
+//         consonantCount++;
+//         consonants.push(char); // Add to consonants array
+//       }
+//     }
+//   }
 
-  return { vowelsCount, consonantCount, vowels, consonants };
-}
+//   return { vowelsCount, consonantCount, vowels, consonants };
+// }
 
-// Example usage
-const result3 = countVowelsAndConsonants3(strVowel3);
-// console.log(`Vowels Count: ${result3.vowelsCount}`); // Output: Vowels Count: 3
-// console.log(`Consonants Count: ${result3.consonantCount}`); // Output: Consonants Count: 7
-// console.log(`Vowels: ${result3.vowels}`); // Output: Vowels: e, o, o
-// console.log(`Consonants: ${result3.consonants}`); // Output: Consonants: H, l, l, W, r, l, d
+// // Example usage
+// const result3 = countVowelsAndConsonants3(strVowel3);
+// // console.log(`Vowels Count: ${result3.vowelsCount}`); // Output: Vowels Count: 3
+// // console.log(`Consonants Count: ${result3.consonantCount}`); // Output: Consonants Count: 7
+// // console.log(`Vowels: ${result3.vowels}`); // Output: Vowels: e, o, o
+// // console.log(`Consonants: ${result3.consonants}`); // Output: Consonants: H, l, l, W, r, l, d
 
-//! ===============================
-// String Compression :
-// finding duplicates works by comparing each character with all subsequent characters in the string.
-//! ===============================
+// //! ===============================
+// // String Compression :
+// // finding duplicates works by comparing each character with all subsequent characters in the string.
+// //! ===============================
 
-let compressStr = "aaabbbbcccaaa";
+// let compressStr = "aaabbbbcccaaa";
 
-function compressString(str) {
-  let count = 1;
-  let compressed = "";
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] == str[i + 1]) {
-      count++;
-    } else {
-      // Append the character
-      compressed += str[i];
-      // Append the count only if it's greater than 1
-      if (count > 1) {
-        compressed += " " + count + " ";
-      }
-      count = 1; // Reset count
-    }
-  }
-  return compressed;
-}
+// function compressString(str) {
+//   let count = 1;
+//   let compressed = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == str[i + 1]) {
+//       count++;
+//     } else {
+//       // Append the character
+//       compressed += str[i];
+//       // Append the count only if it's greater than 1
+//       if (count > 1) {
+//         compressed += " " + count + " ";
+//       }
+//       count = 1; // Reset count
+//     }
+//   }
+//   return compressed;
+// }
 
-// console.log(compressString(compressStr));
-// a 3 b 4 c 3 a 3
+// // console.log(compressString(compressStr));
+// // a 3 b 4 c 3 a 3
 
 //! ===============================
 // Substrings of a String
-//! ===============================
+// //! ===============================
 
-function generateSubstrings(str) {
-  let substrings = [];
-  for (let i = 0; i < str.length; i++) {
-    let temp = "";
-    for (let j = i; j < str.length; j++) {
-      temp += str[j];
-      substrings.push(temp);
-    }
-  }
-  return substrings;
-}
+// function generateSubstrings(str) {
+//   let substrings = [];
+//   for (let i = 0; i < str.length; i++) {
+//     let temp = "";
+//     for (let j = i; j < str.length; j++) {
+//       temp += str[j];
+//       substrings.push(temp);
+//     }
+//   }
+//   return substrings;
+// }
 
-// Input
-// console.log(generateSubstrings("abc"));
-// Output: ["a", "ab", "abc", "b", "bc", "c"]
+// // Input
+// // console.log(generateSubstrings("abc"));
+// // Output: ["a", "ab", "abc", "b", "bc", "c"]
 
 //! ===============================
 // take two string and check the one string is a substring of another string
@@ -394,140 +394,141 @@ const string1 = "Hello, world!";
 const string2 = "world";
 // console.log(isSubstring(string1, string2)); // Output: true
 
-//! ===============================
-// swapCase in  string
-//! ===============================
+// //! ===============================
+// // swapCase in  string
+// //! ===============================
 
-function swapCase(str) {
-  let swapped = "";
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (char === char.toUpperCase()) {
-      swapped += char.toLowerCase();
-    } else {
-      swapped += char.toUpperCase();
-    }
-  }
-  return swapped;
-}
+// function swapCase(str) {
+//   let swapped = "";
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     if (char === char.toUpperCase()) {
+//       swapped += char.toLowerCase();
+//     } else {
+//       swapped += char.toUpperCase();
+//     }
+//   }
+//   return swapped;
+// }
 
-// Input
+// // Input
 // console.log(swapCase("Hello World!")); // Output: "hELLO wORLD!"
 
-//! ===============================
-// characterFrequencyCount
-//! ===============================
+// //! ===============================
+// // characterFrequencyCount
+// //! ===============================
 
-function characterFrequencyCount(str) {
-  const frequency = {};
+// function characterFrequencyCount(str) {
+//   const frequency = {};
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (frequency[char]) {
-      frequency[char] += 1;
-    } else {
-      frequency[char] = 1;
-    }
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     if (frequency[char]) {
+//       frequency[char] += 1;
+//     } else {
+//       frequency[char] = 1;
+//     }
+//   }
 
-  return frequency;
-}
+//   return frequency;
+// }
 
-// Example usage
-const inputString = "hello world";
-const result = characterFrequencyCount(inputString);
-// console.log(result);
-// { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
+// // Example usage
+// const inputString = "hello world";
+// const result = characterFrequencyCount(inputString);
+// // console.log(result);
+// // { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
 
-//! ===============================
-// find largest character from string and its length also
-//! ===============================
+// //! ===============================
+// // find largest character from string and its length also
+// //! ===============================
 
-let strLargest = "the dog is the danger then the cat";
+// let strLargest = "the dog is the danger then the cat";
 
-function strLargest(str) {
-  let largestWord = "";
-  let arr = str.split(" ");
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length > largestWord.length) {
-      largestWord = arr[i];
-    }
-  }
-  const lengthOfLargestWord = largestWord.length;
-  return { largestWord, lengthOfLargestWord };
-}
+// function strLargest2(str) {
+//   let largestWord = "";
+//   let arr = str.split(" ");
+//   console.log(arr);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].length > largestWord.length) {
+//       largestWord = arr[i];
+//     }
+//   }
+//   const lengthOfLargestWord = largestWord.length;
+//   return { largestWord, lengthOfLargestWord };
+// }
 
-// console.log(strLargest(strLargest));
-// { largestWord: 'danger', lengthOfLargestWord: 6 }
+// console.log(strLargest2(strLargest));
+// // { largestWord: 'danger', lengthOfLargestWord: 6 }
 
-//! ===============================
-//  compare two string
-//! ===============================
+// //! ===============================
+// //  compare two string
+// //! ===============================
 
-// ======== Method 1 =========
+// // ======== Method 1 =========
 
-const compstring = "Hello";
-const compstring2 = "Hello";
+// const compstring = "Hello";
+// const compstring2 = "Hello";
 
-if (compstring === compstring2) {
-  // console.log("The strings are equal.");
-} else {
-  // console.log("The strings are not equal.");
-}
-// ======== Method 2 =========
+// if (compstring === compstring2) {
+//   // console.log("The strings are equal.");
+// } else {
+//   // console.log("The strings are not equal.");
+// }
+// // ======== Method 2 =========
 
-if (compstring.includes(compstring2)) {
-  // console.log(`The string "${compstring}" contains "${compstring2}".`);
-} else {
-  // console.log(`The string "${compstring}" does not contain "${compstring2}".`);
-}
+// if (compstring.includes(compstring2)) {
+//   // console.log(`The string "${compstring}" contains "${compstring2}".`);
+// } else {
+//   // console.log(`The string "${compstring}" does not contain "${compstring2}".`);
+// }
 
-// ======== Method 3 =========
+// // ======== Method 3 =========
 
-if (compstring.length === compstring2.length) {
-  // console.log("The strings have the same length.");
-} else {
-  // console.log("The strings do not have the same length.");
-}
+// if (compstring.length === compstring2.length) {
+//   // console.log("The strings have the same length.");
+// } else {
+//   // console.log("The strings do not have the same length.");
+// }
 
-//! ===============================
-// slice and concatenate strings without using methods
-//! ===============================
+// //! ===============================
+// // slice and concatenate strings without using methods
+// //! ===============================
 
-// ======== Method 1 =========
+// // ======== Method 1 =========
 
-let str1 = "Hello, ";
-let str2 = "World!";
+// let str1 = "Hello, ";
+// let str2 = "World!";
 
-// Slicing the strings using indexing
-let slicedStr1 = str1[0] + str1[1] + str1[2] + str1[3] + str1[4]; // Slices "Hello"
-let slicedStr2 = str2[1] + str2[2] + str2[3] + str2[4]; // Slices "orld"
+// // Slicing the strings using indexing
+// let slicedStr1 = str1[0] + str1[1] + str1[2] + str1[3] + str1[4]; // Slices "Hello"
+// let slicedStr2 = str2[1] + str2[2] + str2[3] + str2[4]; // Slices "orld"
 
-// Concatenating the sliced strings
-let result12 = slicedStr1 + slicedStr2;
+// // Concatenating the sliced strings
+// let result12 = slicedStr1 + slicedStr2;
 
-// console.log(result12);
-// Output: "Helloorld"
+// // console.log(result12);
+// // Output: "Helloorld"
 
-// ======== Method 2 =========
+// // ======== Method 2 =========
 
-let str31 = "Hello, ";
-let str32 = "World!";
+// let str31 = "Hello, ";
+// let str32 = "World!";
 
-function sliceString(str, start, end) {
-  let sliced = "";
-  for (let i = start; i < end; i++) {
-    sliced += str[i];
-  }
-  return sliced;
-}
+// function sliceString(str, start, end) {
+//   let sliced = "";
+//   for (let i = start; i < end; i++) {
+//     sliced += str[i];
+//   }
+//   return sliced;
+// }
 
-// Slicing the strings using the function
-let slicedStr13 = sliceString(str31, 0, 5); // Slices "Hello"
-let slicedStr23 = sliceString(str32, 1, 5); // Slices "orld"
+// // Slicing the strings using the function
+// let slicedStr13 = sliceString(str31, 0, 5); // Slices "Hello"
+// let slicedStr23 = sliceString(str32, 1, 5); // Slices "orld"
 
-// Concatenating the sliced strings
-let result33 = slicedStr13 + slicedStr23;
+// // Concatenating the sliced strings
+// let result33 = slicedStr13 + slicedStr23;
 
-// console.log(result33);
-// Output: "Helloorld"
+// // console.log(result33);
+// // Output: "Helloorld"

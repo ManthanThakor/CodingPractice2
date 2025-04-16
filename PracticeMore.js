@@ -2229,6 +2229,27 @@ console.log(flattenArray(nestedArray));
 //! ================================================================================================
 
 //! ===============================
+// Sum of All even Number in Array
+//! ===============================
+
+const Arr12 = [1, 2, 3, 4, 5, 6];
+
+function SumEvenNum(Arr12) {
+  let sum = 0;
+  for (let i = 0; i < Arr12.length; i++) {
+    if (Arr12[i] % 2 === 0) {
+      sum = sum + Arr12[i];
+    }
+  }
+  return sum;
+}
+// console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`);
+// Sum of All even Number in Array 12
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
 //! Check if a String is a Palindrome
 //! ===============================
 
@@ -2283,6 +2304,53 @@ console.log(result); // Output: { vowels: 3, consonants: 7 }
 //! ================================================================================================
 
 //! ===============================
+//! Count Vowels and Consonants in a String (Track Characters + Count)
+//! ===============================
+
+function countVowelsAndConsonants2(str) {
+  let vowelsList = "aeiouAEIOU";
+  let vowelCount = 0;
+  let consonantCount = 0;
+  let vowelsFound = [];
+  let consonantsFound = [];
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+      if (vowelsList.includes(char)) {
+        vowelCount++;
+        vowelsFound.push(char);
+      } else {
+        consonantCount++;
+        consonantsFound.push(char);
+      }
+    }
+  }
+
+  return {
+    vowels: vowelCount,
+    consonants: consonantCount,
+    vowelChars: vowelsFound,
+    consonantChars: consonantsFound,
+  };
+}
+// Example usage:
+let result23 = countVowelsAndConsonants2("Hello World");
+console.log(result23);
+/*
+{
+  vowels: 3,
+  consonants: 7,
+  vowelChars: ['e', 'o', 'o'],
+  consonantChars: ['H', 'l', 'l', 'W', 'r', 'l', 'd']
+}
+*/
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
 //! Find the length of the string (without using .length)
 //! ===============================
 
@@ -2301,5 +2369,214 @@ console.log(getStringLength(str)); // Output: 13
 //! ================================================================================================
 
 //! ===============================
-//! Count Vowels and Consonants in a String
+//! Check if two strings are anagrams.
 //! ===============================
+
+// To check if two strings are anagrams, you need to see whether both strings have:
+// The same characters
+// With same frequency
+// But possibly in different order
+
+//? Input:  "listen", "silent"
+// Output: true  // They are anagrams
+
+//? Input: "hello", "world"
+// Output: false
+
+function characterFrequencyCount(str) {
+  const frequency = {};
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (frequency[char] === undefined) {
+      frequency[char] = 1; // first time
+    } else {
+      frequency[char] += 1; // already exists
+    }
+  }
+
+  return frequency;
+}
+
+function isAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
+
+  const freq1 = characterFrequencyCount(str1);
+  const freq2 = characterFrequencyCount(str2);
+
+  for (let key in freq1) {
+    if (freq1[key] !== freq2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world")); // false
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// find largest character from string and its length also
+//! ===============================
+
+let strLargest = "the dog is the danger then the cat";
+
+function strLargest2(str) {
+  let largestWord = "";
+  let arr = str.split(" ");
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > largestWord.length) {
+      console.log(arr[i].length);
+      largestWord = arr[i];
+    }
+  }
+  const lengthOfLargestWord = largestWord.length;
+  return { largestWord, lengthOfLargestWord };
+}
+
+console.log(strLargest2(strLargest));
+// { largestWord: 'danger', lengthOfLargestWord: 6 }
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// swapCase in  string
+//! ===============================
+
+function swapCase(str) {
+  let swapped = "";
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char === char.toUpperCase()) {
+      swapped += char.toLowerCase();
+    } else {
+      swapped += char.toUpperCase();
+    }
+  }
+  return swapped;
+}
+
+// Input
+console.log(swapCase("Hello World!")); // Output: "hELLO wORLD!"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+// slice and concatenate strings without using methods
+//! ===============================
+
+// ======== Method 1 =========
+
+let str1 = "Hello, ";
+let str2 = "World!";
+
+// Slicing the strings using indexing
+let slicedStr1 = str1[0] + str1[1] + str1[2] + str1[3] + str1[4]; // Slices "Hello"
+let slicedStr2 = str2[1] + str2[2] + str2[3] + str2[4]; // Slices "orld"
+
+// Concatenating the sliced strings
+let result12 = slicedStr1 + slicedStr2;
+
+// console.log(result12);
+// Output: "Helloorld"
+
+// ======== Method 2 =========
+
+let str31 = "Hello, ";
+let str32 = "World!";
+
+function sliceString(str, start, end) {
+  let sliced = "";
+  for (let i = start; i < end; i++) {
+    sliced += str[i];
+  }
+  return sliced;
+}
+
+// Slicing the strings using the function
+let slicedStr13 = sliceString(str31, 0, 5); // Slices "Hello"
+let slicedStr23 = sliceString(str32, 1, 5); // Slices "orld"
+
+// Concatenating the sliced strings
+let result33 = slicedStr13 + slicedStr23;
+
+// console.log(result33);
+// Output: "Helloorld"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//  compare two string
+//! ===============================
+
+// ======== Method 1 =========
+
+const compString = "Hello";
+const compString2 = "Hello";
+
+if (compString === compString2) {
+  console.log("The strings are equal.");
+} else {
+  console.log("The strings are not equal.");
+}
+// ======== Method 2 =========
+
+if (compString.includes(compString2)) {
+  console.log(`The string "${compString}" contains "${compString2}".`);
+} else {
+  console.log(`The string "${compString}" does not contain "${compString2}".`);
+}
+
+// ======== Method 3 =========
+
+if (compString.length === compString2.length) {
+  console.log("The strings have the same length.");
+} else {
+  console.log("The strings do not have the same length.");
+}
+
+//! ================================================================================================
+//! ================================================================================================
+
+function isSubsequence(str1, str2) {
+  let i = 0,
+    j = 0;
+
+  // Traverse both strings
+  while (i < str1.length && j < str2.length) {
+    // If characters match, move to the next character in str2
+    if (str1[i] === str2[j]) {
+      j++;
+    }
+    i++;
+  }
+
+  // If j reaches the end of str2, it means all characters in str2 were found in order in str1
+  return j === str2.length;
+}
+
+// Test cases
+console.log(isSubsequence("abcde", "ace")); // true
+// Iterations:
+// i = 0, j = 0 → 'a' === 'a' → j++, i++
+// i = 1, j = 1 → 'b' !== 'c' → i++
+// i = 2, j = 1 → 'c' === 'c' → j++, i++
+// i = 3, j = 2 → 'd' !== 'e' → i++
+// i = 4, j = 2 → 'e' === 'e' → j++, i++
+// j === str2.length → return true
+
+console.log(isSubsequence("abcde", "aec")); // false
+// Iterations:
+// i = 0, j = 0 → 'a' === 'a' → j++, i++
+// i = 1, j = 1 → 'b' !== 'e' → i++
+// i = 2, j = 1 → 'c' !== 'e' → i++
+// i = 3, j = 1 → 'd' !== 'e' → i++
+// i = 4, j = 1 → 'e' === 'e' → j++, i++
+// i = 5, j = 2 → loop ends, j !== str2.length → return false

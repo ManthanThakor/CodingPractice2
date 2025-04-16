@@ -378,23 +378,23 @@ function SumEvenNum(Arr12) {
 // Output: Duplicate elements are: [1, 2, 3]
 
 //! ===============================
-// Find Duplicate Character in String
-//! ===============================
+// // Find Duplicate Character in String
+// //! ===============================
 
-let strDup = "manthan";
+// let strDup = "manthan";
 
-function findDuplicatesStr(str) {
-  let duplicates = "";
-  for (let i = 0; i < str.length - 1; i++) {
-    for (let j = i + 1; j < str.length; j++) {
-      if (str[i] == str[j]) {
-        duplicates += str[i];
-      }
-    }
-  }
-  return duplicates;
-}
-// console.log("Duplicate elements in string are: ", findDuplicatesStr(strDup));
+// function findDuplicatesStr(str) {
+//   let duplicates = "";
+//   for (let i = 0; i < str.length - 1; i++) {
+//     for (let j = i + 1; j < str.length; j++) {
+//       if (str[i] == str[j]) {
+//         duplicates += str[i];
+//       }
+//     }
+//   }
+//   return duplicates;
+// }
+// // console.log("Duplicate elements in string are: ", findDuplicatesStr(strDup));
 // // Output: Duplicate elements in string are:  an
 
 // //! ===============================
