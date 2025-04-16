@@ -2687,10 +2687,32 @@ console.log(toTitleCase("hello   world from   manthan"));
 
 //! ================================================================================================
 //! ================================================================================================
+
+//! ===============================
+//! Check if a string contains only digits.
+//! ===============================
+
 function isOnlyDigits(str) {
-  return !isNaN(str) && Number.isInteger(Number(str));
+  if (!isNaN(str) && Number.isInteger(Number(str))) {
+    return true;
+  }
+
+  return false;
+}
+
+// ---------------------------------------
+
+function isOnlyDigits(str) {
+  if (str.length === 0) return false;
+  for (let char of str) {
+    if (char < "0" || char > "9") return false;
+  }
+  return true;
 }
 
 console.log(isOnlyDigits("4567")); // true
 console.log(isOnlyDigits("45.67")); // false (this is a float, not an integer)
 console.log(isOnlyDigits("45abc")); // false
+
+//! ================================================================================================
+//! ================================================================================================
