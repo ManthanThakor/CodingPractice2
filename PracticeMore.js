@@ -2419,7 +2419,7 @@ console.log(isAnagram("hello", "world")); // false
 //! ================================================================================================
 
 //! ===============================
-// find largest character from string and its length also
+//! find largest character from string and its length also
 //! ===============================
 
 let strLargest = "the dog is the danger then the cat";
@@ -2445,7 +2445,7 @@ console.log(strLargest2(strLargest));
 //! ================================================================================================
 
 //! ===============================
-// swapCase in  string
+//! swapCase in  string
 //! ===============================
 
 function swapCase(str) {
@@ -2468,7 +2468,7 @@ console.log(swapCase("Hello World!")); // Output: "hELLO wORLD!"
 //! ================================================================================================
 
 //! ===============================
-// slice and concatenate strings without using methods
+//! slice and concatenate strings without using methods
 //! ===============================
 
 // ======== Method 1 =========
@@ -2513,7 +2513,7 @@ let result33 = slicedStr13 + slicedStr23;
 //! ================================================================================================
 
 //! ===============================
-//  compare two string
+//!  compare two string
 //! ===============================
 
 // ======== Method 1 =========
@@ -2544,6 +2544,10 @@ if (compString.length === compString2.length) {
 
 //! ================================================================================================
 //! ================================================================================================
+
+//! ===============================
+//!  Check if one string is a subsequence of another.
+//! ===============================
 
 function isSubsequence(str1, str2) {
   let i = 0,
@@ -2580,3 +2584,113 @@ console.log(isSubsequence("abcde", "aec")); // false
 // i = 3, j = 1 → 'd' !== 'e' → i++
 // i = 4, j = 1 → 'e' === 'e' → j++, i++
 // i = 5, j = 2 → loop ends, j !== str2.length → return false
+
+//! ============== method 2 =================
+
+const string11 = "Hello, world!";
+const string22 = "world";
+function isSubstring1(str1, str2) {
+  if (str1.includes(str2)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isSubstring1(string11, string22));
+// true
+console.log(isSubstring1("abcde", "abc"));
+// true
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//!  convert a string to upper and lower case without using built-in methods in JavaScript
+//! ===============================
+
+function toUpperCaseManual(str) {
+  let result = "";
+  let lowerA = "a".charCodeAt(0); // 97
+  let lowerZ = "z".charCodeAt(0); // 122
+
+  for (let i = 0; i < str.length; i++) {
+    let code = str.charCodeAt(i);
+    if (code >= lowerA && code <= lowerZ) {
+      result += String.fromCharCode(code - 32); // or: code - ('a' - 'A')
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+function toLowerCaseManual(str) {
+  let result = "";
+  let upperA = "A".charCodeAt(0); // 65
+  let upperZ = "Z".charCodeAt(0); // 90
+
+  for (let i = 0; i < str.length; i++) {
+    let code = str.charCodeAt(i);
+    if (code >= upperA && code <= upperZ) {
+      result += String.fromCharCode(code + 32);
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+console.log(toUpperCaseManual("Hello World!")); // "HELLO WORLD!"
+console.log(toLowerCaseManual("Hello World!")); // "hello world!"
+
+//       Relationship Between Lowercase and Uppercase:
+// For each lowercase letter, its ASCII value is exactly 32 greater than the corresponding uppercase letter. For example:
+// a (97) - A (65) = 32
+// b (98) - B (66) = 32
+// c (99) - C (67) = 32
+// This pattern continues for all lowercase and uppercase letters.
+// Conversion:
+
+// When you have a lowercase letter (e.g., c with ASCII 99), subtracting 32 gives you:
+// charCode = 99 (for c)
+// charCode -= 32; results in charCode = 67 (for C).
+// This way, you convert the character from lowercase to uppercase.
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! Convert the first letter of each word to uppercase. (Title Case)
+//! ===============================
+
+function toTitleCase(str) {
+  const words = str.split(" ");
+  let titleCased = [];
+
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    if (word.length > 0) {
+      let capital = word.charAt(0).toUpperCase();
+      let rest = word.slice(1).toLowerCase();
+      titleCased.push(capital + rest);
+    } else {
+      titleCased.push(""); // Handle multiple spaces
+    }
+  }
+
+  return titleCased.join(" ");
+}
+
+// Example:
+console.log(toTitleCase("hello   world from   manthan"));
+// Output: "Hello   World From   Manthan"
+
+//! ================================================================================================
+//! ================================================================================================
+function isOnlyDigits(str) {
+  return !isNaN(str) && Number.isInteger(Number(str));
+}
+
+console.log(isOnlyDigits("4567")); // true
+console.log(isOnlyDigits("45.67")); // false (this is a float, not an integer)
+console.log(isOnlyDigits("45abc")); // false

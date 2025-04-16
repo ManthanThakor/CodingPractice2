@@ -218,23 +218,23 @@
 // }
 // // console.log(`max numb in array ${maxNum(maxNumArray)}`);// max numb in array 42
 
-//! ===============================
-// Sum of All even Number in Array
-//! ===============================
+// //! ===============================
+// // Sum of All even Number in Array
+// //! ===============================
 
-const Arr12 = [1, 2, 3, 4, 5, 6];
+// const Arr12 = [1, 2, 3, 4, 5, 6];
 
-function SumEvenNum(Arr12) {
-  let sum = 0;
-  for (let i = 0; i < Arr12.length; i++) {
-    if (Arr12[i] % 2 === 0) {
-      sum = sum + Arr12[i];
-    }
-  }
-  return sum;
-}
-// console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`);
-// Sum of All even Number in Array 12
+// function SumEvenNum(Arr12) {
+//   let sum = 0;
+//   for (let i = 0; i < Arr12.length; i++) {
+//     if (Arr12[i] % 2 === 0) {
+//       sum = sum + Arr12[i];
+//     }
+//   }
+//   return sum;
+// }
+// // console.log(`Sum of All even Number in Array ${SumEvenNum(Arr12)}`);
+// // Sum of All even Number in Array 12
 
 // //! ===============================
 // // Reverse the Number
