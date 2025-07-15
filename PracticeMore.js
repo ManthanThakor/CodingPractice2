@@ -2,6 +2,8 @@
 // Area and perimeter
 //! ===============================
 
+//? https://youtube.com/shorts/pebzKDY8M8Q?si=oYcuRm1d9fuiKjRE
+
 //? What is Area?
 //* Definition: The space inside a shape.
 //! Example: How much floor space a room has or how much land a garden covers.
@@ -24,7 +26,7 @@ function Rectangle(length, width) {
   console.log(`Rectangle - Area: ${Area}, Perimeter: ${perimeter}`);
 }
 Rectangle(12, 10);
-// Rectangle - Area: 120, Perimeter: 44
+//? Rectangle - Area: 120, Perimeter: 44
 
 //! ============= Square ==================
 // Square:
@@ -33,11 +35,11 @@ Rectangle(12, 10);
 
 function Square(side) {
   let Area = side * side;
-  let perimeter = 4 * side;
+  let perimeter = side + side + side + side; // 4 * side
   console.log(`Square - Area: ${Area}, Perimeter: ${perimeter}`);
 }
 Square(10);
-// Square - Area: 100, Perimeter: 40
+//? Square - Area: 100, Perimeter: 40
 
 //! ============= Circle ==================
 // Circle:
@@ -50,7 +52,8 @@ function circle(radius) {
   const perimeter = 2 * Math.PI * radius; // 2 × π × r
   console.log(`Circle - Area: ${area}, Circumference: ${perimeter}`);
 }
-circle(7); // Circle - Area: 153.93804002589985, Circumference: 43.982297150257104
+circle(7);
+//? Circle - Area: 153.93804002589985, Circumference: 43.982297150257104
 
 //! ============= Triangle ==================
 // Triangle (assuming base and height):
@@ -62,7 +65,8 @@ function triangle(base, height, side1, side2) {
   const perimeter = base + side1 + side2; // Sum of all sides
   console.log(`Triangle - Area: ${area}, Perimeter: ${perimeter}`);
 }
-triangle(5, 6, 3, 4); // Triangle - Area: 15, Perimeter: 12
+triangle(5, 6, 3, 4);
+//? Triangle - Area: 15, Perimeter: 12
 
 //! ================================================================================================
 //! ================================================================================================
@@ -87,7 +91,7 @@ const StartingRange = 2;
 const EndingRage = 5;
 const InputValue = 3;
 checkNum(StartingRange, EndingRage, InputValue);
-// The value 3 falls within the specified range.
+//? The value 3 falls within the specified range.
 
 //? ----------------------------------------------
 
@@ -104,7 +108,7 @@ const checkNum2 = (StartingRange, EndingRage, InputValue) => {
 };
 
 checkNum2(2, 5, 3);
-// The value 3 falls within the specified range.
+//? The value 3 falls within the specified range.
 
 //? ----------------------------------------------
 
@@ -125,13 +129,13 @@ const checkNum3 = (StartingRange, EndingRage, InputValue) => {
 };
 
 checkNum3(2, 5, 3);
-// The value 3 falls within the specified range.
+//? The value 3 falls within the specified range.
 
 checkNum3(2, 5, 1);
-// The value 1 does not fall within the specified range.
+//? The value 1 does not fall within the specified range.
 
 checkNum3(2, 5, 6);
-// The value 6 does not fall within the specified range.
+//? The value 6 does not fall within the specified range.
 
 //! ================================================================================================
 //! ================================================================================================
@@ -147,9 +151,9 @@ const ValueBetweenTwoNum = (num1, num2) => {
 };
 
 ValueBetweenTwoNum(2, 6);
-// 3
-// 4
-// 5
+//? 3
+//? 4
+//? 5
 
 //! ================================================================================================
 //! ================================================================================================
@@ -164,7 +168,7 @@ const SumOfTwoNumber = (num1, num2) => {
 };
 
 console.log(SumOfTwoNumber(1, 2));
-// 3
+//? 3
 
 //! ================================================================================================
 //! ================================================================================================
@@ -178,7 +182,7 @@ const multiplesNum = (num1, num2) => {
   return result;
 };
 console.log(multiplesNum(2, 3));
-// 6
+//? 6
 
 //? without operator
 
@@ -190,7 +194,7 @@ const multiplesNum2 = (num1, num2) => {
   return result;
 };
 console.log(multiplesNum2(3, 10));
-// 30
+//? 30
 
 //! ================================================================================================
 //! ================================================================================================
@@ -207,24 +211,17 @@ const calculateExponential = (base, exponent) => {
   return `${base} raised to the power of ${exponent} is : ${result}`;
 };
 console.log(calculateExponential(2, 4));
-// 2 raised to the power of 4 is : 16
+//? 2 raised to the power of 4 is : 16
 
-//! ================================================================================================
-//! ================================================================================================
+//? ------------------------
 
-//? ----------------------------------------------
-//! // Odd or even
-//? ----------------------------------------------
+const calculateExponential2 = (base, exponent) => {
+  let result = base ** exponent;
 
-function checkEvenOdd(num) {
-  if (num % 2 === 0) {
-    console.log(num + " is Even");
-  } else {
-    console.log(num + " is Odd");
-  }
-}
-checkEvenOdd(7);
-checkEvenOdd(10);
+  return `${base} raised to the power of ${exponent} is : ${result}`;
+};
+console.log(calculateExponential2(2, 4));
+//? 2 raised to the power of 4 is : 16
 
 //! ================================================================================================
 //! ================================================================================================
@@ -235,16 +232,16 @@ checkEvenOdd(10);
 
 function findLargest(a, b) {
   if (a > b) {
-    console.log(a + " is larger");
+    console.log(a + " Value a is larger");
   } else if (b > a) {
-    console.log(b + " is larger");
+    console.log(b + " Value b is larger");
   } else {
     console.log("Both are equal");
   }
 }
-findLargest(5, 10);
-findLargest(20, 10);
-findLargest(7, 7);
+findLargest(5, 10); //? 10 Value b is larger
+findLargest(20, 10); //? 20 Value a is larger
+findLargest(7, 7); //? Both are equal
 
 //! ================================================================================================
 //! ================================================================================================
@@ -262,9 +259,9 @@ function checkNumber(num) {
     console.log(num + " is Zero");
   }
 }
-checkNumber(5);
-checkNumber(-8);
-checkNumber(0);
+checkNumber(5); //? 5 is Positive
+checkNumber(-8); //? -8 is Negative
+checkNumber(0); //? 0 is Zero
 
 //! ================================================================================================
 //! ================================================================================================
@@ -276,7 +273,7 @@ checkNumber(0);
 function assignGrade(marks) {
   if (marks >= 90) {
     console.log("Grade: A");
-  } else if (marks >= 75) {
+  } else if (marks >= 75 && marks < 90) {
     console.log("Grade: B");
   } else if (marks >= 50) {
     console.log("Grade: C");
@@ -286,7 +283,7 @@ function assignGrade(marks) {
 }
 
 // Example usage
-assignGrade(85); // Output: Grade: B
+assignGrade(85); //? Output: Grade: B
 
 //! ================================================================================================
 //! ================================================================================================
@@ -295,9 +292,9 @@ assignGrade(85); // Output: Grade: B
 // leap year or not
 //! ===============================
 
-// The code you provided checks whether a given year is a leap year or not. Here's a detailed explanation:
+// The code  checks whether a given year is a leap year or not. Here's a detailed explanation:
 
-// Leap Year Rule:
+//* Leap Year Rule:
 // A leap year is a year that:
 // Is divisible by 4, but not divisible by 100, unless it is also divisible by 400.
 
@@ -307,7 +304,7 @@ assignGrade(85); // Output: Grade: B
 // Years like 2020 and 2024 are leap years because they are divisible by 4 but not divisible by 100.
 
 function leapYear(year) {
-  if (year % 4 === 0 && year % 100 !== 0) {
+  if (year % 4 == 0 && year % 100 != 0) {
     return year + " is a leap year"; // Case for being divisible by 4 but not 100
   } else if (year % 400 === 0) {
     return year + " is a leap year"; // Case for being divisible by 400
@@ -316,30 +313,32 @@ function leapYear(year) {
   }
 }
 
-console.log(leapYear(2000)); // "2000 is a leap year"
-console.log(leapYear(1900)); // "1900 is not a leap year"
-console.log(leapYear(2024)); // "2024 is a leap year"
-console.log(leapYear(2025)); // "2025 is not a leap year"
+console.log(leapYear(2000)); //? "2000 is a leap year"
+console.log(leapYear(1900)); //? "1900 is not a leap year"
+console.log(leapYear(2024)); //? "2024 is a leap year"
+console.log(leapYear(2025)); //? "2025 is not a leap year"
 
 //? ----------------------------------------------
 //? ----------------------------------------------
 
-function leapYear(year) {
-  if (year % 400 === 0) {
-    console.log(year + " is a leap year");
-  } else if (year % 100 === 0) {
-    console.log(year + " is not a leap year");
-  } else if (year % 4 === 0) {
-    console.log(year + " is a leap year");
+function leapYear2(year) {
+  if (year % 4 === 0) {
+    if (year % 100 !== 0) {
+      return year + " is a leap year";
+    } else if (year % 400 === 0) {
+      return year + " is a leap year";
+    } else {
+      return year + " is not a leap year";
+    }
   } else {
-    console.log(year + " is not a leap year");
+    return year + " is not a leap year";
   }
 }
 
-leapYear(2000); // "2000 is a leap year"
-leapYear(1900); // "1900 is not a leap year"
-leapYear(2024); // "2024 is a leap year"
-leapYear(2025); // "2025 is not a leap year"
+console.log(leapYear2(2000)); //? "2000 is a leap year"
+console.log(leapYear2(1900)); //? "1900 is not a leap year"
+console.log(leapYear2(2024)); //? "2024 is a leap year"
+console.log(leapYear2(2025)); //? "2025 is not a leap year"
 
 //! ================================================================================================
 //! ================================================================================================
@@ -361,7 +360,7 @@ function GreaterNum(a, b, c) {
     console.log(` ${c} is the Greatest number`);
   }
 }
-GreaterNum(numA, numB, numC); // 20 is the Greatest number
+GreaterNum(numA, numB, numC); //? 20 is the Greatest number
 
 //?  -----------------------------------
 
@@ -379,14 +378,14 @@ function GreaterNum(a, b, c) {
   }
 }
 
-GreaterNum(10, 20, 5); // Output: 20 is the Greatest number
+GreaterNum(10, 20, 5); //? Output: 20 is the Greatest number
 
-//! ================================================================================================
-//! ================================================================================================
+//! =============================================================================================
+//! =============================================================================================
 
-//! ===============================
+//! =============================================================================================
 //? find temp in c pass in f and then check given temp is cold normal or hot
-//! ===============================
+//! =============================================================================================
 
 const temperature = 30;
 const temperature2 = 60;
@@ -396,21 +395,21 @@ function temp(fahrenheit) {
   const celsius = (fahrenheit - 32) * (5 / 9);
 
   if (celsius < 15) {
-    console.log(`${celsius.toFixed(2)}°C - Cold`);
+    console.log(`${Math.floor(celsius)}°C - Cold`);
   } else if (celsius <= 25) {
     // No need to check celsius >= 15 because the first condition already ensures this.
-    console.log(`${celsius.toFixed(2)}°C - normal`);
+    console.log(`${Math.floor(celsius)}°C - normal`);
   } else {
-    console.log(`${celsius.toFixed(2)}°C - hot`);
+    console.log(`${Math.floor(celsius)}°C - hot`);
   }
 }
 
-temp(temperature); //-1.11°C - Cold
-temp(temperature2); //15.56°C - normal
-temp(temperature3); //26.67°C - hot
+temp(temperature); //? -1.11°C - Cold
+temp(temperature2); //? 15.56°C - normal
+temp(temperature3); //? 26.67°C - hot
 
-//! ================================================================================================
-//! ================================================================================================
+//! =============================================================================================
+//! =============================================================================================
 
 //! ===============================
 //? find the greatest number among four numbers:
@@ -428,8 +427,8 @@ function GreaterNum(a, b, c, d) {
   }
 }
 
-GreaterNum(10, 20, 5, 30); // Output: 30 is the Greatest number
-GreaterNum(50, 40, 60, 30); // Output: 60 is the Greatest number
+GreaterNum(10, 20, 5, 30); //? Output: 30 is the Greatest number
+GreaterNum(50, 40, 60, 30); //? Output: 60 is the Greatest number
 
 //?  -----------------------------------
 
@@ -459,8 +458,8 @@ function GreaterNum(a, b, c, d) {
   }
 }
 
-GreaterNum(10, 20, 5, 30); // Output: 30 is the Greatest number
-GreaterNum(50, 40, 60, 30); // Output: 60 is the Greatest number
+GreaterNum(10, 20, 5, 30); //?  Output: 30 is the Greatest number
+GreaterNum(50, 40, 60, 30); //? Output: 60 is the Greatest number
 
 //?  -----------------------------------
 
@@ -481,7 +480,7 @@ function GreaterNum(a, b, c, d) {
   console.log(largest + " is the greatest number");
 }
 
-GreaterNum(10, 20, 5, 30); // Output: 30 is the greatest number
+GreaterNum(10, 20, 5, 30); //? Output: 30 is the greatest number
 
 //! ================================================================================================
 //! ================================================================================================
@@ -497,8 +496,8 @@ function canVote(age) {
     console.log("Not eligible to vote");
   }
 }
-canVote(20);
-canVote(15);
+canVote(20); //? Eligible to vote
+canVote(15); //? Not eligible to vote
 
 //! ================================================================================================
 //! ================================================================================================
@@ -519,6 +518,18 @@ series1(5);
 // 3
 // 4
 // 5
+
+//! -------------------- OR ----------------------
+
+function series11(num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    result += i + " "; // Concatenate each number to the result string
+  }
+  console.log(result); // Print the result string without trailing space
+}
+series11(5);
+// 1 2 3 4 5
 
 //! ================================================================================================
 //! ================================================================================================
@@ -548,11 +559,13 @@ series2(5);
 function series22(num) {
   let sign = 1;
   for (let i = 1; i <= num; i++) {
-    console.log(`${i * sign}`);
-    sign = -sign;
+    let value = i * sign;
+    console.log(value);
+    sign = -sign; // Flip the sign for next number
   }
 }
 series22(5);
+
 // 1
 // -2
 // 3
@@ -568,10 +581,13 @@ series22(5);
 
 function series3(num) {
   for (let i = 1; i <= num; i++) {
-    console.log(`${i} * ${i} = ${i * i}`);
+    let square = i * i;
+    console.log(`${i} * ${i} = ${square}`);
   }
 }
+
 series3(5);
+
 // 1 * 1 = 1
 // 2 * 2 = 4
 // 3 * 3 = 9
@@ -587,10 +603,12 @@ series3(5);
 
 function series4(num) {
   for (let i = 1; i <= num; i++) {
-    console.log(`${i} * ${i} * ${i} = ${i * i * i}`);
+    let cube = i * i * i; // or use i ** 3
+    console.log(`${i} * ${i} * ${i} = ${cube}`);
   }
 }
 series4(5);
+
 // 1 * 1 * 1 = 1
 // 2 * 2 * 2 = 8
 // 3 * 3 * 3 = 27
@@ -605,23 +623,26 @@ series4(5);
 //! ===============================
 
 //  raised to the power of two" and "raised to the power of three ( logic )
-const numPart113 = 10;
+
 function SeriesPart3(num) {
   for (let i = 1; i <= num; i++) {
-    console.log(i ** 2 + i ** 3);
+    let square = i * i; // Square calculation
+    let cube = i * i * i; // Cube calculation
+    let result = square + cube;
+    console.log(`${i}² + ${i}³ = ${square} + ${cube} = ${result}`);
   }
 }
-console.log(SeriesPart3(numPart113));
-// 2
-// 12
-// 36
-// 80
-// 150
-// 252
-// 392
-// 576
-// 810
-// 1100
+SeriesPart3(10);
+// 1² + 1³ = 1 + 1 = 2
+// 2² + 2³ = 4 + 8 = 12
+// 3² + 3³ = 9 + 27 = 36
+// 4² + 4³ = 16 + 64 = 80
+// 5² + 5³ = 25 + 125 = 150
+// 6² + 6³ = 36 + 216 = 252
+// 7² + 7³ = 49 + 343 = 392
+// 8² + 8³ = 64 + 512 = 576
+// 9² + 9³ = 81 + 729 = 810
+// 10² + 10³ = 100 + 1000 = 1100
 
 //?  -----------------------------------
 
@@ -675,16 +696,16 @@ SeriesPart3(10);
 // 2 + 3 = 5, so the sequence becomes: 0, 1, 1, 2, 3, 5.
 
 function Fibonacci(num) {
-  let a = 0,
-    b = 1;
-  let next; // Declaring next outside the loop
+  let a = 0;
+  let b = 1;
+  let next = 0;
   let result = "";
 
   for (let i = 1; i <= num; i++) {
+    result += a + " "; // Concatenating the result
     next = a + b; // Updating the existing variable
     a = b;
     b = next;
-    result += a + " "; // Concatenating the result
   }
   return result;
 }
@@ -720,8 +741,14 @@ console.log(Fibonacci(10));
 function factorial(num) {
   let result = 1;
 
+  if (num < 0) {
+    return "Factorial is not defined for negative numbers";
+  } else if (num === 0) {
+    return 1; // 0! is defined as 1
+  }
+
   for (let i = 1; i <= num; i++) {
-    result = result * i + " ";
+    result = result * i;
   }
   return result;
 }
@@ -758,7 +785,7 @@ factorial2(factNum2);
 //? Third iteration (i = 3): result = (result)2 * (i)3 → result = 6.
 // And so on, until i reaches the number num.
 
-//! ============ FOR PRINT SERIES OF FACTORIAL with  helper loop===================
+//! ============ FOR PRINT SERIES OF FACTORIAL with  helper loop ===================
 
 function factorial2(num) {
   let result = 1;
@@ -804,6 +831,19 @@ factorialOfOddNumbers(5);
 // 6
 // 120
 
+function factorialOfOddNumbers(num) {
+  //? same like above code but just better way
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result *= i;
+    if (i % 2 != 0) {
+      console.log(result); // only print at odd steps
+    }
+  }
+  return result;
+}
+factorialOfOddNumbers(5);
+
 //? ---------------
 //? above Code is good but alternative way
 //? ---------------
@@ -846,6 +886,10 @@ function oddFactorials(n) {
 
 // Call the function
 oddFactorials(7);
+//? 1! = 1
+//? 3! = 6
+//? 5! = 120
+//? 7! = 5040
 
 //! ================================================================================================
 //! ================================================================================================
@@ -858,6 +902,46 @@ var x = 7;
 var y = "7";
 // console.log(x == y); // true
 // console.log(x === y); //  false
+
+//! ================================================================================================
+//! ================================================================================================
+
+//? ----------------------------------------------
+//! // Odd or even
+//? ----------------------------------------------
+
+function checkEvenOdd(num) {
+  if (num % 2 === 0) {
+    console.log(num + " is Even");
+  } else {
+    console.log(num + " is Odd");
+  }
+}
+checkEvenOdd(7); // 7 is Odd
+checkEvenOdd(10); // 10 is Even
+
+//! ================================================================================================
+//! ================================================================================================
+
+//? ----------------------------------------------
+//! // “Find the sum of all the multiples of 3 or 5 below a given number (like 10).”
+//? ----------------------------------------------
+
+function sumOfMultiples(limit) {
+  let sum = 0;
+
+  for (let i = 1; i < limit; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+
+const re = sumOfMultiples(10);
+console.log("Sum of multiples of 3 or 5 below 10 is:", re);
+// Sum of multiples of 3 or 5 below 10 is: 23 ( 3 + 5 + 6 + 9 = 23)
 
 //! ================================================================================================
 //! ================================================================================================
@@ -912,6 +996,7 @@ const printPrimeSeries = (n) => {
 
 // Call function
 printPrimeSeries(20);
+// Prime numbers up to 20:
 // 2
 // 3
 // 5
@@ -920,6 +1005,28 @@ printPrimeSeries(20);
 // 13
 // 17
 // 19
+
+//? ---------------
+
+const printPrimeSeries2 = (n) => {
+  console.log(`Prime numbers up to ${n}:`);
+  for (let i = 2; i <= n; i++) {
+    let isPrime = true;
+
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      console.log(i);
+    }
+  }
+};
+
+printPrimeSeries2(20);
 
 //! ================================================================================================
 //! ================================================================================================
@@ -931,7 +1038,7 @@ printPrimeSeries(20);
 const TablePrint = (num, range = 10) => {
   console.log(`Table of Number ${num} :`);
 
-  let result = "";
+  let result = 1;
   for (let i = 1; i <= range; i++) {
     result = num * i;
     console.log(`${num} * ${i} = ${result}`);
@@ -962,19 +1069,18 @@ function countDigits(number) {
     return 1;
   }
 
-  number = Math.abs(number);
-
+  let temp = Math.abs(number);
   let count = 0;
-  while (number != 0) {
-    number = Math.floor(number / 10);
+
+  while (temp !== 0) {
+    temp = Math.floor(temp / 10);
     count++;
   }
+
   return count;
 }
-
-console.log(countDigits(12345)); // Output: 5
-console.log(countDigits(-678)); // Output: 3
-console.log(countDigits(0)); // Output: 1
+console.log(countDigits(12345)); //? Output: 5
+console.log(countDigits(-9876)); //? Output: 4
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1109,36 +1215,21 @@ console.log(ReverseNum(number)); // Output: 54321
 // const number2 = -12345;
 // console.log(ReverseNum2(number)); // Output: -54321
 
-//! ================================================================================================
-//! ================================================================================================
+//?=============================================
 
-//! ===============================
-//  7
-//  7 5
-//  7 5 2
-//  7 5 2 3  || take n = 3257
-//! ===============================
+function reverseUsingString(num) {
+  let str = num.toString(); // Convert number to string
+  let reversedStr = "";
 
-function printReversePattern(n) {
-  let numStr = n.toString();
-  let length = numStr.length;
-
-  for (let i = 0; i < length; i++) {
-    let row = "";
-
-    for (let j = length - 1; j >= length - 1 - i; j--) {
-      row = row + numStr[j];
-    }
-
-    console.log(row);
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i]; // Add characters in reverse
   }
+
+  return Number(reversedStr); // Convert reversed string to number
 }
 
-printReversePattern(3257);
-//  7
-//  7 5
-//  7 5 2
-//  7 5 2 3
+// Example:
+console.log(reverseUsingString(12345)); // Output: 54321
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1149,18 +1240,18 @@ printReversePattern(3257);
 
 let aSwap = 5;
 let bSwap = 10;
-console.log(`Before swapping: a = ${aSwap}, b = ${bSwap}`);
+console.log(`Before swapping: aSwap = ${aSwap}, bSwap = ${bSwap}`);
 
-aSwap = aSwap + bSwap;
-bSwap = aSwap - bSwap;
-aSwap = aSwap - bSwap;
+aSwap = aSwap + bSwap; // 5 + 10 = 15
+bSwap = aSwap - bSwap; // 15- 10 = 5
+aSwap = aSwap - bSwap; // 15 - 5 = 10
 
-console.log(`After swapping: a = ${aSwap}, b = ${bSwap}`);
+console.log(`After swapping: aSwap = ${aSwap}, bSwap = ${bSwap}`);
 
 // -----------------------------------------------------
 
-let a = 5,
-  b = 10;
+let a = 5;
+let b = 10;
 console.log(`Before swapping: a = ${a}, b = ${b}`);
 
 let temp = a;
@@ -1203,6 +1294,8 @@ console.log(Bww); // 20
 
 let arr123 = [1, 2, 3, 4, 5];
 
+console.log(arr123.length); // 5
+
 for (let i = 0; i < arr123.length; i++) {
   console.log(arr123[i]);
 }
@@ -1237,6 +1330,7 @@ function findMinMax(arr) {
   }
 
   return { min, max };
+  0;
 }
 
 let arrMinMax = [3, 1, 8, 2, 7, 5];
@@ -1326,8 +1420,8 @@ function reverseArray(arr) {
   return arr;
 }
 
-let reverseArray = [3, 1, 8, 2, 7, 5];
-console.log(reverseArray(reverseArray)); // [5, 7, 2, 8, 1, 3]
+let reverseArray2 = [3, 1, 8, 2, 7, 5];
+console.log(reverseArray(reverseArray2)); // [5, 7, 2, 8, 1, 3]
 
 //! --------------------- Method -2 ----------------------------------------
 
@@ -1338,8 +1432,6 @@ function reverseArray22(arr) {
   }
   return reversed;
 }
-
-let reverseArray2 = [3, 1, 8, 2, 7, 5];
 console.log(reverseArray22(reverseArray2)); // Output: [5, 7, 2, 8, 1, 3]
 
 //! --------------------- Method -3 ----------------------------------------
@@ -1414,7 +1506,7 @@ console.log(sumOfArray([10, 20, 30])); // 60
 //! ================================================================================================
 
 //! ===============================
-//! Find the Occurrence of an Element in an Array
+//! find the occurrence (frequency) of one particular element in an array
 //! ===============================
 
 function countOccurrences(arr, target) {
@@ -1442,7 +1534,7 @@ function countFrequency(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     let key = arr[i]; // Get the current element
-    if (frequency[key] === undefined) {
+    if (frequency[key] == undefined) {
       frequency[key] = 1; // If not found, initialize to 1
     } else {
       frequency[key]++; // Increment count
@@ -1509,6 +1601,8 @@ function findDuplicateChars(str) {
 
   // Find characters with frequency > 1
   for (let char in frequency) {
+    // char = key in frequency
+    console.log(char); // To see the character
     console.log(frequency[char]);
     if (frequency[char] > 1) {
       duplicates.push(char);
@@ -1587,16 +1681,13 @@ console.log(sortArray([1, 3, 4, 5, 2]));
 //! ===============================
 
 function removeDuplicates(arr) {
-  arr = sortArray(arr); // First, sort the array (First we have to  sort array)
+  arr = sortArray(arr); // Sort the array first
+
   let result = [];
 
-  if (arr.length === 0) return result;
-
-  result.push(arr[0]); // First element is always unique
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i - 1]) {
-      result.push(arr[i]); // Push unique elements
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      result.push(arr[i]);
     }
   }
 
@@ -1605,7 +1696,7 @@ function removeDuplicates(arr) {
 
 let arrRemoveDuplicate = [1, 1, 2, 3, 4, 5, 2, 2];
 console.log(removeDuplicates(arrRemoveDuplicate));
-// Output: [1, 2, 3, 4, 5]
+// ✅ Output: [1, 2, 3, 4, 5]
 
 //! ================================================================================================
 //! ================================================================================================
@@ -1705,9 +1796,9 @@ Initial arrays:
 arr1 = [1, 3, 5]
 arr2 = [2, 4, 6, 7, 8]
 
-Step 1: Compare 1 and 2 -> 1 is smaller, push 1 -> mergedArray = [1]
-Step 2: Compare 3 and 2 -> 2 is smaller, push 2 -> mergedArray = [1, 2]
-Step 3: Compare 3 and 4 -> 3 is smaller, push 3 -> mergedArray = [1, 2, 3]
+Step 1: Compare 1 and 2 -> 1 is smaller, push 1 -> mergedArray = [1] , i++ 
+Step 2: Compare 3 and 2 -> 2 is smaller, push 2 -> mergedArray = [1, 2] , j++ 
+Step 3: Compare 3 and 4 -> 3 is smaller, push 3 -> mergedArray = [1, 2, 3] , 
 Step 4: Compare 5 and 4 -> 4 is smaller, push 4 -> mergedArray = [1, 2, 3, 4]
 Step 5: Compare 5 and 6 -> 5 is smaller, push 5 -> mergedArray = [1, 2, 3, 4, 5]
 
@@ -2250,6 +2341,38 @@ function SumEvenNum(Arr12) {
 //! ================================================================================================
 
 //! ===============================
+//  7
+//  7 5
+//  7 5 2
+//  7 5 2 3  || take n = 3257
+//! ===============================
+
+function printReversePattern(n) {
+  let numStr = n.toString();
+  let length = numStr.length;
+
+  for (let i = 0; i < length; i++) {
+    let row = "";
+
+    for (let j = length - 1; j >= length - 1 - i; j--) {
+      row = row + numStr[j];
+    }
+
+    console.log(row);
+  }
+}
+
+printReversePattern(3257);
+
+//  7
+//  7 5
+//  7 5 2
+//  7 5 2 3
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
 //! Check if a String is a Palindrome
 //! ===============================
 
@@ -2463,6 +2586,25 @@ function swapCase(str) {
 
 // Input
 console.log(swapCase("Hello World!")); // Output: "hELLO wORLD!"
+
+//! ================================================================================================
+//! ================================================================================================
+
+//! ===============================
+//! removeSpaces from string
+//! ===============================
+
+function removeSpaces(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+console.log(removeSpaces("H e l l o  W o r l d")); // Output: "HelloWorld"
 
 //! ================================================================================================
 //! ================================================================================================
